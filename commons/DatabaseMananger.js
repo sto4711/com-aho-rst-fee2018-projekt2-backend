@@ -1,9 +1,10 @@
 import Datastore from 'nedb-promise'
+import {Logger} from "./Logger";
 
 export class DatabaseMananger {
     constructor(filename) {
         this.db = new Datastore({filename: filename, autoload: true});
-        console.log('Database ' + filename.replace(".db", "") + ' ready');
+        Logger.traceMessage('DatabaseMananger', 'constructor', 'Database "' + filename.replace('.db', '') + '" ready')
     }
 
     async insert(row) {
