@@ -3,14 +3,12 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import UIDGenerator from 'uid-generator';
 import {Logger} from "./commons/Logger";
-import {ServerContext} from "./commons/ServerContext";
 import {RouterWebshop} from './router/RouterWebshop';
 
 class WebshopBackend {
     constructor() {
         this.app = express();
         this.routerWebshop = new RouterWebshop();
-        this.serverContext = new ServerContext();//Singleton!
 
         this.app.use((request, response, next) => {
             response.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');                     //enable CORS: frontend runs on localhost:63342
@@ -23,7 +21,7 @@ class WebshopBackend {
         });
         //Authentification
         this.app.use((request, response, next) =>{
-            request.authenticated = this.serverContext.isTokenValid(request.headers.authorization);
+            request.authenticated = this.routerWebshop.getControllerAuthentication().isTokenValid(request.headers.authorization);
             next();
         });
 

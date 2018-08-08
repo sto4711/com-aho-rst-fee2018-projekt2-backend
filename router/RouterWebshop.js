@@ -1,26 +1,33 @@
 import express from 'express';
 import authentication from 'express-authentication';
-import {ControllerAuthentification} from "../controller/ControllerAuthentification";
+import {ControllerAuthentication} from '../controller/ControllerAuthentication';
+import {ControllerProduct} from '../controller/ControllerProduct';
 
 export class RouterWebshop {
     constructor() {
         this.router = express.Router();
-        this.controllerAuthentification = new ControllerAuthentification();
+        this.controllerAuthentication = new ControllerAuthentication();
+        this.controllerProduct = new ControllerProduct();
 
-        this.router.get("/", async (request, response) => {                                 // GET dummy
-            response.json("bin auch eine message")
+        this.router.get('/', async (request, response) => {                                 // GET dummy
+            response.json('bin auch eine message')
         });
 
-        this.router.post("/auth/signin", async (request, response) => {                                // login, get token; gets back 401 if not ok
-            await this.controllerAuthentification.signin(request, response);
+        this.router.post('/auth/signin', async (request, response) => {
+            await this.controllerAuthentication.signin(request, response);
         });
 
-        this.router.get("/products", authentication.required(), async (request, response) => {                                 // GET products
-            response.json("bin auch ein product")
+        this.router.get('/products', authentication.required(), async (request, response) => {
+            console.log('get products');
         });
     }
 
     getRouter() {
         return this.router;
     }
+
+    getControllerAuthentication() {
+        return this.controllerAuthentication;
+    }
+
 }
