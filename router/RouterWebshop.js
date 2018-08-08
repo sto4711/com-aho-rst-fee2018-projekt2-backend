@@ -18,7 +18,7 @@ export class RouterWebshop {
         });
 
         this.router.get('/products', authentication.required(), async (request, response) => {
-            console.log('get products');
+            response.json('bin auch ein product')
         });
     }
 
