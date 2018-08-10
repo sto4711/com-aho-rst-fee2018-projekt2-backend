@@ -14,11 +14,15 @@ export class RouterWebshop {
         });
 
         this.router.post('/auth/signin', async (request, response) => {
-            await this.controllerAuthentication.signin(request, response);
+            await this.controllerAuthentication.signIn(request, response);
+        });
+
+        this.router.post('/auth/signout', authentication.required(), async (request, response) => {
+            await this.controllerAuthentication.signOut(request, response);
         });
 
         this.router.get('/products', authentication.required(), async (request, response) => {
-            response.json('bin auch ein product')
+            response.json('product1,product2,... ' + Date.now() )
         });
     }
 

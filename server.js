@@ -21,23 +21,10 @@ class WebshopBackend {
         });
 
         //Authentication
-        this.app.use(async (request, response, next) =>{
-            console.log(request.headers.authorization);
-
+        this.app.use(async (request, response, next) => {
             request.authenticated = await this.routerWebshop.getControllerAuthentication().isTokenValid(request);
-
             next();
-
         });
-
-        // this.app.use(async (request, response, next) => {
-        //     if (!request.path.startsWith('/webshop/auth/signin')) {
-        //         const token = request.headers.authorization;
-        //         request.authenticated = await this.routerWebshop.getControllerAuthentication().checkToken(token);
-        //     } else {
-        //         next();
-        //     }
-        // });
 
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());

@@ -14,16 +14,36 @@ export class StoreAuthentication {
 
     async getUserID(user, pwd) {
         const userArr = await this.dbMananger_User.find({"user": user, "pwd": pwd});
-        if (userArr.length == 0) {
-            Logger.traceError('StoreAuthentication', 'getUserID', 'user and / or pwd not ok');
-            throw "user and / or pwd not found";
-        }
-        return userArr[0]._id;
+        return (userArr.length == 0 ? null : userArr[0]._id);
     }
 
-    async getSession(userID) {
+    async getSessionByUser(userID) {
         const sessionArr = await this.dbMananger_Session.find({"userID": userID});
         return (sessionArr.length == 0 ? null : sessionArr[0]);
+    }
+
+    async getSessionByToken(token) {
+        const sessionArr = await this.dbMananger_Session.find({"token": token});
+        return (sessionArr.length == 0 ? null : sessionArr[0]);
+    }
+
+    async createSession(userID) {
+        const token = await this.uIDGenerator.generate();
+        await this.dbMananger_Session.insert(new Session(userID, token));
+        Logger.traceMessage('StoreAuthentication', 'createSession', 'session created');
+        return token;
+    }
+
+    async renewSession(sessionID) {
+        const token = await this.uIDGenerator.generate();
+        await this.dbMananger_Session.update(sessionID, {"token": token, "tokenDate": new Date()});
+        Logger.traceMessage('StoreAuthentication', 'renewSession', 'session.token & tokenDate updated');
+        return token;
+    }
+
+    async updateSessionTokenDate(sessionID, tokenDate) {
+        await this.dbMananger_Session.update(sessionID, {"tokenDate": tokenDate});
+        Logger.traceMessage('StoreAuthentication', 'updateSessionTokenDate', 'session.tokenDate updated');
     }
 
     async getSessionTokenDate(token) {
@@ -31,20 +51,6 @@ export class StoreAuthentication {
         return (sessionArr.length == 0 ? null : sessionArr[0].tokenDate);
     }
 
-    async generateToken() {
-        const token = await this.uIDGenerator.generate();
-        Logger.traceMessage('StoreAuthentication', 'generateToken', 'generated');
-        return token;
-    }
 
-    async insertSession(userID, token) {
-        await this.dbMananger_Session.insert(new Session(userID, token));
-        Logger.traceMessage('StoreAuthentication', 'insertSession', 'session inserted');
-    }
-
-    async updateSessionToken(sessionID, token) {
-        await this.dbMananger_Session.update(sessionID, {"token": token, "tokenDate": Date.now()});
-        Logger.traceMessage('StoreAuthentication', 'updateSessionToken', 'session.token & tokenDate updated');
-    }
 
 }
