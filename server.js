@@ -11,10 +11,10 @@ class WebshopBackend {
         this.routerWebshop = new RouterWebshop();
 
         this.app.use((request, response, next) => {
-            response.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');                     //enable CORS: frontend runs on localhost:63342
+            response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');                     //enable CORS: frontend runs on localhost:63342
             response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
             response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-            response.setHeader('Access-Control-Allow-Credentials', true);                                    //enable CORS
+            response.setHeader('Access-Control-Allow-Credentials', true);
 
             response.setHeader('Content-Type', 'application/json; charset=utf-8');
             next();

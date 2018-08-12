@@ -23,7 +23,7 @@ export class ControllerAuthentication {
                     token = session.token;
                 }
                 Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" ok');
-                response.json({token: token});
+                response.json({value: token});
             }
             else {
                 Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.user + '" failed, user or pwd nok');
@@ -48,7 +48,7 @@ export class ControllerAuthentication {
                     response.json({status: 'no session found'});
                 } else {
                     await this.storeAuthentication.updateSessionTokenDate(session._id, new Date(Date.now() - this.HOUR));
-                    Logger.traceMessage('ControllerAuthentification', 'signOut', 'token "' + token + '" ok');
+                    Logger.traceMessage('ControllerAuthentification', 'signOut', 'ok');
                     response.json({status: 'no'});
                 }
             }
@@ -65,6 +65,11 @@ export class ControllerAuthentication {
         }
 
         const tokenDate = await this.storeAuthentication.getSessionTokenDate(token);
+        if (tokenDate == null) {
+            Logger.traceMessage('StoreAuthentication', 'isSessionValid', 'unknown token ' + token);
+            return false;
+        }
+
         const hasNotExpired = Date.now() < (tokenDate.getTime() + this.HOUR);
         if (!hasNotExpired) {
             Logger.traceMessage('StoreAuthentication', 'isSessionValid', 'session not valid, token has expired');
