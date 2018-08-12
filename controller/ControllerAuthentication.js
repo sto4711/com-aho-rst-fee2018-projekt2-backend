@@ -16,23 +16,12 @@ export class ControllerAuthentication {
                 if (session == null) {
                     token = await this.storeAuthentication.createSession(userID);
                     Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> no session found, new one created');
+                } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
+                    token = await this.storeAuthentication.renewSession(session._id);
+                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> session expired, token renewed');
                 } else {
-                    const now = new Date();
-                    const tokenDate = session.tokenDate;
-                    console.log('n   ' + now + ' -> ' + now.getTime());
-                    console.log('t   ' + tokenDate + ' -> ' + (tokenDate.getTime() + this.HOUR));
-
-                    if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
-                        token = await this.storeAuthentication.renewSession(session._id);
-                        Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> session expired, token renewed');
-                    } else {
-                        token = session.token;
-                        // await this.storeAuthentication.renewTokenDate(session._id);
-                        // Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> session not expired, token renewed');
-                    }
+                    token = session.token;
                 }
-
-
                 Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" ok');
                 response.json({token: token});
             }
