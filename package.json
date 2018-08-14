@@ -10,7 +10,8 @@
     "express": "4.16.3",
     "express-authentication": "^0.3.2",
     "nedb-promise": "^2.0.1",
-    "uid-generator": "1.0.0"
+    "uid-generator": "1.0.0",
+    "dateformat": "3.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
