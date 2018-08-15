@@ -11,7 +11,7 @@ export class Logger {
         while (str.length < 60) {
             str += " ";
         }
-        return dateformat(new Date(), "yyyy.mm.dd h:MM:ss TT") + str + message;
+        return dateformat(new Date(), "yyyy.mm.dd h:MM:ss ") + str + message;
     }
 
     static traceMessage(className, functionName, message) {

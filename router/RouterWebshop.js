@@ -22,8 +22,14 @@ export class RouterWebshop {
         });
 
         this.router.get('/products', authentication.required(), async (request, response) => {
-            response.json('product1,product2,... ' + Date.now() )
+            response.json('product1,product2,... ' + Date.now() );
         });
+
+        this.router.get('/admin/user', authentication.required(), async (request, response) => {
+            console.log("router: user -> get");
+            response.json('user1,user2,... ' + Date.now() );
+        });
+
     }
 
     getRouter() {
