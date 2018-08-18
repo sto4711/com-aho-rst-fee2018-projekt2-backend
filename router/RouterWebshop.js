@@ -22,7 +22,7 @@ export class RouterWebshop {
         });
 
         this.router.get('/products', authentication.required(), async (request, response) => {
-            response.json('product1,product2,... ' + Date.now() );
+            await this.controllerProduct.getProducts(request, response);
         });
 
         this.router.get('/admin/user', authentication.required(), async (request, response) => {
