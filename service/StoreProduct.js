@@ -7,9 +7,7 @@ export class StoreProduct {
     }
 
     async getProducts() {
-        Logger.traceError('StoreProduct','getProducts','ok');
-//        return await this.dbMananger.find({"state": "ACTIVE"});
-        return await this.dbMananger_Product.find();
+        return await this.dbMananger_Product.find( /* {"name": ""} */ );
     }
 
 }

@@ -26,9 +26,16 @@ class WebshopBackend {
             next();
         });
 
+        //Trace URL
+        this.app.use(async (request, response, next) => {
+            Logger.traceMessage('Server', 'traceURL', request.url);
+            next();
+        });
+
+        this.app.use(express.static(path.resolve("public")));                   // images, etc
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());
-        this.app.use('/webshop', this.routerWebshop.getRouter());            // backend  -> http://localhost:3000/webshop
+        this.app.use('/webshop', this.routerWebshop.getRouter());               // backend  -> http://localhost:3000/webshop
         this.app.listen(3000);
         Logger.traceMessage('WebshopApp', 'constructor', 'Backend Webshop started: http://localhost:3000');
     }
