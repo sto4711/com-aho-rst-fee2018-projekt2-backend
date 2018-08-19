@@ -1,5 +1,5 @@
-import {StoreAuthentication} from '../service/StoreAuthentication';
-import {Logger} from '../commons/Logger';
+import {StoreAuthentication} from '../../service/authentication/StoreAuthentication';
+import {Logger} from '../../commons/Logger';
 
 export class ControllerAuthentication {
     constructor() {

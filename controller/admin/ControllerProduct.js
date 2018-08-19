@@ -1,5 +1,5 @@
-import {StoreProduct} from '../service/StoreProduct';
-import {Logger} from "../commons/Logger";
+import {StoreProduct} from '../../service/admin/StoreProduct';
+import {Logger} from "../../commons/Logger";
 
 export class ControllerProduct {
     constructor() {
@@ -8,7 +8,7 @@ export class ControllerProduct {
 
     async getProducts(request, response)  {
         try {
-            response.json(await this.storeProduct.getProducts());
+            response.json(await this.storeProduct.getProducts(request.query.filterName));
             Logger.traceMessage('ControllerProduct', 'getProducts', 'ok');
         } catch (e) {
             Logger.traceError('ControllerProduct', 'getProducts', 'failed -> ' + e);

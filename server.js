@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import UIDGenerator from 'uid-generator';
 import {Logger} from "./commons/Logger";
 import {RouterWebshop} from './router/RouterWebshop';
 
@@ -16,7 +15,12 @@ class WebshopBackend {
             response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
             response.setHeader('Access-Control-Allow-Credentials', true);
 
-            response.setHeader('Content-Type', 'application/json; charset=utf-8');
+            if (request.path.startsWith("/image")) {
+                response.setHeader("Content-Type", "image/png");
+            }else   {
+                response.setHeader('Content-Type', 'application/json; charset=utf-8');
+            }
+
             next();
         });
 

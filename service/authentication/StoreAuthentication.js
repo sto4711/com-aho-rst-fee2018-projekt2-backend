@@ -1,7 +1,7 @@
 import UIDGenerator from 'uid-generator';
-import {Logger} from "../commons/Logger";
-import {DatabaseMananger_NEDB} from "../commons/DatabaseMananger_NEDB";
-import {Session} from "../service/authentication/Session";
+import {Logger} from "../../commons/Logger";
+import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
+import {Session} from "../../service/authentication/Session";
 
 
 export class StoreAuthentication {
