@@ -8,29 +8,32 @@ export class ControllerAuthentication {
     }
 
     async signIn(request, response) {
+        console.log('request.body.email -> ' + request.body.email);
+        console.log('request.body.pwd -> ' + request.body.pwd);
+
         try {
-            const userID = await this.storeAuthentication.getUserID(request.body.user, request.body.pwd);
+            const userID = await this.storeAuthentication.getUserID(request.body.email, request.body.pwd);
             if (userID != null) {
                 const session = await this.storeAuthentication.getSessionByUser(userID);
                 let token = null;
                 if (session == null) {
                     token = await this.storeAuthentication.createSession(userID);
-                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> no session found, new one created');
+                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
                     token = await this.storeAuthentication.renewSession(session._id);
-                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" -> session expired, token renewed');
+                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
                 } else {
                     token = session.token;
                 }
-                Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.user + '" ok');
+                Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" ok');
                 response.json({value: token});
             }
             else {
-                Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.user + '" failed, user or pwd nok');
+                Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
                 response.status(401).send('user or pwd nok');
             }
         } catch (e) {
-            Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.user + '" failed -> ' + e);
+            Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.email + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

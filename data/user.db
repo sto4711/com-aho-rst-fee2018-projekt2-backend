@@ -1,2 +1,2 @@
-{"name":"Alain","firstname":"Holzhauser","user":"aho","pwd":"aho","_id":"00crcwDLlQ3Xmbbb"}
-{"name":"Roland","firstname":"Stauffer","user":"rst","pwd":"rst","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"aho","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
+{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"rst","type":"admin","_id":"01crcwDLlQ3Xmbbb"}

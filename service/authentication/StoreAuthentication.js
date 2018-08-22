@@ -12,8 +12,8 @@ export class StoreAuthentication {
         this.dbMananger_Session.deleteAll();
     }
 
-    async getUserID(user, pwd) {
-        const userArr = await this.dbMananger_User.find({"user": user, "pwd": pwd});
+    async getUserID(email, pwd) {
+        const userArr = await this.dbMananger_User.find({"email": email, "pwd": pwd});
         return (userArr.length === 0 ? null : userArr[0]._id);
     }
 
