@@ -7,14 +7,8 @@ import {Session} from "../../service/authentication/Session";
 export class StoreAuthentication {
     constructor() {
         this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
-        this.dbMananger_User = new DatabaseMananger_NEDB("data/user.db");
         this.dbMananger_Session = new DatabaseMananger_NEDB("data/session.db");
         this.dbMananger_Session.deleteAll();
-    }
-
-    async getUserID(email, pwd) {
-        const userArr = await this.dbMananger_User.find({"email": email, "pwd": pwd});
-        return (userArr.length === 0 ? null : userArr[0]._id);
     }
 
     async getSessionByUser(userID) {

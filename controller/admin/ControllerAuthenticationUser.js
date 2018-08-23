@@ -1,39 +1,51 @@
 import {StoreAuthentication} from '../../service/authentication/StoreAuthentication';
+import {StoreUser} from '../../service/admin/StoreUser';
 import {Logger} from '../../commons/Logger';
 
-export class ControllerAuthentication {
+export class ControllerAuthenticationUser {
     constructor() {
         this.HOUR = 1000 * 60 * 60;//ms
         this.storeAuthentication = new StoreAuthentication();
+        this.storeUser = new StoreUser();
     }
 
-    async signIn(request, response) {
+    async getUsers(request, response)  {
+        try {
+            response.json(await this.storeUser.getUsers());
+            Logger.traceMessage('ControllerAuthenticationUser', 'getUsers', 'ok');
+        } catch (e) {
+            Logger.traceError('ControllerAuthenticationUser', 'getUsers', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+   async signIn(request, response) {
         console.log('request.body.email -> ' + request.body.email);
         console.log('request.body.pwd -> ' + request.body.pwd);
 
         try {
-            const userID = await this.storeAuthentication.getUserID(request.body.email, request.body.pwd);
+            const userID = await this.storeUser.getUserID(request.body.email, request.body.pwd);
             if (userID != null) {
                 const session = await this.storeAuthentication.getSessionByUser(userID);
                 let token = null;
                 if (session == null) {
                     token = await this.storeAuthentication.createSession(userID);
-                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
+                    Logger.traceMessage('ControllerAuthenticationUser', 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
                     token = await this.storeAuthentication.renewSession(session._id);
-                    Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
+                    Logger.traceMessage('ControllerAuthenticationUser', 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
                 } else {
                     token = session.token;
                 }
-                Logger.traceMessage('ControllerAuthentification', 'signin', 'user "' + request.body.email + '" ok');
+                Logger.traceMessage('ControllerAuthenticationUser', 'signin', 'user "' + request.body.email + '" ok');
                 response.json({value: token});
             }
             else {
-                Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
+                Logger.traceError('ControllerAuthenticationUser', 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
                 response.status(401).send('user or pwd nok');
             }
         } catch (e) {
-            Logger.traceError('ControllerAuthentification', 'signin', 'user"' + request.body.email + '" failed -> ' + e);
+            Logger.traceError('ControllerAuthenticationUser', 'signin', 'user"' + request.body.email + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -42,12 +54,12 @@ export class ControllerAuthentication {
         const token = request.headers.authorization;
         try {
             if (token == null) {
-                Logger.traceError('ControllerAuthentification', 'signOut', 'no token in header');
+                Logger.traceError('ControllerAuthenticationUser', 'signOut', 'no token in header');
                 response.json({status: 'no token in header'});
             } else {
                 const session = await this.storeAuthentication.getSessionByToken(token);
                 if (session == null) {
-                    Logger.traceMessage('ControllerAuthentification', 'signOut', 'no session found for token "' + token + '" ok');
+                    Logger.traceMessage('ControllerAuthenticationUser', 'signOut', 'no session found for token "' + token + '" ok');
                     response.json({status: 'no session found'});
                 } else {
                     await this.storeAuthentication.updateSessionTokenDate(session._id, new Date(Date.now() - this.HOUR));
@@ -56,7 +68,7 @@ export class ControllerAuthentication {
                 }
             }
         } catch (e) {
-            Logger.traceError('ControllerAuthentification', 'signOut', 'token"' + token + '" failed -> ' + e);
+            Logger.traceError('ControllerAuthenticationUser', 'signOut', 'token"' + token + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
