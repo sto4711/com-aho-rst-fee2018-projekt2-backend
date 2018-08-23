@@ -9,8 +9,8 @@ export class RouterWebshop {
         this.controllerAuthenticationUser = new ControllerAuthenticationUser();
         this.controllerArticle = new ControllerArticle();
 
-        this.router.get('/', async (request, response) => {                                 // GET dummy
-            response.json('bin auch eine message')
+        this.router.get('/auth/isLoggedIn', async (request, response) => {
+            await this.controllerAuthenticationUser.getIsLoggedIn(request, response);
         });
 
         this.router.post('/auth/signin', async (request, response) => {

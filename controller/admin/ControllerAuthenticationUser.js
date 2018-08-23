@@ -9,12 +9,24 @@ export class ControllerAuthenticationUser {
         this.storeUser = new StoreUser();
     }
 
-    async getUsers(request, response)  {
+    async getIsLoggedIn(request, response)  {
         try {
-            response.json(await this.storeUser.getUsers());
-            Logger.traceMessage('ControllerAuthenticationUser', 'getUsers', 'ok');
+            const userID = await this.storeUser.getUserID_ByMail(request.query.email);
+            let session = null;
+            if (userID !== null) {
+                session = await this.storeAuthentication.getSessionByUser(userID);
+            }
+
+            if(session ===null)    {
+                response.json({IsLoggedIn : false});
+                Logger.traceMessage('ControllerAuthenticationUser', 'getIsLoggedIn', request.query.email + ' is not logged in');
+            }
+            else    {
+                response.json({IsLoggedIn : true});
+                Logger.traceMessage('ControllerAuthenticationUser', 'getIsLoggedIn', request.query.email + ' is logged in');
+            }
         } catch (e) {
-            Logger.traceError('ControllerAuthenticationUser', 'getUsers', 'failed -> ' + e);
+            Logger.traceError('ControllerAuthenticationUser', 'getIsLoggedIn', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -90,6 +102,16 @@ export class ControllerAuthenticationUser {
             Logger.traceMessage('StoreAuthentication', 'isSessionValid', 'session not valid, token has expired');
         }
         return hasNotExpired;
+    }
+
+    async getUsers(request, response)  {
+        try {
+            response.json(await this.storeUser.getUsers());
+            Logger.traceMessage('ControllerAuthenticationUser', 'getUsers', 'ok');
+        } catch (e) {
+            Logger.traceError('ControllerAuthenticationUser', 'getUsers', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
     }
 
 }
