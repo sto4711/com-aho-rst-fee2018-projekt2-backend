@@ -27,5 +27,14 @@ export class ControllerArticle {
         }
     }
 
+    async getArticleDetails(request, response)  {
+        try {
+            response.json(await this.storeProduct.getArticleDetais(request.query.id));
+            Logger.traceMessage('ControllerArticle', 'getArticleDetais', 'ok');
+        } catch (e) {
+            Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
 
 }

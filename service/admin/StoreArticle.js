@@ -15,4 +15,12 @@ export class StoreArticle {
 
         return await this.dbMananger_Product.find({});
     }
+
+    async getArticleDetais(id) {
+        if (id !== '') {
+            return await this.dbMananger_Product.find({"_id":id});
+        }
+        return await this.dbMananger_Product.find({});
+    }
+
 }

@@ -35,7 +35,7 @@ export class RouterWebshop {
         });
 
         this.router.get('/article-details',  async (request, response) => {
-            await this.controllerArticle.getArticles(request, response);
+            await this.controllerArticle.getArticleDetails(request, response);
         });
     }
 
