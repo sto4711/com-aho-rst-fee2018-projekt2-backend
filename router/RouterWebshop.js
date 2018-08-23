@@ -28,6 +28,10 @@ export class RouterWebshop {
         this.router.get('/admin/articles',  async (request, response) => {
             await this.controllerArticle.getArticles(request, response);
         });
+
+        this.router.get('/articles',  async (request, response) => {
+            await this.controllerArticle.getAllArticles(request, response);
+        });
     }
 
     getRouter() {

@@ -16,4 +16,15 @@ export class ControllerArticle {
         }
     }
 
+    async getAllArticles(request, response)  {
+        try {
+            response.json(await this.storeProduct.getAllArticles(request.query));
+            Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
+        } catch (e) {
+            Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+
 }

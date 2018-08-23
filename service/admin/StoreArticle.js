@@ -11,5 +11,8 @@ export class StoreArticle {
         }
         return await this.dbMananger_Product.find({});
     }
+    async getAllArticles(filterName) {
 
+        return await this.dbMananger_Product.find({});
+    }
 }
