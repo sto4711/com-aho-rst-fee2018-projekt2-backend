@@ -7,6 +7,7 @@ export class ControllerArticle {
     }
 
     async getArticles(request, response)  {
+
         try {
             response.json(await this.storeProduct.getArticles(request.query.filterName));
             Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');

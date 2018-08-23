@@ -2,6 +2,7 @@ import express from 'express';
 import authentication from 'express-authentication';
 import {ControllerAuthenticationUser} from '../controller/admin/ControllerAuthenticationUser';
 import {ControllerArticle} from '../controller/admin/ControllerArticle';
+import {Logger} from "../commons/Logger";
 
 export class RouterWebshop {
     constructor() {
@@ -31,6 +32,10 @@ export class RouterWebshop {
 
         this.router.get('/articles',  async (request, response) => {
             await this.controllerArticle.getAllArticles(request, response);
+        });
+
+        this.router.get('/article-details',  async (request, response) => {
+            await this.controllerArticle.getArticles(request, response);
         });
     }
 

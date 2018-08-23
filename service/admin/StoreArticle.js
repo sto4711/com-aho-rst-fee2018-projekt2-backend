@@ -7,11 +7,11 @@ export class StoreArticle {
 
     async getArticles(filterName) {
         if (filterName !== '') {
-            return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
+             return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
         }
         return await this.dbMananger_Product.find({});
     }
-    async getAllArticles(filterName) {
+    async getAllArticles() {
 
         return await this.dbMananger_Product.find({});
     }
