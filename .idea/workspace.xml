@@ -2,310 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb7e8182-95fd-4a32-8990-c8722e50b0ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_23.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_24.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_26.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_27.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_28.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_29.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_31.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_32.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_33.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_34.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_35.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_36.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_37.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_38.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_39.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_41.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_42.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_43.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_44.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_45.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_46.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_49.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_50.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_52.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_53.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_55.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_56.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_57.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_58.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_59.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_61.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_62.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_63.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_64.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_65.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_66.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_67.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_68.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_69.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_70.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_71.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_72.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_73.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_74.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_75.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_76.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_77.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_78.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_79.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_80.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_81.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_82.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_83.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_84.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_85.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_86.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_87.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_88.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_89.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_90.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_91.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_92.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_93.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_94.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_95.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_96.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_97.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_98.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_99.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_23.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_24.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_26.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_27.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_28.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_29.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_31.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_32.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_33.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_34.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_35.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_36.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_37.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_38.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_39.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_41.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_42.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_43.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_44.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_45.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_46.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_47.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_48.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_49.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_50.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_51.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_52.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_53.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_55.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_56.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_57.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_58.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_59.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_61.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_62.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_63.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_64.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_65.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_66.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_67.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_68.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_69.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_70.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_71.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_72.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_73.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_74.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_75.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_76.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_77.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_78.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_79.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_80.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_81.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_82.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_83.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_84.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_85.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_86.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_87.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_88.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_89.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_90.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_91.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_92.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_93.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_94.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_95.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_96.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_97.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_98.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/image/bikeOrigin_clone_pixelated_small_99.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/admin/ControllerArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/admin/ControllerArticle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/admin/ControllerAuthenticationUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/admin/ControllerAuthenticationUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/article.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/article.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone61.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone63.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone65.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone66.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone69.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone73.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone74.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone75.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone77.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone78.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone79.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone81.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone82.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone83.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone84.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone85.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone86.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone87.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone88.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone89.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone91.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone92.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone93.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone94.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone95.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone97.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone98.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent-clone99.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ebike_pixelated_transparent.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/admin/StoreArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/admin/StoreArticle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/session.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/session.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -357,24 +56,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="db" value="2" />
-          <entry key="js" value="6" />
+          <entry key="db" value="3" />
+          <entry key="jpg" value="2" />
+          <entry key="js" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="6" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Image" value="2" />
+          <entry key="JavaScript" value="7" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="25" />
+          <entry key="js" value="52" />
+          <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="25" />
+          <entry key="JavaScript" value="52" />
+          <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
     </session>
@@ -393,11 +96,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/user.db">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="74" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/admin/ControllerArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
+            <state relative-caret-position="255">
+              <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -417,7 +141,17 @@
     <findStrings>
       <find>_id</find>
       <find>getArticles</find>
+      <find>trace</find>
+      <find>&quot;</find>
+      <find>get produ</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>'</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -428,6 +162,7 @@
         <option value="$PROJECT_DIR$/router/RouterWebshop.js" />
         <option value="$PROJECT_DIR$/service/admin/StoreArticle.js" />
         <option value="$PROJECT_DIR$/controller/admin/ControllerArticle.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -466,45 +201,12 @@
             <path>
               <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="com-aho-rst-fee2018-projekt2-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="authentication" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -516,11 +218,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\data" />
       <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\public\image" />
+      <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\data" />
       <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\service\admin" />
       <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\service\authentication" />
       <recent name="C:\workspaceWebStorm\com-aho-rst-fee2018-projekt2-backend\controller\admin" />
@@ -564,24 +267,39 @@
       <workItem from="1534835557938" duration="2009000" />
       <workItem from="1535020033067" duration="429000" />
       <workItem from="1535020480015" duration="16961000" />
-      <workItem from="1535096129316" duration="2101000" />
+      <workItem from="1535096129316" duration="3858000" />
     </task>
+    <task id="LOCAL-00001" summary="- getAllArticles()&#10;- getArticleDetails()">
+      <created>1535098929362</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1535098929362</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- getAllArticles()&#10;- getArticleDetails()">
+      <created>1535099456329</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1535099456329</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19081000" />
+    <option name="totallyTimeSpent" value="20838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2333113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2333113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23743017" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39952904" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23743017" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39944133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -602,20 +320,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- getAllArticles()&#10;- getArticleDetails()" />
+    <option name="LAST_COMMIT_MESSAGE" value="- getAllArticles()&#10;- getArticleDetails()" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/authentication/StoreAuthentication.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/user.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/admin/ControllerAuthenticationUser.js">
@@ -631,6 +341,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/admin/StoreArticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="60" lean-forward="true" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/admin/ControllerArticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/image/bikeOriginPink.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/image/bikeOrigin.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -641,17 +381,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/admin/StoreArticle.js">
+    <entry file="file://$PROJECT_DIR$/data/user.db">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="60" lean-forward="true" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/admin/ControllerArticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
+        <state relative-caret-position="17">
+          <caret line="1" column="74" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="74" />
         </state>
       </provider>
     </entry>

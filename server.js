@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import {Logger} from "./commons/Logger";
+import {Logger} from './commons/Logger';
 import {RouterWebshop} from './router/RouterWebshop';
 
 class WebshopBackend {
@@ -12,11 +12,11 @@ class WebshopBackend {
         this.app.use((request, response, next) => {
             response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');                     //enable CORS: frontend runs on localhost:63342
             response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
-            response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+            response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
             response.setHeader('Access-Control-Allow-Credentials', true);
 
-            if (request.path.startsWith("/image")) {
-                response.setHeader("Content-Type", "image/png");
+            if (request.path.startsWith('/image')) {
+                response.setHeader('Content-Type', 'image/png');
             }else   {
                 response.setHeader('Content-Type', 'application/json; charset=utf-8');
             }
@@ -32,11 +32,13 @@ class WebshopBackend {
 
         //Trace URL
         this.app.use(async (request, response, next) => {
-            Logger.traceMessage('Server', 'traceURL', request.url);
+            if(!request.url.endsWith('jpg'))   {
+                Logger.traceMessage('Server', 'traceURL', request.url);
+            }
             next();
         });
 
-        this.app.use(express.static(path.resolve("public")));                   // images, etc
+        this.app.use(express.static(path.resolve('public')));                   // images, etc
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());
         this.app.use('/webshop', this.routerWebshop.getRouter());               // backend  -> http://localhost:3000/webshop
