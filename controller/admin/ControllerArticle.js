@@ -7,7 +7,6 @@ export class ControllerArticle {
     }
 
     async getArticles(request, response)  {
-
         try {
             response.json(await this.storeProduct.getArticles(request.query.filterName));
             Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
@@ -19,22 +18,24 @@ export class ControllerArticle {
 
     async getAllArticles(request, response)  {
         try {
-            response.json(await this.storeProduct.getAllArticles(request.query));
-            Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
+            response.json(await this.storeProduct.getAllArticles());
+            Logger.traceMessage('ControllerArticle', 'getAllArticles', 'ok');
         } catch (e) {
-            Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
+            Logger.traceError('ControllerArticle', 'getAllArticles', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
     async getArticleDetails(request, response)  {
         try {
-            response.json(await this.storeProduct.getArticleDetais(request.query.id));
-            Logger.traceMessage('ControllerArticle', 'getArticleDetais', 'ok');
+            response.json(await this.storeProduct.getArticleDetails(request.query.id));
+            Logger.traceMessage('ControllerArticle', 'getArticleDetails', 'ok');
         } catch (e) {
-            Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
+            Logger.traceError('ControllerArticle', 'getArticleDetails', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
+
+
 
 }

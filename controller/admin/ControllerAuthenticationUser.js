@@ -32,9 +32,6 @@ export class ControllerAuthenticationUser {
     }
 
    async signIn(request, response) {
-        console.log('request.body.email -> ' + request.body.email);
-        console.log('request.body.pwd -> ' + request.body.pwd);
-
         try {
             const userID = await this.storeUser.getUserID(request.body.email, request.body.pwd);
             if (userID != null) {

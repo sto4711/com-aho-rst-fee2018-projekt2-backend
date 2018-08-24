@@ -7,20 +7,19 @@ export class StoreArticle {
 
     async getArticles(filterName) {
         if (filterName !== '') {
-             return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
+            return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
         }
         return await this.dbMananger_Product.find({});
     }
+
     async getAllArticles() {
-
         return await this.dbMananger_Product.find({});
     }
 
-    async getArticleDetais(id) {
-        if (id !== '') {
-            return await this.dbMananger_Product.find({"_id":id});
-        }
-        return await this.dbMananger_Product.find({});
+    async getArticleDetails(id) {
+        return await this.dbMananger_Product.find({"_id": id});
     }
+
+
 
 }
