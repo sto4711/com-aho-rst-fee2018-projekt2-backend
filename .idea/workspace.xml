@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb7e8182-95fd-4a32-8990-c8722e50b0ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/shopping-basket/ShoppingBasket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/shopping-basket/ShoppingBasketItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/shopping-basket/StoreShoppingBasket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/session.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/session.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/RouterWebshop.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/RouterWebshop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shoppingbasket.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/shoppingbasket.db" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +64,7 @@
           <entry key="1691" value="1" />
           <entry key="1702" value="1" />
           <entry key="babelrc" value="1" />
-          <entry key="db" value="11" />
+          <entry key="db" value="14" />
           <entry key="jpg" value="4" />
           <entry key="js" value="42" />
         </counts>
@@ -78,20 +74,20 @@
           <entry key="Image" value="4" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="44" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="db" value="3" />
-          <entry key="js" value="1031" />
+          <entry key="db" value="4" />
+          <entry key="js" value="1034" />
           <entry key="txt" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1031" />
-          <entry key="PLAIN_TEXT" value="166" />
+          <entry key="JavaScript" value="1034" />
+          <entry key="PLAIN_TEXT" value="167" />
         </counts>
       </usages-collector>
     </session>
@@ -101,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="50" column="73" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="73" />
+            <state relative-caret-position="325">
+              <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -113,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="240">
+              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -125,18 +121,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/shopping-basket/StoreShoppingBasket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -152,6 +140,7 @@
       <find>StoreAuthentication</find>
       <find>_id</find>
       <find>update</find>
+      <find>9G3FjJlONNK1SYlV</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -313,7 +302,7 @@
       <workItem from="1535109906881" duration="844000" />
       <workItem from="1535111805717" duration="5653000" />
       <workItem from="1535264726461" duration="45000" />
-      <workItem from="1535264869469" duration="14855000" />
+      <workItem from="1535264869469" duration="15949000" />
     </task>
     <task id="LOCAL-00001" summary="- getAllArticles()&#10;- getArticleDetails()">
       <created>1535098929362</created>
@@ -371,11 +360,32 @@
       <option name="project" value="LOCAL" />
       <updated>1535271109944</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- some refactoring">
+      <created>1535281588566</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1535281588566</updated>
+    </task>
+    <task id="LOCAL-00010" summary="service shopping-basket added&#10;- '/shopping-basket/create'         &#10;- '/shopping-basket/addItem'        &#10;- '/shopping-basket/removeItem'">
+      <created>1535281623305</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1535281623305</updated>
+    </task>
+    <task id="LOCAL-00011" summary="service shopping-basket added&#10;- '/shopping-basket/create'         &#10;- '/shopping-basket/addItem'        &#10;- '/shopping-basket/removeItem'">
+      <created>1535281727143</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1535281727143</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43357000" />
+    <option name="totallyTimeSpent" value="44451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -386,8 +396,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23743017" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39944133" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23743017" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39944133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -413,16 +423,17 @@
     <MESSAGE value="- some clean up" />
     <MESSAGE value="- Article field itemNuber (Artikelnummer) added&#10;- Articel description changed; done with a Lorem ispum generator" />
     <MESSAGE value="- some refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="- some refactoring" />
+    <MESSAGE value="service shopping-basket added&#10;- '/shopping-basket/create'         &#10;- '/shopping-basket/addItem'        &#10;- '/shopping-basket/removeItem'" />
+    <option name="LAST_COMMIT_MESSAGE" value="service shopping-basket added&#10;- '/shopping-basket/create'         &#10;- '/shopping-basket/addItem'        &#10;- '/shopping-basket/removeItem'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js</url>
-          <line>43</line>
+          <line>46</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -549,29 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/shopping-basket/StoreShoppingBasket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="50" column="73" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/shopping-basket/ShoppingBasketItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -579,10 +567,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="136" lean-forward="true" selection-start-column="136" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/shopping-basket/StoreShoppingBasket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="240">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

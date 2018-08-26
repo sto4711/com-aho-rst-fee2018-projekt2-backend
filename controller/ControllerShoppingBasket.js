@@ -45,7 +45,7 @@ export class ControllerShoppingBasket {
             if (shoppingBasket != null) {
                 for (let i = 0; i < shoppingBasket.items.length; i++) {
                     if (shoppingBasket.items[i].articleID === request.body.articleID) {
-                        shoppingBasket.items.splice(1, 1);
+                        shoppingBasket.items.splice(i, 1);
                         break;
                     }
                 }
