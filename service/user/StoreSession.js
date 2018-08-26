@@ -1,10 +1,10 @@
 import UIDGenerator from 'uid-generator';
 import {Logger} from "../../commons/Logger";
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
-import {Session} from "../../service/authentication/Session";
+import {Session} from "../../service/user/Session";
 
 
-export class StoreAuthentication {
+export class StoreSession {
     constructor() {
         this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
         this.dbMananger_Session = new DatabaseMananger_NEDB("data/session.db");

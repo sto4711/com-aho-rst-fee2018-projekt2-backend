@@ -1,14 +1,14 @@
-import {StoreArticle} from '../../service/admin/StoreArticle';
-import {Logger} from "../../commons/Logger";
+import {StoreArticle} from '../service/article/StoreArticle';
+import {Logger} from "../commons/Logger";
 
 export class ControllerArticle {
     constructor() {
-        this.storeProduct = new StoreArticle();
+        this.storeArticle = new StoreArticle();
     }
 
     async getArticles(request, response)  {
         try {
-            response.json(await this.storeProduct.getArticles(request.query.filterName));
+            response.json(await this.storeArticle.getArticles(request.query.filterName));
             Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
         } catch (e) {
             Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
@@ -18,7 +18,7 @@ export class ControllerArticle {
 
     async getAllArticles(request, response)  {
         try {
-            response.json(await this.storeProduct.getAllArticles());
+            response.json(await this.storeArticle.getAllArticles());
             Logger.traceMessage('ControllerArticle', 'getAllArticles', 'ok');
         } catch (e) {
             Logger.traceError('ControllerArticle', 'getAllArticles', 'failed -> ' + e);
@@ -28,7 +28,7 @@ export class ControllerArticle {
 
     async getArticleDetails(request, response)  {
         try {
-            response.json(await this.storeProduct.getArticleDetails(request.query.id));
+            response.json(await this.storeArticle.getArticleDetails(request.query.id));
             Logger.traceMessage('ControllerArticle', 'getArticleDetails', 'ok');
         } catch (e) {
             Logger.traceError('ControllerArticle', 'getArticleDetails', 'failed -> ' + e);

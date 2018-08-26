@@ -26,7 +26,7 @@ class WebshopBackend {
 
         //Authentication
         this.app.use(async (request, response, next) => {
-            request.authenticated = await this.routerWebshop.getControllerAuthenticationUser().isTokenValid(request);
+            request.authenticated = await this.routerWebshop.getControllerUser().isTokenValid(request);
             next();
         });
 

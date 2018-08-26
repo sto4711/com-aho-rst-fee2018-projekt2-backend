@@ -1,33 +1,32 @@
 import express from 'express';
 import authentication from 'express-authentication';
-import {ControllerAuthenticationUser} from '../controller/admin/ControllerAuthenticationUser';
-import {ControllerArticle} from '../controller/admin/ControllerArticle';
-import {Logger} from "../commons/Logger";
+import {ControllerUser} from '../controller/ControllerUser';
+import {ControllerArticle} from '../controller/ControllerArticle';
 
 export class RouterWebshop {
     constructor() {
         this.router = express.Router();
-        this.controllerAuthenticationUser = new ControllerAuthenticationUser();
+        this.controllerUser = new ControllerUser();
         this.controllerArticle = new ControllerArticle();
 
-        this.router.get('/auth/isLoggedIn', async (request, response) => {
-            await this.controllerAuthenticationUser.getIsLoggedIn(request, response);
+        this.router.get('/user/isLoggedIn', async (request, response) => {
+            await this.controllerUser.isLoggedIn(request, response);
         });
 
-        this.router.post('/auth/signin', async (request, response) => {
-            await this.controllerAuthenticationUser.signIn(request, response);
+        this.router.post('/user/signIn', async (request, response) => {
+            await this.controllerUser.signIn(request, response);
         });
 
-        this.router.post('/auth/signout', authentication.required(), async (request, response) => {
-            await this.controllerAuthenticationUser.signOut(request, response);
+        this.router.post('/user/signOut', authentication.required(), async (request, response) => {
+            await this.controllerUser.signOut(request, response);
         });
 
-        this.router.get('/admin/users', authentication.required(), async (request, response) => {
-            await this.controllerAuthenticationUser.getUsers(request, response);
+        this.router.get('/users', authentication.required(), async (request, response) => {
+            await this.controllerUser.getUsers(request, response);
         });
 
-        this.router.get('/admin/articles',  async (request, response) => {
-            await this.controllerArticle.getArticles(request, response);
+        this.router.get('/user-details', authentication.required(), async (request, response) => {
+            await response.json({status : 'not yet implemented'});
         });
 
         this.router.get('/articles',  async (request, response) => {
@@ -37,14 +36,23 @@ export class RouterWebshop {
         this.router.get('/article-details',  async (request, response) => {
             await this.controllerArticle.getArticleDetails(request, response);
         });
+
+        this.router.post('/shopping-basket/create', async (request, response) => {
+            await this.controllerAuthenticationUser.signIn(request, response);
+        });
+
+
+
+
+
     }
 
     getRouter() {
         return this.router;
     }
 
-    getControllerAuthenticationUser() {
-        return this.controllerAuthenticationUser;
+    getControllerUser() {
+        return this.controllerUser;
     }
 
 }
