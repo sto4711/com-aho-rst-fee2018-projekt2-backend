@@ -1,4 +1,3 @@
-import UIDGenerator from 'uid-generator';
 import {Logger} from "../../commons/Logger";
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
 import {ShoppingBasket} from "./ShoppingBasket";
@@ -6,7 +5,6 @@ import {ShoppingBasket} from "./ShoppingBasket";
 
 export class StoreShoppingBasket {
     constructor() {
-        this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
         this.dbMananger_ShoppingBasket = new DatabaseMananger_NEDB("data/shoppingbasket.db");
         this.LOGGER_NAME = 'StoreShoppingBasket';
     }
