@@ -7,9 +7,7 @@ export class StoreArticle {
 
     async getArticles(filterName) {
         if (filterName !== '') {
-            const articlesArr = await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
-            console.log('articlesArr.length ' + articlesArr.length);
-            return articlesArr;
+            return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
         }
         return await this.dbMananger_Product.find({});
     }
