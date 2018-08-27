@@ -8,17 +8,8 @@ export class ControllerArticle {
 
     async getArticles(request, response)  {
         try {
-            response.json(await this.storeArticle.getArticles(request.query.filterName));
-            Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
-        } catch (e) {
-            Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
-            response.status(500).send('server error, contact support');
-        }
-    }
-
-    async getAllArticles(request, response)  {
-        try {
-            response.json(await this.storeArticle.getAllArticles());
+            const filter = request.query.filter ;
+            response.json(await this.storeArticle.getArticles( (filter==null? '' : filter)  ));
             Logger.traceMessage('ControllerArticle', 'getAllArticles', 'ok');
         } catch (e) {
             Logger.traceError('ControllerArticle', 'getAllArticles', 'failed -> ' + e);
