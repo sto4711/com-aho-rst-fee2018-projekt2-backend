@@ -43,12 +43,17 @@ export class ControllerShoppingBasket {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             if (shoppingBasket != null) {
-                for (let i = 0; i < shoppingBasket.items.length; i++) {
-                    if (shoppingBasket.items[i].articleID === request.body.articleID) {
-                        shoppingBasket.items.splice(i, 1);
-                        break;
-                    }
-                }
+                //const shoppingBasketItemsSet = new Set(shoppingBasket.items); //performance++
+                //keep all the others
+                shoppingBasket.items = shoppingBasket.items.filter((item) => {
+                    return (item.articleID !== request.body.articleID);
+                });
+                // for (let i = 0; i < shoppingBasket.items.length; i++) {
+                //     if (shoppingBasket.items[i].articleID === request.body.articleID) {
+                //         shoppingBasket.items.splice(i, 1);
+                //         break;
+                //     }
+                // }
                 await this.storeShoppingBasket.update(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
             }
