@@ -50,7 +50,7 @@ export class RouterWebshop {
         this.router.post('/shopping-basket/removeItem', async (request, response) => {
             await this.controllerShoppingBasket.removeItem_ShoppingBasket(request, response);
         });
-        this.router.post('/shopping-basket/getShoppingCartBasket', async (request, response) => {
+        this.router.get('/shopping-basket/', async (request, response) => {
             await this.controllerShoppingBasket.get_ShoppingBasket(request, response);
         });
 

@@ -71,12 +71,10 @@ export class ControllerShoppingBasket {
 
     async get_ShoppingBasket(request, response){
         try {
-            let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
-
-            response.json(shoppingBasket);
-            Logger.traceMessage(this.LOGGER_NAME, 'get ShoppingCartBasket ID', 'ok');
+            response.json(await this.storeShoppingBasket.get(request.query.id));
+            Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'get_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
