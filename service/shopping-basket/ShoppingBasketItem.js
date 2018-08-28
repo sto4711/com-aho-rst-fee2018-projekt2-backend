@@ -1,6 +1,9 @@
 export class ShoppingBasketItem {
-    constructor(articleID, count) {
+    constructor(articleID, articleName,articlePrice,articleAvailability,articleCount) {
         this.articleID = articleID;
-        this.count = count;
+        this.articleName = articleName;
+        this.articlePrice = articlePrice;
+        this.articleAvailability = articleAvailability;
+        this.articleCount = articleCount;
     }
 }

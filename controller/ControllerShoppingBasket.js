@@ -3,8 +3,9 @@ import {StoreShoppingBasket} from "../service/shopping-basket/StoreShoppingBaske
 import {ShoppingBasketItem} from "../service/shopping-basket/ShoppingBasketItem";
 
 export class ControllerShoppingBasket {
-    constructor() {
+    constructor(storeArticle) {
         this.storeShoppingBasket = new StoreShoppingBasket();
+        this.storeArticle = storeArticle;
         this.LOGGER_NAME = 'ControllerShoppingBasket';
     }
 
@@ -22,7 +23,8 @@ export class ControllerShoppingBasket {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             if (shoppingBasket != null) {
-                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, request.body.count);
+                const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
+                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name,article.price, article.availability, request.body.count);
                 shoppingBasket.items.push(shoppingBasketItem);
                 await this.storeShoppingBasket.update(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');

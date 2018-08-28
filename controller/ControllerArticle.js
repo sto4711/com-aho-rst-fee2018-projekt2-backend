@@ -6,6 +6,10 @@ export class ControllerArticle {
         this.storeArticle = new StoreArticle();
     }
 
+    getStoreArticle()   {
+        return this.storeArticle;
+    }
+
     async getArticles(request, response)  {
         try {
             const filter = request.query.filter ;

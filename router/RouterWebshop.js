@@ -9,7 +9,7 @@ export class RouterWebshop {
         this.router = express.Router();
         this.controllerUser = new ControllerUser();
         this.controllerArticle = new ControllerArticle();
-        this.controllerShoppingBasket = new ControllerShoppingBasket();
+        this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
 
         this.router.get('/user/isLoggedIn', async (request, response) => {
             await this.controllerUser.isLoggedIn(request, response);
