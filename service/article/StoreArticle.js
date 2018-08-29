@@ -12,6 +12,11 @@ export class StoreArticle {
         return await this.dbMananger_Product.find({});
     }
 
+    async getArticlesOrderByLimited(sort, ascDesc, limit) {
+        const ascDesc_DB = (ascDesc.toLowerCase()==='asc'? this.dbMananger_Product.DESCENDING: this.dbMananger_Product.ASCENDING);
+        return await this.dbMananger_Product.find({}, {"releaseDate": this.dbMananger_Product.DESCENDING}, limit);
+    }
+
     async getArticleDetails(id) {
         return await this.dbMananger_Product.find({"_id": id});
     }
