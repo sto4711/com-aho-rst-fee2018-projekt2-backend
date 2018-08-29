@@ -4,6 +4,8 @@ import {Logger} from "./Logger";
 export class DatabaseMananger_NEDB {
     constructor(filename) {
         this.db = new Datastore({filename: filename, autoload: true});
+        this.DESCENDING = -1;
+        this.ASCENDING = 1;
         Logger.traceMessage('DatabaseMananger_NEDB', 'constructor', 'Database "' + filename.replace('.db', '') + '" ready')
     }
 
@@ -15,7 +17,13 @@ export class DatabaseMananger_NEDB {
         await this.db.update({_id: id}, {$set: set});
     }
 
-    async find(filter) {
+    async find(filter, sort, limit) {
+        if(sort!==null && limit !==null)    {
+            return await this.db.cfind(filter).sort(sort).limit(limit).exec();
+        }
+        else if(sort!==null)    {
+            return await this.db.cfind(filter).sort(sort).exec();
+        }
         return await this.db.cfind(filter).exec();
     }
 
