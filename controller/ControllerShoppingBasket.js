@@ -24,7 +24,9 @@ export class ControllerShoppingBasket {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             if (shoppingBasket != null) {
                 const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
-                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name,article.price, article.availability, request.body.count);
+                const articlePriceSum = article.price * parseInt(request.body.articleAmount);
+                shoppingBasket.totalSum+= articlePriceSum;
+                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.count, article.itemNumber);
                 shoppingBasket.items.push(shoppingBasketItem);
                 await this.storeShoppingBasket.update(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
@@ -71,7 +73,7 @@ export class ControllerShoppingBasket {
         }
     }
 
-    async get_ShoppingBasket(request, response){
+    async getShoppingBasket(request, response) {
         try {
             response.json(await this.storeShoppingBasket.get(request.query.id));
             Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
@@ -80,7 +82,6 @@ export class ControllerShoppingBasket {
             response.status(500).send('server error, contact support');
         }
     }
-
 
 
 }
