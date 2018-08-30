@@ -26,7 +26,7 @@ export class ControllerShoppingBasket {
                 const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
                 const articlePriceSum = article.price * parseInt(request.body.articleAmount);
                 shoppingBasket.totalSum+= articlePriceSum;
-                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.count, article.itemNumber);
+                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
                 shoppingBasket.items.push(shoppingBasketItem);
                 await this.storeShoppingBasket.update(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
@@ -39,6 +39,28 @@ export class ControllerShoppingBasket {
             Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+    async changeItemAmount_ShoppingBasket(request, response) {
+        try {
+            let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
+            shoppingBasket.totalSum = 0;
+            for (let i = 0; i < shoppingBasket.items.length; i++) {
+                if (shoppingBasket.items[i].articleID === request.body.articleID) {
+                    shoppingBasket.items[i].articleAmount = request.body.articleAmount;
+                    shoppingBasket.items[i].articlePriceSum = shoppingBasket.items[i].articleAmount * shoppingBasket.items[i].articlePrice;
+                    shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
+                }else   {
+                    shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
+                }
+                await this.storeShoppingBasket.update(shoppingBasket);
+            }
+            response.json(shoppingBasket);
+            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

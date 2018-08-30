@@ -55,6 +55,10 @@ export class RouterWebshop {
             await this.controllerShoppingBasket.addItem_ShoppingBasket(request, response);
         });
 
+        this.router.post('/shopping-basket/changeItemAmount', async (request, response) => {
+            await this.controllerShoppingBasket.changeItemAmount_ShoppingBasket(request, response);
+        });
+
         this.router.post('/shopping-basket/removeItem', async (request, response) => {
             await this.controllerShoppingBasket.removeItem_ShoppingBasket(request, response);
         });
