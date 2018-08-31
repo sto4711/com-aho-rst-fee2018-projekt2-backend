@@ -22,12 +22,28 @@ export class ControllerShoppingBasket {
     async addItem_ShoppingBasket(request, response) {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
+            let articleAlreadyExists = false;
             if (shoppingBasket != null) {
-                const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
-                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name,article.price, article.availability, request.body.count);
-                shoppingBasket.items.push(shoppingBasketItem);
-                await this.storeShoppingBasket.update(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
+                //check if article already exists
+                for (let i = 0; i < shoppingBasket.items.length; i++) {
+                    if (shoppingBasket.items[i].articleID === request.body.articleID) {
+                        articleAlreadyExists = true;
+                        break;
+                    }
+                }
+
+                if(articleAlreadyExists)    {
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
+                    await this.changeItemAmount_ShoppingBasket(request, response);
+                }else   {
+                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
+                    const articlePriceSum = article.price * parseInt(request.body.articleAmount);
+                    shoppingBasket.totalSum+= articlePriceSum;
+                    const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
+                    shoppingBasket.items.push(shoppingBasketItem);
+                    await this.storeShoppingBasket.update(shoppingBasket);
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
+                }
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
@@ -37,6 +53,28 @@ export class ControllerShoppingBasket {
             Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+    async changeItemAmount_ShoppingBasket(request, response) {
+        try {
+            let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
+            shoppingBasket.totalSum = 0;
+            for (let i = 0; i < shoppingBasket.items.length; i++) {
+                if (shoppingBasket.items[i].articleID === request.body.articleID) {
+                    shoppingBasket.items[i].articleAmount = request.body.articleAmount;
+                    shoppingBasket.items[i].articlePriceSum = shoppingBasket.items[i].articleAmount * shoppingBasket.items[i].articlePrice;
+                    shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
+                }else   {
+                    shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
+                }
+                await this.storeShoppingBasket.update(shoppingBasket);
+            }
+            response.json(shoppingBasket);
+            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -71,7 +109,7 @@ export class ControllerShoppingBasket {
         }
     }
 
-    async get_ShoppingBasket(request, response){
+    async getShoppingBasket(request, response) {
         try {
             response.json(await this.storeShoppingBasket.get(request.query.id));
             Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
@@ -80,7 +118,6 @@ export class ControllerShoppingBasket {
             response.status(500).send('server error, contact support');
         }
     }
-
 
 
 }
