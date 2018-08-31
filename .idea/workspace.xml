@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb7e8182-95fd-4a32-8990-c8722e50b0ba" name="Default Changelist" comment="">
+    <list default="true" id="fb7e8182-95fd-4a32-8990-c8722e50b0ba" name="Default Changelist" comment="- changeItemAmount added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/shoppingbasket.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/shoppingbasket.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/RouterWebshop.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/RouterWebshop.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,18 +54,19 @@
     <session id="-1354579158">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -75,7 +75,7 @@
           <entry key="1702" value="1" />
           <entry key="babelrc" value="1" />
           <entry key="db" value="41" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="jpg" value="4" />
           <entry key="js" value="78" />
         </counts>
@@ -85,20 +85,20 @@
           <entry key="Image" value="4" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="80" />
-          <entry key="PLAIN_TEXT" value="42" />
+          <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="db" value="40" />
-          <entry key="js" value="2012" />
-          <entry key="txt" value="241" />
+          <entry key="db" value="41" />
+          <entry key="js" value="2186" />
+          <entry key="txt" value="252" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="2012" />
-          <entry key="PLAIN_TEXT" value="281" />
+          <entry key="JavaScript" value="2186" />
+          <entry key="PLAIN_TEXT" value="293" />
         </counts>
       </usages-collector>
     </session>
@@ -108,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="51">
               <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -120,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="58" column="58" lean-forward="true" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+            <state relative-caret-position="918">
+              <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -129,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="146">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -147,7 +147,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -164,7 +164,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/article/StoreArticle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
+            <state relative-caret-position="357">
               <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
@@ -225,9 +225,9 @@
         <option value="$PROJECT_DIR$/controller/ControllerArticle.js" />
         <option value="$PROJECT_DIR$/service/shopping-basket/ShoppingBasket.js" />
         <option value="$PROJECT_DIR$/service/shopping-basket/ShoppingBasketItem.js" />
-        <option value="$PROJECT_DIR$/data/shoppingbasket.db" />
         <option value="$PROJECT_DIR$/router/RouterWebshop.js" />
         <option value="$PROJECT_DIR$/controller/ControllerShoppingBasket.js" />
+        <option value="$PROJECT_DIR$/data/shoppingbasket.db" />
       </list>
     </option>
   </component>
@@ -257,43 +257,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="shopping-basket" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -327,6 +290,43 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="shopping-basket" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="shopping-basket" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,6 +402,8 @@
       <workItem from="1535534677896" duration="1812000" />
       <workItem from="1535541564548" duration="1893000" />
       <workItem from="1535547361288" duration="1624000" />
+      <workItem from="1535699290106" duration="932000" />
+      <workItem from="1535702496258" duration="3230000" />
     </task>
     <task id="LOCAL-00001" summary="- getAllArticles()&#10;- getArticleDetails()">
       <created>1535098929362</created>
@@ -529,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535644935183</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- changeItemAmount added">
+      <created>1535647389113</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1535647389113</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84298000" />
+    <option name="totallyTimeSpent" value="89215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -544,16 +553,16 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4990086" weight="0.3282123" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6728354" visible="true" weight="0.23603351" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6649042" weight="0.3980447" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.67151356" weight="0.23603351" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6642432" visible="true" weight="0.31424582" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49947312" weight="0.32953465" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4976867" weight="0.3282123" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32862744" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.32716456" side_tool="true" visible="true" weight="0.23603351" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.33575678" side_tool="true" visible="true" weight="0.31424582" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -579,16 +588,17 @@
     <MESSAGE value="- get_ShoppingBasket fixed (get no post)" />
     <MESSAGE value="    ShoppingBasketItem fields articleName,articlePrice,articleAvailability,articleCount added" />
     <MESSAGE value="- articleTotal, shoppingbasketTotal, ArticleNo added" />
-    <option name="LAST_COMMIT_MESSAGE" value="- articleTotal, shoppingbasketTotal, ArticleNo added" />
+    <MESSAGE value="- changeItemAmount added" />
+    <option name="LAST_COMMIT_MESSAGE" value="- changeItemAmount added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js</url>
-          <line>51</line>
+          <line>62</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -627,9 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/user/StoreSession.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -644,39 +651,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/commons/DatabaseMananger_NEDB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ControllerArticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/article/StoreArticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/babel-core/lib/transformation/internal-plugins/block-hoist.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -706,10 +686,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/router/RouterWebshop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="58" column="58" lean-forward="true" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+        <state relative-caret-position="918">
+          <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -723,12 +713,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js">
+    <entry file="file://$PROJECT_DIR$/controller/ControllerArticle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="527">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/article/StoreArticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/ControllerShoppingBasket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/shoppingbasket.db">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

@@ -22,14 +22,28 @@ export class ControllerShoppingBasket {
     async addItem_ShoppingBasket(request, response) {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
+            let articleAlreadyExists = false;
             if (shoppingBasket != null) {
-                const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
-                const articlePriceSum = article.price * parseInt(request.body.articleAmount);
-                shoppingBasket.totalSum+= articlePriceSum;
-                const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
-                shoppingBasket.items.push(shoppingBasketItem);
-                await this.storeShoppingBasket.update(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
+                //check if article already exists
+                for (let i = 0; i < shoppingBasket.items.length; i++) {
+                    if (shoppingBasket.items[i].articleID === request.body.articleID) {
+                        articleAlreadyExists = true;
+                        break;
+                    }
+                }
+
+                if(articleAlreadyExists)    {
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
+                    await this.changeItemAmount_ShoppingBasket(request, response);
+                }else   {
+                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
+                    const articlePriceSum = article.price * parseInt(request.body.articleAmount);
+                    shoppingBasket.totalSum+= articlePriceSum;
+                    const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
+                    shoppingBasket.items.push(shoppingBasketItem);
+                    await this.storeShoppingBasket.update(shoppingBasket);
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
+                }
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
