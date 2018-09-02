@@ -40,7 +40,7 @@ export class ControllerShoppingBasket {
                     Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
                     await this.changeItemAmount_ShoppingBasket(request, response);
                 }else   {
-                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
+                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID));
                     const articlePriceSum = article.price * parseInt(request.body.articleAmount);
                     shoppingBasket.totalSum+= articlePriceSum;
                     const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
