@@ -5,8 +5,13 @@ import {Logger} from '../commons/Logger';
 export class ControllerUser {
     constructor() {
         this.HOUR = 1000 * 60 * 60;//ms
+        this.LOGGER_NAME = 'ControllerUser';
         this.storeSession = new StoreSession();
         this.storeUser = new StoreUser();
+    }
+
+    getStoreSession()   {
+        return this.storeSession;
     }
 
     async isLoggedIn(request, response)  {
@@ -19,14 +24,14 @@ export class ControllerUser {
 
             if(session ===null)    {
                 response.json({IsLoggedIn : false});
-                Logger.traceMessage('ControllerUser', 'isLoggedIn', request.query.email + ' is not logged in');
+                Logger.traceMessage(this.LOGGER_NAME, 'isLoggedIn', request.query.email + ' is not logged in');
             }
             else    {
                 response.json({IsLoggedIn : true});
-                Logger.traceMessage('ControllerUser', 'isLoggedIn', request.query.email + ' is logged in');
+                Logger.traceMessage(this.LOGGER_NAME, 'isLoggedIn', request.query.email + ' is logged in');
             }
         } catch (e) {
-            Logger.traceError('ControllerUser', 'getIsLoggedIn', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'getIsLoggedIn', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -39,22 +44,22 @@ export class ControllerUser {
                 let token = null;
                 if (session == null) {
                     token = await this.storeSession.createSession(userID);
-                    Logger.traceMessage('ControllerUser', 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
+                    Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
                     token = await this.storeSession.renewSession(session._id);
-                    Logger.traceMessage('ControllerUser', 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
+                    Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
                 } else {
                     token = session.token;
                 }
-                Logger.traceMessage('ControllerUser', 'signin', 'user "' + request.body.email + '" ok');
+                Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" ok');
                 response.json({value: token});
             }
             else {
-                Logger.traceError('ControllerUser', 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
+                Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
                 response.status(401).send('user or pwd nok');
             }
         } catch (e) {
-            Logger.traceError('ControllerUser', 'signin', 'user"' + request.body.email + '" failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -63,21 +68,21 @@ export class ControllerUser {
         const token = request.headers.authorization;
         try {
             if (token == null) {
-                Logger.traceError('ControllerUser', 'signOut', 'no token in header');
-                response.json({status: 'no token in header'});
+                Logger.traceError(this.LOGGER_NAME, 'signOut', 'no token in header');
+                response.status(404).send('no token in header');
             } else {
                 const session = await this.storeSession.getSessionByToken(token);
                 if (session == null) {
-                    Logger.traceMessage('ControllerUser', 'signOut', 'no session found for token "' + token + '" ok');
-                    response.json({status: 'no session found'});
+                    Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'no session found for token "' + token + '" ok');
+                    response.status(404).send('no session found');
                 } else {
                     await this.storeSession.updateSessionTokenDate(session._id, new Date(Date.now() - this.HOUR));
-                    Logger.traceMessage('ControllerAuthentification', 'signOut', 'ok');
-                    response.json({status: 'no'});
+                    Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'ok');
+                    response.json({status: 'ok'});
                 }
             }
         } catch (e) {
-            Logger.traceError('ControllerUser', 'signOut', 'token"' + token + '" failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'signOut', 'token"' + token + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -90,13 +95,13 @@ export class ControllerUser {
 
         const tokenDate = await this.storeSession.getSessionTokenDate(token);
         if (tokenDate == null) {
-            Logger.traceMessage('ControllerUser', 'isSessionValid', 'unknown token ' + token);
+            Logger.traceMessage(this.LOGGER_NAME, 'isSessionValid', 'unknown token ' + token);
             return false;
         }
 
         const hasNotExpired = Date.now() < (tokenDate.getTime() + this.HOUR);
         if (!hasNotExpired) {
-            Logger.traceMessage('ControllerUser', 'isSessionValid', 'session not valid, token has expired');
+            Logger.traceMessage(this.LOGGER_NAME, 'isSessionValid', 'session not valid, token has expired');
         }
         return hasNotExpired;
     }
@@ -104,9 +109,9 @@ export class ControllerUser {
     async getUsers(request, response)  {
         try {
             response.json(await this.storeUser.getUsers());
-            Logger.traceMessage('ControllerUser', 'getUsers', 'ok');
+            Logger.traceMessage(this.LOGGER_NAME, 'getUsers', 'ok');
         } catch (e) {
-            Logger.traceError('ControllerUser', 'getUsers', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'getUsers', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

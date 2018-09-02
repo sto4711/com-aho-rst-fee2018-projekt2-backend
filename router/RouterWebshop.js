@@ -3,6 +3,7 @@ import authentication from 'express-authentication';
 import {ControllerUser} from '../controller/ControllerUser';
 import {ControllerArticle} from '../controller/ControllerArticle';
 import {ControllerShoppingBasket} from "../controller/ControllerShoppingBasket";
+import {ControllerOrder} from "../controller/ControllerOrder";
 
 export class RouterWebshop {
     constructor() {
@@ -10,6 +11,7 @@ export class RouterWebshop {
         this.controllerUser = new ControllerUser();
         this.controllerArticle = new ControllerArticle();
         this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
+        this.controllerOrder = new ControllerOrder(this.controllerShoppingBasket.getStoreShoppingBasket(), this.controllerUser.getStoreSession());
 
         this.router.get('/user/isLoggedIn', async (request, response) => {
             await this.controllerUser.isLoggedIn(request, response);
@@ -28,18 +30,18 @@ export class RouterWebshop {
         });
 
         this.router.get('/user-details', authentication.required(), async (request, response) => {
-            await response.json({status : 'not yet implemented'});
+            await response.json({status: 'not yet implemented'});
         });
 
-        this.router.get('/articles',  async (request, response) => {
+        this.router.get('/articles', async (request, response) => {
             await this.controllerArticle.getArticles(request, response);
         });
 
-        this.router.get('/articles/newest',  async (request, response) => {
+        this.router.get('/articles/newest', async (request, response) => {
             await this.controllerArticle.getArticlesNewest(request, response);
         });
 
-        this.router.get('/article-details',  async (request, response) => {
+        this.router.get('/article-details', async (request, response) => {
             await this.controllerArticle.getArticleDetails(request, response);
         });
 
@@ -62,6 +64,15 @@ export class RouterWebshop {
         this.router.post('/shopping-basket/removeItem', async (request, response) => {
             await this.controllerShoppingBasket.removeItem_ShoppingBasket(request, response);
         });
+
+        this.router.post('/order/create', authentication.required(), async (request, response) => {
+            await this.controllerOrder.create(request, response);
+        });
+
+        this.router.get('/order-details', async (request, response) => {
+            await this.controllerArticle.getArticleDetails(request, response);
+        });
+
 
     }
 

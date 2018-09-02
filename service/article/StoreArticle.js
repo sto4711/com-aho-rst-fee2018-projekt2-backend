@@ -18,7 +18,8 @@ export class StoreArticle {
     }
 
     async getArticleDetails(id) {
-        return await this.dbMananger_Product.find({"_id": id});
+        const articleArr =  await this.dbMananger_Product.find({"_id": id});
+        return (articleArr.length === 0 ? null : articleArr[0]);
     }
 
 
