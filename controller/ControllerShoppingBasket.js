@@ -9,6 +9,10 @@ export class ControllerShoppingBasket {
         this.LOGGER_NAME = 'ControllerShoppingBasket';
     }
 
+    getStoreShoppingBasket()   {
+        return this.storeShoppingBasket;
+    }
+
     async createShoppingBasket(request, response) {
         try {
             response.json(await this.storeShoppingBasket.create());
@@ -36,7 +40,7 @@ export class ControllerShoppingBasket {
                     Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
                     await this.changeItemAmount_ShoppingBasket(request, response);
                 }else   {
-                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID))[0];
+                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID));
                     const articlePriceSum = article.price * parseInt(request.body.articleAmount);
                     shoppingBasket.totalSum+= articlePriceSum;
                     const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, articlePriceSum, article.availability, request.body.articleAmount, article.itemNumber);
@@ -83,17 +87,9 @@ export class ControllerShoppingBasket {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             if (shoppingBasket != null) {
-                //const shoppingBasketItemsSet = new Set(shoppingBasket.items); //performance++
-                //keep all the others
                 shoppingBasket.items = shoppingBasket.items.filter((item) => {
                     return (item.articleID !== request.body.articleID);
                 });
-                // for (let i = 0; i < shoppingBasket.items.length; i++) {
-                //     if (shoppingBasket.items[i].articleID === request.body.articleID) {
-                //         shoppingBasket.items.splice(i, 1);
-                //         break;
-                //     }
-                // }
                 await this.storeShoppingBasket.update(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
             }
@@ -111,8 +107,14 @@ export class ControllerShoppingBasket {
 
     async getShoppingBasket(request, response) {
         try {
-            response.json(await this.storeShoppingBasket.get(request.query.id));
-            Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
+            const shoppingBasket = await this.storeShoppingBasket.get(request.query.id);
+            if (shoppingBasket === null) {
+                Logger.traceError(this.LOGGER_NAME, 'getShoppingBasket', 'shoppingBasketID"' + request.query.id + '" failed. no basket found ->');
+                response.status(404).send('ShoppingBasket not found');
+            }else   {
+                response.json(shoppingBasket);
+                Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
+            }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'get_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');

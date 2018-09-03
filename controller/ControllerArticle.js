@@ -13,7 +13,12 @@ export class ControllerArticle {
     async getArticles(request, response)  {
         try {
             const filter = request.query.filter ;
-            response.json(await this.storeArticle.getArticles( (filter==null? '' : filter)  ));
+
+            const result = await this.storeArticle.getArticles( (filter==null? '' : filter)  );
+            Logger.traceMessage('ControllerArticle', 'getArticles', 'count articles ' + result.length );
+            response.json(result);
+
+            //response.json(await this.storeArticle.getArticles( (filter==null? '' : filter)  ));
             Logger.traceMessage('ControllerArticle', 'getArticles', 'ok');
         } catch (e) {
             Logger.traceError('ControllerArticle', 'getArticles', 'failed -> ' + e);
