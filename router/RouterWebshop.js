@@ -70,7 +70,7 @@ export class RouterWebshop {
         });
 
         this.router.get('/order-details', async (request, response) => {
-            await this.controllerArticle.getArticleDetails(request, response);
+            await this.controllerOrder.getOrderDetails(request, response);
         });
 
 

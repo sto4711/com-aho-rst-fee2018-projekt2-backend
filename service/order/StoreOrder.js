@@ -20,11 +20,10 @@ export class StoreOrder {
         return (orderArr.length === 0 ? null : orderArr[0]);
     }
 
-    async getArticleDetails(id) {
-        return await this.dbMananger_Product.find({"_id": id});
+    async getOrderDetails(id) {
+        const orderArr =  await this.dbMananger_Order.find({"_id": id});
+        return (orderArr.length === 0 ? null : orderArr[0]);
     }
-
-
 
 
 }

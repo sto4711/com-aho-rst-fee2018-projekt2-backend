@@ -51,10 +51,10 @@ export class ControllerOrder {
 
     async getOrderDetails(request, response)  {
         try {
-            response.json(await this.storeArticle.getArticleDetails(request.query.id));
-            Logger.traceMessage('ControllerArticle', 'getArticleDetails', 'ok');
+            response.json(await this.storeOrder.getOrderDetails(request.query.id));
+            Logger.traceMessage(this.LOGGER_NAME, 'getOrderDetails', 'ok');
         } catch (e) {
-            Logger.traceError('ControllerArticle', 'getArticleDetails', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'getOrderDetails', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
