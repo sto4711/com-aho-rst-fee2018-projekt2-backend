@@ -107,8 +107,14 @@ export class ControllerShoppingBasket {
 
     async getShoppingBasket(request, response) {
         try {
-            response.json(await this.storeShoppingBasket.get(request.query.id));
-            Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
+            const shoppingBasket = await this.storeShoppingBasket.get(request.query.id);
+            if (shoppingBasket === null) {
+                Logger.traceError(this.LOGGER_NAME, 'getShoppingBasket', 'shoppingBasketID"' + request.query.id + '" failed. no basket found ->');
+                response.status(404).send('ShoppingBasket not found');
+            }else   {
+                response.json(shoppingBasket);
+                Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
+            }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'get_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
