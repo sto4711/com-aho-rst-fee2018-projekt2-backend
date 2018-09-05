@@ -6,7 +6,8 @@ export class DatabaseMananger_NEDB {
         this.db = new Datastore({filename: filename, autoload: true});
         this.DESCENDING = -1;
         this.ASCENDING = 1;
-        Logger.traceMessage('DatabaseMananger_NEDB', 'constructor', 'Database "' + filename.replace('.db', '') + '" ready')
+        this.LOGGER_NAME = 'StoreShoppingBasket';
+        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Database "' + filename.replace('.db', '') + '" ready')
     }
 
     async insert(row) {
