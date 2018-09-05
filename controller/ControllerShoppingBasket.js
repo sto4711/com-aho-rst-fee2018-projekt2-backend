@@ -73,8 +73,8 @@ export class ControllerShoppingBasket {
                 }else   {
                     shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
                 }
-                await this.storeShoppingBasket.update(shoppingBasket);
             }
+            await this.storeShoppingBasket.update(shoppingBasket);
             response.json(shoppingBasket);
             Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'ok');
         } catch (e) {
