@@ -9,6 +9,7 @@ export class StoreSession {
         this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
         this.dbMananger_Session = new DatabaseMananger_NEDB("data/session.db");
         this.dbMananger_Session.deleteAll();
+        this.LOGGER_NAME = 'StoreSession';
     }
 
     async getSessionByUser(userID) {
@@ -24,20 +25,20 @@ export class StoreSession {
     async createSession(userID) {
         const token = await this.uIDGenerator.generate();
         await this.dbMananger_Session.insert(new Session(userID, token));
-        Logger.traceMessage('StoreAuthentication', 'createSession', 'session created');
+        Logger.traceMessage(this.LOGGER_NAME, 'createSession', 'session created');
         return token;
     }
 
     async renewSession(sessionID) {
         const token = await this.uIDGenerator.generate();
         await this.dbMananger_Session.update(sessionID, {"token": token, "tokenDate": new Date()});
-        Logger.traceMessage('StoreAuthentication', 'renewSession', 'session.token & tokenDate updated');
+        Logger.traceMessage(this.LOGGER_NAME, 'renewSession', 'session.token & tokenDate updated');
         return token;
     }
 
     async updateSessionTokenDate(sessionID, tokenDate) {
         await this.dbMananger_Session.update(sessionID, {"tokenDate": tokenDate});
-        Logger.traceMessage('StoreAuthentication', 'updateSessionTokenDate', 'session.tokenDate updated');
+        Logger.traceMessage(this.LOGGER_NAME, 'updateSessionTokenDate', 'session.tokenDate updated');
     }
 
     async getSessionTokenDate(token) {

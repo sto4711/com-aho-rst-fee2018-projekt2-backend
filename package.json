@@ -5,6 +5,9 @@
   "license": "UNLICENSED",
   "version": "0.0.1",
   "author": "Roland Stauffer",
+  "scripts": {
+    "start backend": "node -r babel-register \"server.js\""
+  },
   "dependencies": {
     "body-parser": "1.18.x",
     "express": "4.16.3",

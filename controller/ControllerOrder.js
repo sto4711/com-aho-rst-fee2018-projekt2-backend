@@ -44,7 +44,7 @@ export class ControllerOrder {
                 response.json(order);
             }
         } catch (e) {
-            Logger.traceError('ControllerOrder', 'create', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

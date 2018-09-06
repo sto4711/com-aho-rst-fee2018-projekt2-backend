@@ -8,6 +8,8 @@ class WebshopBackend {
     constructor() {
         this.app = express();
         this.routerWebshop = new RouterWebshop();
+        this.LOGGER_NAME = 'WebshopBackend';
+
 
         this.app.use((request, response, next) => {
             response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');                     //enable CORS: frontend runs on localhost:63342
@@ -33,7 +35,7 @@ class WebshopBackend {
         //Trace URL
         this.app.use(async (request, response, next) => {
             if(!request.url.endsWith('jpg'))   {
-                Logger.traceMessage('Server', 'traceURL', request.url);
+                Logger.traceMessage(this.LOGGER_NAME, 'traceURL', request.url);
             }
             next();
         });
@@ -43,7 +45,7 @@ class WebshopBackend {
         this.app.use(bodyParser.json());
         this.app.use('/webshop', this.routerWebshop.getRouter());               // backend  -> http://localhost:3000/webshop
         this.app.listen(3000);
-        Logger.traceMessage('WebshopApp', 'constructor', 'Backend Webshop started: http://localhost:3000');
+        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend Webshop started: http://localhost:3000');
     }
 }
 
