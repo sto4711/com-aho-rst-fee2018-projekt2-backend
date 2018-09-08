@@ -1,27 +1,30 @@
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
+import {Logger} from "../../commons/Logger";
 
 export class StoreArticle {
     constructor() {
-        this.dbMananger_Product = new DatabaseMananger_NEDB("data/article.db");
+        this.dbMananger_Article = new DatabaseMananger_NEDB("data/article.db");
     }
 
     async getArticles(filterName) {
         if (filterName !== '') {
-            return await this.dbMananger_Product.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
+            return await this.dbMananger_Article.find({"searchTags": new RegExp(filterName.toLowerCase())});
         }
-        return await this.dbMananger_Product.find({});
+        return await this.dbMananger_Article.find({});
     }
 
     async getArticlesOrderByLimited(sort, ascDesc, limit) {
-        const ascDesc_DB = (ascDesc.toLowerCase()==='asc'? this.dbMananger_Product.DESCENDING: this.dbMananger_Product.ASCENDING);
-        return await this.dbMananger_Product.find({}, {"releaseDate": this.dbMananger_Product.DESCENDING}, limit);
+        const ascDesc_DB = (ascDesc.toLowerCase()==='asc'? this.dbMananger_Article.DESCENDING: this.dbMananger_Article.ASCENDING);
+        return await this.dbMananger_Article.find({}, {"releaseDate": this.dbMananger_Article.DESCENDING}, limit);
     }
 
     async getArticleDetails(id) {
-        const articleArr =  await this.dbMananger_Product.find({"_id": id});
+        const articleArr =  await this.dbMananger_Article.find({"_id": id});
         return (articleArr.length === 0 ? null : articleArr[0]);
     }
 
-
+    async update(article) {
+        await this.dbMananger_Article.update(article._id, article);
+    }
 
 }

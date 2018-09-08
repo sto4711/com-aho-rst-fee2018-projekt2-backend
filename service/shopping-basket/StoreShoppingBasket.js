@@ -11,13 +11,13 @@ export class StoreShoppingBasket {
 
     async create() {
         const shoppingBasket = await this.dbMananger_ShoppingBasket.insert(new ShoppingBasket());
-        Logger.traceMessage(this.LOGGER_NAME, 'create', 'basket created');
+        Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
         return shoppingBasket;
     }
 
     async get(shoppingBasketID) {
         const basketArr = await this.dbMananger_ShoppingBasket.find({"_id": shoppingBasketID});
-        Logger.traceMessage(this.LOGGER_NAME, 'get', 'get ok');
+        Logger.traceMessage(this.LOGGER_NAME, 'get', 'ok');
         return (basketArr.length === 0 ? null : basketArr[0]);
     }
 
