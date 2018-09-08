@@ -31,7 +31,7 @@
 {"userID":"","shoppingBasketDate":{"$$date":1536223943422},"items":[],"totalSum":0,"_id":"hKFzk5gkRKy8CmP2"}
 {"userID":"","shoppingBasketDate":{"$$date":1536223748341},"items":[],"totalSum":0,"_id":"hX99zzUWlSu6mKcw"}
 {"userID":"","shoppingBasketDate":{"$$date":1535713965813},"items":[],"totalSum":1000.35,"_id":"hx8XIaR9rcUPiZL4"}
-{"userID":"","shoppingBasketDate":{"$$date":1536311493049},"items":[{"articleID":"xEUehKXKxYo0014","articleName":"E-Bike Modell 14","articlePrice":14000.05,"articlePriceSum":42000.149999999994,"articleAvailability":true,"articleAmount":3,"itemNumber":"100000014"},{"articleID":"xEUehKXKxYo0098","articleName":"E-Bike Modell 98","articlePrice":98000.05,"articlePriceSum":98000.05,"articleAvailability":true,"articleAmount":1,"itemNumber":"100000098"}],"totalSum":231002.65000000002,"_id":"io1PLGstiHyHFXfi"}
+{"userID":"","shoppingBasketDate":{"$$date":1536311493049},"items":[{"articleID":"xEUehKXKxYo0003","articleName":"E-Bike Modell 3","articlePrice":3000.35,"articleAvailability":true,"articleAmount":1,"itemNumber":"10000003","articlePriceSum":3000.35},{"articleID":"xEUehKXKxYo0011","articleName":"E-Bike Modell 11","articlePrice":11000.35,"articleAvailability":false,"articleAmount":1,"itemNumber":"100000011","articlePriceSum":11000.35}],"totalSum":14000.7,"_id":"io1PLGstiHyHFXfi"}
 {"userID":"","shoppingBasketDate":{"$$date":1536310476376},"items":[],"totalSum":0,"_id":"jc88Wsq3bRTkeC8q"}
 {"userID":"","shoppingBasketDate":{"$$date":1535901774056},"items":[],"totalSum":0,"_id":"llUZGrfJlyuKHWSd"}
 {"userID":"","shoppingBasketDate":{"$$date":1536309734270},"items":[],"totalSum":0,"_id":"nqIRVa1xJVdVrwt9"}
