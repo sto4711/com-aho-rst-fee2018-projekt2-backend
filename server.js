@@ -34,8 +34,8 @@ class WebshopBackend {
 
         //Trace URL
         this.app.use(async (request, response, next) => {
-            if(!request.url.endsWith('jpg'))   {
-                Logger.traceMessage(this.LOGGER_NAME, 'traceURL', request.url);
+            if(!request.url.endsWith('jpg') && request.method !== 'OPTIONS' )   {
+                Logger.traceMessage(this.LOGGER_NAME, 'traceURL', request.url + '     (' + request.method + ')');
             }
             next();
         });
