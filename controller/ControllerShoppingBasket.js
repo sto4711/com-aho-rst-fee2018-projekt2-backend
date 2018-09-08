@@ -27,7 +27,7 @@ export class ControllerShoppingBasket {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.query.id);
             if (shoppingBasket === null) {
-                Logger.traceError(this.LOGGER_NAME, 'getShoppingBasket', 'shoppingBasketID"' + request.query.id + '" failed. no basket found ->');
+                Logger.traceError(this.LOGGER_NAME, 'getShoppingBasket', 'shoppingBasketID"' + request.query.id + '" failed, no basket found ->');
                 response.status(404).send('ShoppingBasket not found');
             } else {
                 response.json(shoppingBasket);
@@ -47,24 +47,21 @@ export class ControllerShoppingBasket {
     }
 
     async addItem_ShoppingBasket(request, response) {
-        debugger;
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             let articleAlreadyExists = false;
             if (shoppingBasket != null) {
-                //check if article already exists
                 for (let i = 0; i < shoppingBasket.items.length; i++) {
                     if (shoppingBasket.items[i].articleID === request.body.articleID) {
                         articleAlreadyExists = true;
+                        Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
+                        await this.changeItemAmount_ShoppingBasket(request, response);
                         break;
                     }
                 }
 
-                if (articleAlreadyExists) {
-                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
-                    await this.changeItemAmount_ShoppingBasket(request, response);
-                } else {
-                    const article = (await this.storeArticle.getArticleDetails(request.body.articleID));
+                if (!articleAlreadyExists) {
+                    const article = await this.storeArticle.getArticleDetails(request.body.articleID);
                     const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber);
                     shoppingBasket.items.push(shoppingBasketItem);
                     this.calculateTotalSum(shoppingBasket);

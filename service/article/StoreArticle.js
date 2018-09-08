@@ -8,7 +8,7 @@ export class StoreArticle {
 
     async getArticles(filterName) {
         if (filterName !== '') {
-            return await this.dbMananger_Article.find({"searchTags": new RegExp(filterName.toLowerCase(), 'g')});
+            return await this.dbMananger_Article.find({"searchTags": new RegExp(filterName.toLowerCase())});
         }
         return await this.dbMananger_Article.find({});
     }
