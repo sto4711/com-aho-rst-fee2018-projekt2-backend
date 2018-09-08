@@ -50,13 +50,11 @@ export class ControllerArticle {
     async changeArticleRating(request, response)  {
         try {
             let article = await this.storeArticle.getArticleDetails(request.body.articleID);
-            let hasChanged = false;
-
             if(request.body.rateUp) {// find the lowest
                 for (let i = 0; i < article.rating.length; i++ ) {
                     if(!article.rating[i])  {
                         article.rating[i] = true;
-                        hasChanged = true;
+                        await this.storeArticle.update(article);
                         break;
                     }
                 }
@@ -64,14 +62,10 @@ export class ControllerArticle {
                 for (let i = article.rating.length; i >= 0; i-- ) {
                     if(article.rating[i])  {
                         article.rating[i] = false;
-                        hasChanged = true;
+                        await this.storeArticle.update(article);
                         break;
                     }
                 }
-            }
-
-            if(hasChanged)  {
-                await this.storeArticle.update(article);
             }
             response.json(article);
             Logger.traceMessage(this.LOGGER_NAME, 'changeArticleRating', 'ok');
