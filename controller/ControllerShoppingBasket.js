@@ -111,14 +111,13 @@ export class ControllerShoppingBasket {
                 });
                 this.calculateTotalSum(shoppingBasket);
                 await this.storeShoppingBasket.update(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'shoppingBasketID "' + request.body.shoppingBasketID + '" ok');
+                response.json(shoppingBasket);
+                Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'ok');
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
                 response.status(404).send('ShoppingBasket not found');
             }
-            response.json(shoppingBasket);
-            Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
