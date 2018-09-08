@@ -47,6 +47,7 @@ export class ControllerShoppingBasket {
     }
 
     async addItem_ShoppingBasket(request, response) {
+        debugger;
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             let articleAlreadyExists = false;
@@ -66,11 +67,11 @@ export class ControllerShoppingBasket {
                     const article = (await this.storeArticle.getArticleDetails(request.body.articleID));
                     const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber);
                     shoppingBasket.items.push(shoppingBasketItem);
+                    this.calculateTotalSum(shoppingBasket);
+                    await this.storeShoppingBasket.update(shoppingBasket);
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'ok');
+                    response.json(shoppingBasket);
                 }
-                this.calculateTotalSum(shoppingBasket);
-                await this.storeShoppingBasket.update(shoppingBasket);
-                response.json(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'ok');
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
