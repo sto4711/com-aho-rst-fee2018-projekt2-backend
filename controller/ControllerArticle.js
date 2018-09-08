@@ -47,6 +47,39 @@ export class ControllerArticle {
         }
     }
 
+    async changeArticleRating(request, response)  {
+        try {
+            let article = await this.storeArticle.getArticleDetails(request.body.articleID);
+            let hasChanged = false;
+
+            if(request.body.rateUp) {// find the lowest
+                for (let i = 0; i < article.rating.length; i++ ) {
+                    if(!article.rating[i])  {
+                        article.rating[i] = true;
+                        hasChanged = true;
+                        break;
+                    }
+                }
+            }else   {
+                for (let i = article.rating.length; i >= 0; i-- ) {
+                    if(article.rating[i])  {
+                        article.rating[i] = false;
+                        hasChanged = true;
+                        break;
+                    }
+                }
+            }
+
+            if(hasChanged)  {
+                await this.storeArticle.update(article);
+            }
+            response.json(article);
+            Logger.traceMessage(this.LOGGER_NAME, 'changeArticleRating', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'changeArticleRating', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
 
 
 }
