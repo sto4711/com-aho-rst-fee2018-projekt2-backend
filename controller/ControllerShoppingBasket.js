@@ -61,8 +61,8 @@ export class ControllerShoppingBasket {
                 }
 
                 if (!articleAlreadyExists) {
-                    const article = await this.storeArticle.getArticleDetails(request.body.articleID);
-                    const shoppingBasketItem = new ShoppingBasketItem(request.body.articleID, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber);
+                    const article = await this.storeArticle.getArticleDetails(request.body.articleID, null);
+                    const shoppingBasketItem = new ShoppingBasketItem(article._id, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber, article.articleQueryParameter);
                     shoppingBasket.items.push(shoppingBasketItem);
                     this.calculateTotalSum(shoppingBasket);
                     await this.storeShoppingBasket.update(shoppingBasket);
@@ -121,7 +121,6 @@ export class ControllerShoppingBasket {
             response.status(500).send('server error, contact support');
         }
     }
-
 
 
 }
