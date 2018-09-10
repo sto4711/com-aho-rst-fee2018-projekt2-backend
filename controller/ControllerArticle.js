@@ -39,7 +39,7 @@ export class ControllerArticle {
 
     async getArticleDetails(request, response)  {
         try {
-            response.json(await this.storeArticle.getArticleDetails(request.query.id));
+            response.json(await this.storeArticle.getArticleDetails(null, request.query.article));
             Logger.traceMessage(this.LOGGER_NAME, 'getArticleDetails', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getArticleDetails', 'failed -> ' + e);
@@ -49,7 +49,7 @@ export class ControllerArticle {
 
     async changeArticleRating(request, response)  {
         try {
-            let article = await this.storeArticle.getArticleDetails(request.body.articleID);
+            let article = await this.storeArticle.getArticleDetails(request.body.articleID,null);
             if(request.body.rateUp) {// find the lowest
                 for (let i = 0; i < article.rating.length; i++ ) {
                     if(!article.rating[i])  {

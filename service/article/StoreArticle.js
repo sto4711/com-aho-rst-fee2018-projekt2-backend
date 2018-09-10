@@ -14,12 +14,12 @@ export class StoreArticle {
     }
 
     async getArticlesOrderByLimited(sort, ascDesc, limit) {
-        const ascDesc_DB = (ascDesc.toLowerCase()==='asc'? this.dbMananger_Article.DESCENDING: this.dbMananger_Article.ASCENDING);
+        const ascDesc_DB = (ascDesc.toLowerCase() === 'asc' ? this.dbMananger_Article.DESCENDING : this.dbMananger_Article.ASCENDING);
         return await this.dbMananger_Article.find({}, {"releaseDate": this.dbMananger_Article.DESCENDING}, limit);
     }
 
-    async getArticleDetails(id) {
-        const articleArr =  await this.dbMananger_Article.find({"_id": id});
+    async getArticleDetails(articleId, articleQueryParameter) {
+        const articleArr = await this.dbMananger_Article.find((articleId? {"_id": articleId} : {"articleQueryParameter": articleQueryParameter}));
         return (articleArr.length === 0 ? null : articleArr[0]);
     }
 
