@@ -41,8 +41,8 @@ export class RouterWebshop {
             await this.controllerArticle.getArticles(request, response);
         });
 
-        this.router.get('/articles/newest', async (request, response) => {
-            await this.controllerArticle.getArticlesNewest(request, response);
+        this.router.get('/articles/latest', async (request, response) => {
+            await this.controllerArticle.getArticlesLatest(request, response);
         });
 
         this.router.get('/article-details', async (request, response) => {
