@@ -97,15 +97,9 @@ export class RouterWebshop {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/commit', async (request, response) => {
+        this.router.patch('/order/commit', authentication.required(), async (request, response) => {
             await this.controllerOrder.commit(request, response);
         });
-
-
-
-
-
-
     }
 
     getRouter() {
