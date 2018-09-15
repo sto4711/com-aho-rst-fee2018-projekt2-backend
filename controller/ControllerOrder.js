@@ -44,24 +44,24 @@ export class ControllerOrder {
             if (ok) {
                 if (request.url.endsWith('change-delivery-address')) {
                     order.deliveryAddress = request.body.deliveryAddress;
-                    await this.storeOrder.update(order)
+                    await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change deliveryAddress', 'ok');
                 } else if (request.url.endsWith('change-contact-data')) {
                     order.contactData = request.body.contactData;
-                    await this.storeOrder.update(order)
+                    await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change contactData', 'ok');
                 }
                 else if (request.url.endsWith('change-delivery-type')) {
                     order.deliveryType = request.body.deliveryType;
-                    await this.storeOrder.update(order)
+                    await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change deliveryType', 'ok');
                 }
                 else if (request.url.endsWith('change-payment-type')) {
                     order.paymentType = request.body.paymentType;
-                    await this.storeOrder.update(order)
+                    await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change paymentType', 'ok');
                 }
@@ -71,11 +71,29 @@ export class ControllerOrder {
             }
 
             if (!ok) {
-                Logger.traceError(this.LOGGER_NAME, 'changeDeliveryAddress', 'order not found / URL not found');
+                Logger.traceError(this.LOGGER_NAME, 'change', 'order not found / URL not found');
                 response.status(404).send('order not found');
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'change', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+    async commit(request, response) {
+        try {
+            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            if (order != null) {
+                order.state = 'commit';
+                await this.storeOrder.update(order);
+                response.json(order);
+                Logger.traceMessage(this.LOGGER_NAME, 'commit', 'ok');
+            } else {
+                Logger.traceError(this.LOGGER_NAME, 'commit', 'order not found / URL not found');
+                response.status(404).send('order not found');
+            }
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'commit', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
