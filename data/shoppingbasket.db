@@ -14,6 +14,7 @@
 {"userID":"","shoppingBasketDate":{"$$date":1536310418051},"items":[],"totalSum":0,"_id":"Fu4CVmtVyI8dR8sO"}
 {"userID":"","shoppingBasketDate":{"$$date":1536309798466},"items":[],"totalSum":0,"_id":"HxPs9alhnoilR1Um"}
 {"userID":"","shoppingBasketDate":{"$$date":1536237365264},"items":[],"totalSum":0,"_id":"LKDN5p5QsgFx4fWW"}
+{"shoppingBasketDate":{"$$date":1537016473715},"items":[],"totalSum":0,"_id":"LbphyykwqGY9PWVR"}
 {"userID":"","shoppingBasketDate":{"$$date":1536237295241},"items":[],"totalSum":0,"_id":"P96NrYqijVc3qPgK"}
 {"userID":"","shoppingBasketDate":{"$$date":1536237439771},"items":[],"totalSum":0,"_id":"PccbQ0Eexdt8qfOF"}
 {"userID":"","shoppingBasketDate":{"$$date":1536309918377},"items":[],"totalSum":0,"_id":"QaoVFQMCCZEDcrBj"}
@@ -39,3 +40,5 @@
 {"userID":"","shoppingBasketDate":{"$$date":1536309734270},"items":[],"totalSum":0,"_id":"nqIRVa1xJVdVrwt9"}
 {"userID":"","shoppingBasketDate":{"$$date":1535908373216},"items":[{"articleID":"xEUehKXKxYo001","articleName":"E-Bike Modell 1","articlePrice":1000.35,"articlePriceSum":3001.05,"articleAvailability":true,"articleAmount":3,"itemNumber":"10000001"},{"articleID":"xEUehKXKxYo0010","articleName":"E-Bike Modell 10","articlePrice":10000.05,"articlePriceSum":10000.05,"articleAvailability":true,"articleAmount":1,"itemNumber":"100000010"},{"articleID":"xEUehKXKxYo0098","articleName":"E-Bike Modell 98","articlePrice":98000.05,"articlePriceSum":294000.15,"articleAvailability":false,"articleAmount":3,"itemNumber":"100000098"}],"totalSum":307001.25,"_id":"ro4aDIsj2Vw1iCkB"}
 {"userID":"","shoppingBasketDate":{"$$date":1536172923440},"items":[],"totalSum":20000.1,"_id":"y9oQhA9dWZT6PXSw"}
+{"shoppingBasketDate":{"$$date":1537016594153},"items":[],"totalSum":0,"_id":"UNvW4cyKFzymQSm1"}
+{"shoppingBasketDate":{"$$date":1537016594153},"items":[{"articleID":"xEUehKXKxYo0007","articleName":"E-Bike Modell 7","articlePrice":7000.35,"articleAvailability":false,"articleAmount":1,"itemNumber":"10000007","articlePriceSum":7000.35,"articleQueryParameter":"Superbike-E-Bike-Modell-7"}],"totalSum":7000.35,"_id":"UNvW4cyKFzymQSm1"}

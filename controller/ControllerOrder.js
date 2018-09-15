@@ -11,7 +11,6 @@ export class ControllerOrder {
         this.LOGGER_NAME = 'ControllerOrder';
     }
 
-
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
@@ -22,25 +21,6 @@ export class ControllerOrder {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket not found');
                 response.status(404).send('shoppingBasket not found');
             }
-            //
-            // if (userId != null) {
-            //     order = await this.storeOrder.get(shoppingBasket._id);
-            // }else   {
-            //     Logger.traceError(this.LOGGER_NAME, 'create', 'user / session not found');
-            //     response.status(404).send('user / session not found');
-            // }
-            //
-            // if (order == null) {
-            //     shoppingBasket.userID = userId;
-            //     shoppingBasket.created = new Date();
-            //     shoppingBasket.state = 'created';
-            //     await this.storeOrder.create(shoppingBasket);
-            //     Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
-            //     response.json(shoppingBasket);
-            // }else   {
-            //     Logger.traceMessage(this.LOGGER_NAME, 'create', 'order already created');
-            //     response.json(order);
-            // }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
@@ -57,13 +37,10 @@ export class ControllerOrder {
         }
     }
 
-
     async change(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
             let ok = (order != null ? true : false);
-
-
             if (ok) {
                 if (request.url.endsWith('change-delivery-address')) {
                     order.deliveryAddress = request.body.deliveryAddress;
@@ -82,9 +59,12 @@ export class ControllerOrder {
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change deliveryType', 'ok');
                 }
-
-
-
+                else if (request.url.endsWith('change-payment-type')) {
+                    order.paymentType = request.body.paymentType;
+                    await this.storeOrder.update(order)
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change paymentType', 'ok');
+                }
                 else {
                     ok = false;
                 }

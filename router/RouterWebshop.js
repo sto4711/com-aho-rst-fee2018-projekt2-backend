@@ -93,6 +93,11 @@ export class RouterWebshop {
             await this.controllerOrder.change(request, response);
         });
 
+        this.router.patch('/order/change-payment-type', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
+
 
 
 
