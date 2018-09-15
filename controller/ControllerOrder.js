@@ -84,12 +84,17 @@ export class ControllerOrder {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
             if (order != null) {
+                const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+                order.userID = session.userID;
+            }
+            if (order.userId != null) {
                 order.state = 'commit';
                 await this.storeOrder.update(order);
                 response.json(order);
                 Logger.traceMessage(this.LOGGER_NAME, 'commit', 'ok');
-            } else {
-                Logger.traceError(this.LOGGER_NAME, 'commit', 'order not found / URL not found');
+            }
+            else {
+                Logger.traceError(this.LOGGER_NAME, 'commit', 'order / user not found');
                 response.status(404).send('order not found');
             }
         } catch (e) {
