@@ -61,6 +61,7 @@ export class ControllerOrder {
                 }
                 else if (request.url.endsWith('change-payment-type')) {
                     order.paymentType = request.body.paymentType;
+                    order.paymentType = request.body.paymentType;
                     await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change paymentType', 'ok');
@@ -80,7 +81,7 @@ export class ControllerOrder {
         }
     }
 
-    async commit(request, response) {
+    async approve(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
             if (order != null) {
@@ -88,7 +89,7 @@ export class ControllerOrder {
                 order.userID = session.userID;
             }
             if (order.userID != null) {
-                order.state = 'commit';
+                order.state = 'approved';
                 await this.storeOrder.update(order);
                 response.json(order);
                 Logger.traceMessage(this.LOGGER_NAME, 'commit', 'ok');
