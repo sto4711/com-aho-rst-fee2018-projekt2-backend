@@ -24,11 +24,6 @@ export class ControllerOrder {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket not found');
                 response.status(404).send('shoppingBasket not found');
             }
-
-
-
-
-
             //
             // if (userId != null) {
             //     order = await this.storeOrder.get(shoppingBasket._id);
@@ -63,6 +58,28 @@ export class ControllerOrder {
             response.status(500).send('server error, contact support');
         }
     }
+
+
+    async changeDeliveryAddress(request, response) {
+        try {
+            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            if (order != null) {
+                order.deliveryAddress = request.body.deliveryAddress;
+                await this.storeOrder.update(order);
+            }else   {
+                Logger.traceError(this.LOGGER_NAME, 'changeDeliveryAddress', 'order not found');
+                response.status(404).send('order not found');
+            }
+            response.json(order);
+            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+
+
 
 
 

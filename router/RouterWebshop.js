@@ -49,7 +49,7 @@ export class RouterWebshop {
             await this.controllerArticle.getArticleDetails(request, response);
         });
 
-        this.router.post('/article-details/change-rating', async (request, response) => {
+        this.router.patch('/article-details/change-rating', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
         });
 
@@ -65,11 +65,11 @@ export class RouterWebshop {
             await this.controllerShoppingBasket.addItem(request, response);
         });
 
-        this.router.post('/shopping-basket/change_item_amount', async (request, response) => {
+        this.router.patch('/shopping-basket/change-item-amount', async (request, response) => {
             await this.controllerShoppingBasket.changeItemAmount(request, response);
         });
 
-        this.router.post('/shopping-basket/remove_item', async (request, response) => {
+        this.router.post('/shopping-basket/remove-item', async (request, response) => {
             await this.controllerShoppingBasket.removeItem(request, response);
         });
 
@@ -80,6 +80,11 @@ export class RouterWebshop {
         this.router.get('/order-details', async (request, response) => {
             await this.controllerOrder.getOrderDetails(request, response);
         });
+
+        this.router.patch('/order/change-delivery-address', async (request, response) => {
+            await this.controllerOrder.changeDeliveryAddress(request, response);
+        });
+
 
 
     }
