@@ -82,8 +82,17 @@ export class RouterWebshop {
         });
 
         this.router.patch('/order/change-delivery-address', async (request, response) => {
-            await this.controllerOrder.changeDeliveryAddress(request, response);
+            await this.controllerOrder.change(request, response);
         });
+
+        this.router.patch('/order/change-contact-data', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
+        this.router.patch('/order/change-delivery-type', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
 
 
 

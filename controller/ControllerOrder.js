@@ -12,15 +12,13 @@ export class ControllerOrder {
     }
 
 
-
-
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
             if (shoppingBasket != null) {
                 response.json(await this.storeOrder.create(shoppingBasket));
                 Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
-            }else   {
+            } else {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket not found');
                 response.status(404).send('shoppingBasket not found');
             }
@@ -49,7 +47,7 @@ export class ControllerOrder {
         }
     }
 
-    async getOrderDetails(request, response)  {
+    async getOrderDetails(request, response) {
         try {
             response.json(await this.storeOrder.getOrderDetails(request.query.id));
             Logger.traceMessage(this.LOGGER_NAME, 'getOrderDetails', 'ok');
@@ -60,27 +58,47 @@ export class ControllerOrder {
     }
 
 
-    async changeDeliveryAddress(request, response) {
+    async change(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
-            if (order != null) {
-                order.deliveryAddress = request.body.deliveryAddress;
-                await this.storeOrder.update(order);
-            }else   {
-                Logger.traceError(this.LOGGER_NAME, 'changeDeliveryAddress', 'order not found');
+            let ok = (order != null ? true : false);
+
+
+            if (ok) {
+                if (request.url.endsWith('change-delivery-address')) {
+                    order.deliveryAddress = request.body.deliveryAddress;
+                    await this.storeOrder.update(order)
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change deliveryAddress', 'ok');
+                } else if (request.url.endsWith('change-contact-data')) {
+                    order.contactData = request.body.contactData;
+                    await this.storeOrder.update(order)
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change contactData', 'ok');
+                }
+                else if (request.url.endsWith('change-delivery-type')) {
+                    order.deliveryType = request.body.deliveryType;
+                    await this.storeOrder.update(order)
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change deliveryType', 'ok');
+                }
+
+
+
+                else {
+                    ok = false;
+                }
+            }
+
+            if (!ok) {
+                Logger.traceError(this.LOGGER_NAME, 'changeDeliveryAddress', 'order not found / URL not found');
                 response.status(404).send('order not found');
             }
-            response.json(order);
-            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'change', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
-
-
-
-
 
 
 }

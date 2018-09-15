@@ -4,7 +4,7 @@ export class Address  {
         this.surname =  null;
         this.streetHousenumber =  null;
         this.postCode =  null;
-        this.city =  '';
+        this.city =  null;
     }
 
 
