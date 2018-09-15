@@ -87,7 +87,7 @@ export class ControllerOrder {
                 const session = await this.storeSession.getSessionByToken(request.headers.authorization);
                 order.userID = session.userID;
             }
-            if (order.userId != null) {
+            if (order.userID != null) {
                 order.state = 'commit';
                 await this.storeOrder.update(order);
                 response.json(order);
