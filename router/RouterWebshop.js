@@ -54,26 +54,26 @@ export class RouterWebshop {
         });
 
         this.router.post('/shopping-basket/create', async (request, response) => {
-            await this.controllerShoppingBasket.createShoppingBasket(request, response);
+            await this.controllerShoppingBasket.create(request, response);
         });
 
         this.router.get('/shopping-basket/', async (request, response) => {
-            await this.controllerShoppingBasket.getShoppingBasket(request, response);
+            await this.controllerShoppingBasket.get(request, response);
         });
 
         this.router.post('/shopping-basket/add-item', async (request, response) => {
-            await this.controllerShoppingBasket.addItem_ShoppingBasket(request, response);
+            await this.controllerShoppingBasket.addItem(request, response);
         });
 
         this.router.post('/shopping-basket/change_item_amount', async (request, response) => {
-            await this.controllerShoppingBasket.changeItemAmount_ShoppingBasket(request, response);
+            await this.controllerShoppingBasket.changeItemAmount(request, response);
         });
 
         this.router.post('/shopping-basket/remove_item', async (request, response) => {
-            await this.controllerShoppingBasket.removeItem_ShoppingBasket(request, response);
+            await this.controllerShoppingBasket.removeItem(request, response);
         });
 
-        this.router.post('/order/create', authentication.required(), async (request, response) => {
+        this.router.post('/order/create', async (request, response) => {
             await this.controllerOrder.create(request, response);
         });
 

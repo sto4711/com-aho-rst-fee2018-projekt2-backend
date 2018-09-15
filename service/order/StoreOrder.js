@@ -2,6 +2,7 @@ import UIDGenerator from 'uid-generator';
 import {Logger} from "../../commons/Logger";
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
 import {ShoppingBasket} from "../shopping-basket/ShoppingBasket";
+import {Order} from "./Order";
 
 
 export class StoreOrder {
@@ -10,9 +11,11 @@ export class StoreOrder {
         this.LOGGER_NAME = 'StoreOrder';
     }
 
+
     async create(shoppingBasket) {
-        const order = await this.dbMananger_Order.insert(shoppingBasket);
+        const order = await this.dbMananger_Order.insert(new Order(shoppingBasket));
         Logger.traceMessage(this.LOGGER_NAME, 'create', 'order created');
+        return order;
     }
 
     async get(id) {
