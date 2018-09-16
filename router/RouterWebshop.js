@@ -41,39 +41,39 @@ export class RouterWebshop {
             await this.controllerArticle.getArticles(request, response);
         });
 
-        this.router.get('/articles/newest', async (request, response) => {
-            await this.controllerArticle.getArticlesNewest(request, response);
+        this.router.get('/articles/latest', async (request, response) => {
+            await this.controllerArticle.getArticlesLatest(request, response);
         });
 
         this.router.get('/article-details', async (request, response) => {
             await this.controllerArticle.getArticleDetails(request, response);
         });
 
-        this.router.post('/article-details/change-rating', async (request, response) => {
+        this.router.patch('/article-details/change-rating', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
         });
 
         this.router.post('/shopping-basket/create', async (request, response) => {
-            await this.controllerShoppingBasket.createShoppingBasket(request, response);
+            await this.controllerShoppingBasket.create(request, response);
         });
 
         this.router.get('/shopping-basket/', async (request, response) => {
-            await this.controllerShoppingBasket.getShoppingBasket(request, response);
+            await this.controllerShoppingBasket.get(request, response);
         });
 
         this.router.post('/shopping-basket/add-item', async (request, response) => {
-            await this.controllerShoppingBasket.addItem_ShoppingBasket(request, response);
+            await this.controllerShoppingBasket.addItem(request, response);
         });
 
-        this.router.post('/shopping-basket/change_item_amount', async (request, response) => {
-            await this.controllerShoppingBasket.changeItemAmount_ShoppingBasket(request, response);
+        this.router.patch('/shopping-basket/change-item-amount', async (request, response) => {
+            await this.controllerShoppingBasket.changeItemAmount(request, response);
         });
 
-        this.router.post('/shopping-basket/remove_item', async (request, response) => {
-            await this.controllerShoppingBasket.removeItem_ShoppingBasket(request, response);
+        this.router.post('/shopping-basket/remove-item', async (request, response) => {
+            await this.controllerShoppingBasket.removeItem(request, response);
         });
 
-        this.router.post('/order/create', authentication.required(), async (request, response) => {
+        this.router.post('/order/create', async (request, response) => {
             await this.controllerOrder.create(request, response);
         });
 
@@ -81,7 +81,25 @@ export class RouterWebshop {
             await this.controllerOrder.getOrderDetails(request, response);
         });
 
+        this.router.patch('/order/change-delivery-address', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
 
+        this.router.patch('/order/change-contact-data', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
+        this.router.patch('/order/change-delivery-type', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
+        this.router.patch('/order/change-payment-type', async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+
+        this.router.patch('/order/approve', authentication.required(), async (request, response) => {
+            await this.controllerOrder.approve(request, response);
+        });
     }
 
     getRouter() {

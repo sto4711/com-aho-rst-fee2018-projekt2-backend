@@ -27,7 +27,7 @@ export class ControllerArticle {
         }
     }
 
-    async getArticlesNewest(request, response)  {
+    async getArticlesLatest(request, response)  {
         try {
             response.json(await this.storeArticle.getArticlesOrderByLimited('releaseDate', 'desc', request.query.limit));
             Logger.traceMessage(this.LOGGER_NAME, 'getArticlesNewest', 'ok');

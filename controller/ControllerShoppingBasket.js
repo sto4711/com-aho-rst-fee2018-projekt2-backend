@@ -13,28 +13,28 @@ export class ControllerShoppingBasket {
         return this.storeShoppingBasket;
     }
 
-    async createShoppingBasket(request, response) {
+    async create(request, response) {
         try {
             response.json(await this.storeShoppingBasket.create());
-            Logger.traceMessage(this.LOGGER_NAME, 'createShoppingBasket', 'ok');
+            Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'createShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
-    async getShoppingBasket(request, response) {
+    async get(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.query.id);
             if (shoppingBasket === null) {
-                Logger.traceError(this.LOGGER_NAME, 'getShoppingBasket', 'shoppingBasketID"' + request.query.id + '" failed, no basket found ->');
+                Logger.traceError(this.LOGGER_NAME, 'get', 'shoppingBasketID"' + request.query.id + '" failed, no basket found ->');
                 response.status(404).send('ShoppingBasket not found');
             } else {
                 response.json(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'get_ShoppingBasket', 'ok');
+                Logger.traceMessage(this.LOGGER_NAME, 'get', 'ok');
             }
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'get_ShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'get', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -46,7 +46,7 @@ export class ControllerShoppingBasket {
         }
     }
 
-    async addItem_ShoppingBasket(request, response) {
+    async addItem(request, response) {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             let articleAlreadyExists = false;
@@ -54,8 +54,8 @@ export class ControllerShoppingBasket {
                 for (let i = 0; i < shoppingBasket.items.length; i++) {
                     if (shoppingBasket.items[i].articleID === request.body.articleID) {
                         articleAlreadyExists = true;
-                        Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'article already exists, will change amount');
-                        await this.changeItemAmount_ShoppingBasket(request, response);
+                        Logger.traceMessage(this.LOGGER_NAME, 'addItem', 'article already exists, will change amount');
+                        await this.changeItemAmount(request, response);
                         break;
                     }
                 }
@@ -66,21 +66,21 @@ export class ControllerShoppingBasket {
                     shoppingBasket.items.push(shoppingBasketItem);
                     this.calculateTotalSum(shoppingBasket);
                     await this.storeShoppingBasket.update(shoppingBasket);
-                    Logger.traceMessage(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'ok');
+                    Logger.traceMessage(this.LOGGER_NAME, 'addItem', 'ok');
                     response.json(shoppingBasket);
                 }
             }
             else {
-                Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
+                Logger.traceError(this.LOGGER_NAME, 'addItem', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
                 response.status(404).send('ShoppingBasket not found');
             }
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'addItem_ShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'addItem', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
-    async changeItemAmount_ShoppingBasket(request, response) {
+    async changeItemAmount(request, response) {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             for (let i = 0; i < shoppingBasket.items.length; i++) {
@@ -93,14 +93,14 @@ export class ControllerShoppingBasket {
                 }
             }
             response.json(shoppingBasket);
-            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'ok');
+            Logger.traceMessage(this.LOGGER_NAME, 'changeItemAmount', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount_ShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'changeItemAmount', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
-    async removeItem_ShoppingBasket(request, response) {
+    async removeItem(request, response) {
         try {
             let shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketID);
             if (shoppingBasket != null) {
@@ -110,14 +110,14 @@ export class ControllerShoppingBasket {
                 this.calculateTotalSum(shoppingBasket);
                 await this.storeShoppingBasket.update(shoppingBasket);
                 response.json(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'ok');
+                Logger.traceMessage(this.LOGGER_NAME, 'removeItem', 'ok');
             }
             else {
-                Logger.traceError(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
+                Logger.traceError(this.LOGGER_NAME, 'removeItem', 'shoppingBasketID"' + request.body.shoppingBasketID + '" failed. no basket found ->');
                 response.status(404).send('ShoppingBasket not found');
             }
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'removeItem_ShoppingBasket', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'removeItem', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

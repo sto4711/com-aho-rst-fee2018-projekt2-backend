@@ -14,34 +14,12 @@ export class ControllerOrder {
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
-            let userId = null;
-            let order = null;
-
             if (shoppingBasket != null) {
-                const session = await this.storeSession.getSessionByToken(request.headers.authorization);
-                userId = session.userID;
-            }else   {
+                response.json(await this.storeOrder.create(shoppingBasket));
+                Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
+            } else {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket not found');
                 response.status(404).send('shoppingBasket not found');
-            }
-
-            if (userId != null) {
-                order = await this.storeOrder.get(shoppingBasket._id);
-            }else   {
-                Logger.traceError(this.LOGGER_NAME, 'create', 'user / session not found');
-                response.status(404).send('user / session not found');
-            }
-
-            if (order == null) {
-                shoppingBasket.userID = userId;
-                shoppingBasket.created = new Date();
-                shoppingBasket.state = 'created';
-                await this.storeOrder.create(shoppingBasket);
-                Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
-                response.json(shoppingBasket);
-            }else   {
-                Logger.traceMessage(this.LOGGER_NAME, 'create', 'order already created');
-                response.json(order);
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
@@ -49,7 +27,7 @@ export class ControllerOrder {
         }
     }
 
-    async getOrderDetails(request, response)  {
+    async getOrderDetails(request, response) {
         try {
             response.json(await this.storeOrder.getOrderDetails(request.query.id));
             Logger.traceMessage(this.LOGGER_NAME, 'getOrderDetails', 'ok');
@@ -59,6 +37,72 @@ export class ControllerOrder {
         }
     }
 
+    async change(request, response) {
+        try {
+            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            let ok = (order != null ? true : false);
+            if (ok) {
+                if (request.url.endsWith('change-delivery-address')) {
+                    order.deliveryAddress = request.body.deliveryAddress;
+                    await this.storeOrder.update(order);
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change deliveryAddress', 'ok');
+                } else if (request.url.endsWith('change-contact-data')) {
+                    order.contactData = request.body.contactData;
+                    await this.storeOrder.update(order);
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change contactData', 'ok');
+                }
+                else if (request.url.endsWith('change-delivery-type')) {
+                    order.deliveryType = request.body.deliveryType;
+                    await this.storeOrder.update(order);
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change deliveryType', 'ok');
+                }
+                else if (request.url.endsWith('change-payment-type')) {
+                    order.paymentType = request.body.paymentType;
+                    order.paymentType = request.body.paymentType;
+                    await this.storeOrder.update(order);
+                    response.json(order);
+                    Logger.traceMessage(this.LOGGER_NAME, 'change paymentType', 'ok');
+                }
+                else {
+                    ok = false;
+                }
+            }
+
+            if (!ok) {
+                Logger.traceError(this.LOGGER_NAME, 'change', 'order not found / URL not found');
+                response.status(404).send('order not found');
+            }
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'change', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+    async approve(request, response) {
+        try {
+            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            if (order != null) {
+                const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+                order.userID = session.userID;
+            }
+            if (order.userID != null) {
+                order.state = 'approved';
+                await this.storeOrder.update(order);
+                response.json(order);
+                Logger.traceMessage(this.LOGGER_NAME, 'commit', 'ok');
+            }
+            else {
+                Logger.traceError(this.LOGGER_NAME, 'commit', 'order / user not found');
+                response.status(404).send('order not found');
+            }
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'commit', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
 
 
 }
