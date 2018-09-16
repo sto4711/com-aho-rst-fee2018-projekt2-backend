@@ -28,6 +28,11 @@ export class StoreOrder {
         return (orderArr.length === 0 ? null : orderArr[0]);
     }
 
+    async getOrderAll() {
+        const orderArr =  await this.dbMananger_Order.find();
+        return (orderArr.length === 0 ? null : orderArr[0]);
+    }
+
     async update(order) {
         await this.dbMananger_Order.update(order._id, order);
         Logger.traceMessage(this.LOGGER_NAME, 'update', 'ok');

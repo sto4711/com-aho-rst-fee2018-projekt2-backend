@@ -81,6 +81,10 @@ export class RouterWebshop {
             await this.controllerOrder.getOrderDetails(request, response);
         });
 
+        this.router.get('/order-all', async (request, response) => {
+            await this.controllerOrder.getOrderAll(request, response);
+    });
+
         this.router.patch('/order/change-delivery-address', async (request, response) => {
             await this.controllerOrder.change(request, response);
         });

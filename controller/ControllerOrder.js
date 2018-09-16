@@ -37,6 +37,16 @@ export class ControllerOrder {
         }
     }
 
+    async getOrderAll(request, response) {
+        try {
+            response.json(await this.storeOrder.getOrderAll());
+            Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'getAllOrders', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
     async change(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
