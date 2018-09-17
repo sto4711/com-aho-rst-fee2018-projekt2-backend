@@ -22,10 +22,14 @@ export class DatabaseMananger_NEDB {
         if(sort!==null && limit !==null)    {
             return await this.db.cfind(filter).sort(sort).limit(limit).exec();
         }
-        else if(sort!==null)    {
+        if(sort!==null)    {
             return await this.db.cfind(filter).sort(sort).exec();
         }
-        return await this.db.cfind(filter).exec();
+        else if(filter!==null)    {
+            return await this.db.cfind(filter).exec();
+        }
+        return await this.db.find();
+
     }
 
     async deleteAll() {
