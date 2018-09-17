@@ -1,5 +1,3 @@
-import {StoreSession} from '../service/user/StoreSession';
-import {StoreUser} from '../service/user/StoreUser';
 import {Logger} from '../commons/Logger';
 import {StoreOrder} from "../service/order/StoreOrder";
 
@@ -91,7 +89,7 @@ export class ControllerOrder {
         }
     }
 
-    async approve(request, response) {
+    async changeState(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
             if (order != null) {
@@ -99,7 +97,7 @@ export class ControllerOrder {
                 order.userID = session.userID;
             }
             if (order.userID != null) {
-                order.state = 'approved';
+                order.state = request.body.state;
                 await this.storeOrder.update(order);
                 response.json(order);
                 Logger.traceMessage(this.LOGGER_NAME, 'commit', 'ok');
