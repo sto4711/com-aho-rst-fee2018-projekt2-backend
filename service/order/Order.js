@@ -8,7 +8,7 @@ export class Order  {
         this.ShoppingBasket = shoppingBasket;
         this.userID = null;
         this.orderDate = new Date();
-        this.state = 'new';
+        this.state = 'NEW';
         this.deliveryAddress = new Address();
         this.contactData = new ContactData();
         this.deliveryType = new DeliveryType();

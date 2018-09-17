@@ -101,8 +101,8 @@ export class RouterWebshop {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/approve', authentication.required(), async (request, response) => {
-            await this.controllerOrder.approve(request, response);
+        this.router.patch('/order/state', authentication.required(), async (request, response) => {
+            await this.controllerOrder.changeState(request, response);
         });
     }
 
