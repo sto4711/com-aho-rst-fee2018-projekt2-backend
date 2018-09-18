@@ -19,12 +19,16 @@ export class DatabaseMananger_NEDB {
     }
 
     async find(filter, sort, limit) {
+
         if(sort!==null && limit !==null)    {
-            return await this.db.cfind(filter).sort(sort).limit(limit).exec();
+            console.log(sort);
+             return await this.db.cfind(filter).sort(sort).limit(limit).exec();
         }
         else if(sort!==null)    {
+
             return await this.db.cfind(filter).sort(sort).exec();
         }
+
         return await this.db.cfind(filter).exec();
     }
 
