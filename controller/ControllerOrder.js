@@ -37,7 +37,7 @@ export class ControllerOrder {
 
     async getOrderAll(request, response) {
         try {
-            response.json(await this.storeOrder.getOrderAll());
+            response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
             Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getAllOrders', 'failed -> ' + e);

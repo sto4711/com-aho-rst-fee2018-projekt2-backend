@@ -28,10 +28,9 @@ export class StoreOrder {
         return (orderArr.length === 0 ? null : orderArr[0]);
     }
 
-    async getOrderAll() {
-        return  await this.dbMananger_Order.find({});
-        // return (orderArr.length === 0 ? null : orderArr[0]);
-    }
+    async getOrderAll(filter, sort, limit) {
+        return await this.dbMananger_Order.find(filter, {"orderDate": this.dbMananger_Order.DESCENDING}, limit);
+     }
 
     async update(order) {
         await this.dbMananger_Order.update(order._id, order);

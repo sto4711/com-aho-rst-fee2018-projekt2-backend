@@ -19,17 +19,17 @@ export class DatabaseMananger_NEDB {
     }
 
     async find(filter, sort, limit) {
+
         if(sort!==null && limit !==null)    {
-            return await this.db.cfind(filter).sort(sort).limit(limit).exec();
+            console.log(sort);
+             return await this.db.cfind(filter).sort(sort).limit(limit).exec();
         }
-        if(sort!==null)    {
+        else if(sort!==null)    {
+
             return await this.db.cfind(filter).sort(sort).exec();
         }
-        else if(filter!==null)    {
-            return await this.db.cfind(filter).exec();
-        }
-        return await this.db.find();
 
+        return await this.db.cfind(filter).exec();
     }
 
     async deleteAll() {
