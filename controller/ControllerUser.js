@@ -14,28 +14,6 @@ export class ControllerUser {
         return this.storeSession;
     }
 
-    async isLoggedIn(request, response)  {
-        try {
-            const userID = await this.storeUser.getUserID_ByMail(request.query.email);
-            let session = null;
-            if (userID !== null) {
-                session = await this.storeSession.getSessionByUser(userID);
-            }
-
-            if(session ===null)    {
-                response.json({IsLoggedIn : false});
-                Logger.traceMessage(this.LOGGER_NAME, 'isLoggedIn', request.query.email + ' is not logged in');
-            }
-            else    {
-                response.json({IsLoggedIn : true});
-                Logger.traceMessage(this.LOGGER_NAME, 'isLoggedIn', request.query.email + ' is logged in');
-            }
-        } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'getIsLoggedIn', 'failed -> ' + e);
-            response.status(500).send('server error, contact support');
-        }
-    }
-
    async signIn(request, response) {
         try {
             const userID = await this.storeUser.getUserID(request.body.email, request.body.pwd);

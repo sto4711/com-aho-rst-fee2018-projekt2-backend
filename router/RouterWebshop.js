@@ -13,10 +13,6 @@ export class RouterWebshop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
         this.controllerOrder = new ControllerOrder(this.controllerShoppingBasket.getStoreShoppingBasket(), this.controllerUser.getStoreSession());
 
-        this.router.get('/user/isLoggedIn', async (request, response) => {
-            await this.controllerUser.isLoggedIn(request, response);
-        });
-
         this.router.post('/user/signIn', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
