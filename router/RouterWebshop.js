@@ -69,7 +69,7 @@ export class RouterWebshop {
             await this.controllerShoppingBasket.removeItem(request, response);
         });
 
-        this.router.post('/order/create', async (request, response) => {
+        this.router.post('/order/create', authentication.required(), async (request, response) => {
             await this.controllerOrder.create(request, response);
         });
 
@@ -81,23 +81,23 @@ export class RouterWebshop {
             await this.controllerOrder.getOrderAll(request, response);
     });
 
-        this.router.patch('/order/change-delivery-address', async (request, response) => {
+        this.router.patch('/order/change-delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/change-contact-data', async (request, response) => {
+        this.router.patch('/order/change-contact-data', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/change-delivery-type', async (request, response) => {
+        this.router.patch('/order/change-delivery-type', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/change-payment-type', async (request, response) => {
+        this.router.patch('/order/change-payment-type', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
 
-        this.router.patch('/order/state', authentication.required(), async (request, response) => {
+        this.router.patch('/order/state', authentication.required(), authentication.required(), async (request, response) => {
             await this.controllerOrder.changeState(request, response);
         });
     }
