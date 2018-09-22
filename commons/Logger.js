@@ -3,7 +3,7 @@ import dateformat from 'dateformat';
 export class Logger {
     static buildMessage(className, functionName, message) {
         let str = className + '.' + functionName + '()' ;
-        while (str.length < 60) {
+        while (str.length < 50) {
             str += " ";
         }
         return dateformat(new Date(), "yyyy.mm.dd h:MM:ss ") + str + message;

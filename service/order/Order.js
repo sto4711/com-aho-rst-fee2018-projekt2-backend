@@ -5,7 +5,7 @@ import {PaymentType} from "./PaymentType";
 
 export class Order  {
     constructor(shoppingBasket) {
-        this.ShoppingBasket = shoppingBasket;
+        this.shoppingBasket = shoppingBasket;
         this.userID = null;
         this.orderDate = new Date();
         this.state = 'NEW';
