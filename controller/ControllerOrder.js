@@ -1,5 +1,9 @@
 import {Logger} from '../commons/Logger';
 import {StoreOrder} from "../service/order/StoreOrder";
+import {Address} from "../service/order/Address";
+import {ContactData} from "../service/order/ContactData";
+import {DeliveryType} from "../service/order/DeliveryType";
+import {PaymentType} from "../service/order/PaymentType";
 
 export class ControllerOrder {
     constructor(storeShoppingBasket, storeSession) {
@@ -12,11 +16,23 @@ export class ControllerOrder {
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
-            if (shoppingBasket != null) {
-                response.json(await this.storeOrder.create(shoppingBasket));
+            const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+
+            if (shoppingBasket != null && session != null) {
+                let order = await this.storeOrder.create(shoppingBasket);
+                const orderLatest = await this.storeOrder.getLatestFromUser(session.userID);
+                if(orderLatest!= null)  {
+                    order.deliveryAddress = orderLatest.deliveryAddress;
+                    order.contactData = orderLatest.contactData;
+                    order.deliveryType = orderLatest.deliveryType;
+                    order.paymentType = orderLatest.paymentType;
+                    order.valuesOvertakenFromLatestOrder = true;
+                    await this.storeOrder.update(order);
+                }
+                response.json(order);
                 Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
             } else {
-                Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket not found');
+                Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket / user not found');
                 response.status(404).send('shoppingBasket not found');
             }
         } catch (e) {

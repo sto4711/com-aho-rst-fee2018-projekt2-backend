@@ -23,6 +23,11 @@ export class StoreOrder {
         return (orderArr.length === 0 ? null : orderArr[0]);
     }
 
+    async getLatestFromUser(userId) {
+        const orderArr = await this.dbMananger_Order.find({"userID": userId}, {"orderDate": this.dbMananger_Order.DESCENDING}, 1);
+        return (orderArr.length === 0 ? null : orderArr[0]);
+    }
+
     async getOrderDetails(id) {
         const orderArr =  await this.dbMananger_Order.find({"_id": id});
         return (orderArr.length === 0 ? null : orderArr[0]);

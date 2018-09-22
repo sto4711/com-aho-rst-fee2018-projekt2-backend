@@ -13,5 +13,6 @@ export class Order  {
         this.contactData = new ContactData();
         this.deliveryType = new DeliveryType();
         this.paymentType = new PaymentType();
+        this.valuesOvertakenFromLatestOrder = false;
     }
 }
