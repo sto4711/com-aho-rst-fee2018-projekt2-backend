@@ -42,6 +42,24 @@ export class ControllerUser {
         }
     }
 
+    async create(request, response) {
+        try {
+            const userID = await this.storeUser.getUserID_ByMail(request.body.email);
+            if(!userID)    {
+                let user = request.body;
+                user.type = 'customer';
+                await this.storeUser.create(user);
+                response.json(user);
+            }else   {
+                Logger.traceError(this.LOGGER_NAME, 'create', 'user already exists');
+                response.status(401).send('user already exists');
+            }
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
     async signOut(request, response) {
         const token = request.headers.authorization;
         try {

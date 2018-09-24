@@ -1,4 +1,6 @@
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
+import {ShoppingBasket} from "../shopping-basket/ShoppingBasket";
+import {Logger} from "../../commons/Logger";
 
 
 export class StoreUser {
@@ -18,6 +20,12 @@ export class StoreUser {
     async getUserID_ByMail(email) {
         const userArr = await this.dbMananger_User.find({"email": email});
         return (userArr.length === 0 ? null : userArr[0]._id);
+    }
+
+    async create(user) {
+        const shoppingBasket = await this.dbMananger_User.insert(user);
+        Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
+        return shoppingBasket;
     }
 
 

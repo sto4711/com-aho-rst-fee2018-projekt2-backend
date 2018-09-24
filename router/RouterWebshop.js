@@ -21,6 +21,10 @@ export class RouterWebshop {
             await this.controllerUser.signOut(request, response);
         });
 
+        this.router.post('/user/create', async (request, response) => {
+            await this.controllerUser.create(request, response);
+        });
+
         this.router.get('/users', authentication.required(), async (request, response) => {
             await this.controllerUser.getUsers(request, response);
         });
