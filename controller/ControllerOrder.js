@@ -6,19 +6,29 @@ import {DeliveryType} from "../service/order/DeliveryType";
 import {PaymentType} from "../service/order/PaymentType";
 
 export class ControllerOrder {
-    constructor(storeShoppingBasket, storeSession) {
+    constructor(storeShoppingBasket, storeSession, storeUser) {
         this.storeShoppingBasket = storeShoppingBasket;
         this.storeSession = storeSession;
         this.storeOrder = new StoreOrder();
+        this.storeUser = storeUser;
         this.LOGGER_NAME = 'ControllerOrder';
     }
 
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
-            const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+            let ok = (shoppingBasket ? true : false);
+            let session, user;
 
-            if (shoppingBasket != null && session != null) {
+            if (ok) {
+                session = await this.storeSession.getSessionByToken(request.headers.authorization);
+                ok = (session ? true : false);
+            }
+            if (ok) {
+                user = await this.storeUser.getUser(session.userID);
+                ok = (user ? true : false);
+            }
+            if (ok) {
                 let order = await this.storeOrder.create(shoppingBasket);
                 const orderLatest = await this.storeOrder.getLatestFromUser(session.userID);
                 if (orderLatest != null) {
@@ -27,11 +37,16 @@ export class ControllerOrder {
                     order.deliveryType = orderLatest.deliveryType;
                     order.paymentType = orderLatest.paymentType;
                     order.state = 'NEW COPY OF';
-                    await this.storeOrder.update(order);
+
                 }
+                order.deliveryAddress.surname = user.firstname; // set data from user
+                order.deliveryAddress.givenname = user.name; // set data from user
+                order.contactData.email = user.email; // set data from user
+                await this.storeOrder.update(order);
                 response.json(order);
                 Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
-            } else {
+            }
+            else {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'shoppingBasket / user not found');
                 response.status(404).send('shoppingBasket not found');
             }

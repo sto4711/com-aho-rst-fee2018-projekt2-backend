@@ -14,6 +14,10 @@ export class ControllerUser {
         return this.storeSession;
     }
 
+    getStoreUser()   {
+        return this.storeUser;
+    }
+
    async signIn(request, response) {
         try {
             const userID = await this.storeUser.getUserID(request.body.email, request.body.pwd);
