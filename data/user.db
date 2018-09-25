@@ -1,6 +1,8 @@
 {"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"aho","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
 {"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"rst","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"","firstname":"","email":"","pwd":"","type":"customer","_id":"IY5O00tke5kvsEO3"}
+{"name":"Fritz","firstname":"Muster","email":"fritz.muster@gmail.com","pwd":"rst","type":"customer","_id":"Mz4emTstvbHBswlq"}
 {"name":"r","firstname":"d","email":"roland2.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"SscoYRAV0sUfZepI"}
+{"name":"Hans","firstname":"Muster","email":"hans.muster@gmail.com","pwd":"rst","type":"customer","_id":"YkBVKS80d55JCLqL"}
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"smull4DUVhj9Z9ir"}
-{"name":"Hans","firstname":"Muster","email":"hans.muster@gmail.com","pwd":"rst","type":"customer","_id":"YkBVKS80d55JCLqL"}
