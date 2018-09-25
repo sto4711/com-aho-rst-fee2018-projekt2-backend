@@ -44,11 +44,9 @@ class WebshopBackend {
             next();
         });
 
-        //Trace URL
+        //Trace URL Backend only
         this.app.use(async (request, response, next) => {
-            if (!request.url.endsWith('jpg') && request.method !== 'OPTIONS') {
-                Logger.traceMessage(this.LOGGER_NAME, 'traceURL', request.url + '     (' + request.method + ')');
-            }
+            this.traceURL_Backend(request);
             next();
         });
 
@@ -61,6 +59,13 @@ class WebshopBackend {
         Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend  Webshop : http://localhost:3000/webshop');
         Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Frontend Webshop : http://localhost:3000/frontend');
     }
+
+    traceURL_Backend(request) {
+        if (request.path.startsWith('/webshop') && request.method !== 'OPTIONS') {
+            Logger.traceMessage('WebshopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
+        }
+    }
+
 }
 
 new WebshopBackend();
