@@ -38,6 +38,7 @@ export class StoreOrder {
      }
 
     async update(order) {
+        console.log(order.state);
         await this.dbMananger_Order.update(order._id, order);
         Logger.traceMessage(this.LOGGER_NAME, 'update', 'ok');
     }
