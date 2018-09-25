@@ -38,7 +38,7 @@ export class ControllerUser {
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
-                response.status(401).send('user or pwd nok');
+                response.status(404).send('user or pwd nok');
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed -> ' + e);
@@ -56,7 +56,7 @@ export class ControllerUser {
                 response.json(user);
             }else   {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'user already exists');
-                response.status(401).send('user already exists');
+                response.status(404).send('user already exists');
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);

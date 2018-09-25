@@ -50,7 +50,7 @@ class WebshopBackend {
             next();
         });
 
-        this.app.use(express.static(path.resolve('public')));                   // images, etc
+        this.app.use(express.static(path.resolve('public')));                   // images, frontend
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());
         this.app.use('/webshop', this.routerWebshop.getRouter());               // backend      -> http://localhost:3000/webshop
