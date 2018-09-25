@@ -32,6 +32,10 @@ export class DatabaseMananger_NEDB {
         return await this.db.remove({}, {multi: true});
     }
 
+    async remove(id) {
+        return await this.db.remove({"_id":id},{});
+    }
+
     async logAllItems() {
         const all = await this.find();
         for (let i = 0; i < all.length; i++) {

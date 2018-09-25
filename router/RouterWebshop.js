@@ -104,8 +104,13 @@ export class RouterWebshop {
         this.router.patch('/order/state', authentication.required(), authentication.required(), async (request, response) => {
             await this.controllerOrder.changeState(request, response);
         });
+
         this.router.patch('/order/update', async (request, response) => {
             await this.controllerOrder.updateOrder(request, response);
+        });
+
+        this.router.patch('/order/delete-order', async (request, response) => {
+            await this.controllerOrder.deleteOrder(request, response);
         });
     }
 

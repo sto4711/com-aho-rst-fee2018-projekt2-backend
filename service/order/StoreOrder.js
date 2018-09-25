@@ -38,11 +38,14 @@ export class StoreOrder {
      }
 
     async update(order) {
-        console.log(order.state);
-        await this.dbMananger_Order.update(order._id, order);
+         await this.dbMananger_Order.update(order._id, order);
         Logger.traceMessage(this.LOGGER_NAME, 'update', 'ok');
     }
 
+    async delete(order) {
+         await this.dbMananger_Order.remove(order._id);
+        Logger.traceMessage(this.LOGGER_NAME, 'remove', 'ok');
+    }
 
 
 
