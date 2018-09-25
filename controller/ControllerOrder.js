@@ -66,6 +66,16 @@ export class ControllerOrder {
         }
     }
 
+    async updateOrder(request, response) {
+        try {
+            response.json(await this.storeOrder.update(request.body));
+            Logger.traceMessage(this.LOGGER_NAME, 'updateOrder', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'updateOrder', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
     async getOrderAll(request, response) {
         try {
             response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
