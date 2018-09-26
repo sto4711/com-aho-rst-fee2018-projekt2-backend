@@ -99,7 +99,12 @@
   "OOPS-SOMETHING-WENT-WRONG": "oops something went wrong",
   "WRONG-EMAIL-OR-PASSWORD": "wrong email or password",
   "EMAIL-ALREADY-TAKEN": "email already taken",
-
+  "ORDER-STATUS-UPDATED": "order state updated",
+  "ORDER-UPDATE-SAVE": "order is saved",
+  "ORDER-IS-DELETED": "order is deleted",
+  "ORDER-SAVE": "save order",
+  "ORDER-DELETE": "delete order",
+  "BACKEND-SERVER-IS-UNAVAILABLE-PLEASE-TRY-AGAIN-LATER": "backend server is unavailable please try again later",
 
   "RESET": "reset",
   "ORDER-NOW": "order now",
