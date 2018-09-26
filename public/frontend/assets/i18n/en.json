@@ -104,6 +104,7 @@
   "ORDER-IS-DELETED": "order is deleted",
   "ORDER-SAVE": "save order",
   "ORDER-DELETE": "delete order",
+  "TO-DELETE-THIS-ORDER-FOR-SURE": "are you sure to delete this order?",
   "BACKEND-SERVER-IS-UNAVAILABLE-PLEASE-TRY-AGAIN-LATER": "backend server is unavailable please try again later",
 
   "RESET": "reset",

@@ -49,14 +49,18 @@ export class ControllerUser {
     async create(request, response) {
         try {
             const userID = await this.storeUser.getUserID_ByMail(request.body.email);
+            let session;
             if(!userID)    {
                 let user = request.body;
                 user.type = 'customer';
                 await this.storeUser.create(user);
-                response.json(user);
-            }else   {
+                const userID = await this.storeUser.getUserID(user.email, user.pwd);
+                const token = await this.storeSession.createSession(userID);
+                response.json({value: token});
+            }
+            else   {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'user already exists');
-                response.status(404).send('user already exists');
+                response.status(400).send('user already exists');
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'create', 'failed -> ' + e);
@@ -69,7 +73,7 @@ export class ControllerUser {
         try {
             if (token == null) {
                 Logger.traceError(this.LOGGER_NAME, 'signOut', 'no token in header');
-                response.status(404).send('no token in header');
+                response.status(400).send('no token in header');
             } else {
                 const session = await this.storeSession.getSessionByToken(token);
                 if (session == null) {
