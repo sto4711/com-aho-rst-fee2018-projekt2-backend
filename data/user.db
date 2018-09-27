@@ -1,5 +1,6 @@
 {"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"aho","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
 {"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"rst","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"james2","firstname":"bond","email":"j@mi6.gb","pwd":"rttrr","type":"customer","_id":"4yKXvGcdx19LroaD"}
 {"name":"","firstname":"","email":"","pwd":"","type":"customer","_id":"IY5O00tke5kvsEO3"}
 {"name":"Fritz","firstname":"Muster","email":"fritz.muster@gmail.com","pwd":"rst","type":"customer","_id":"Mz4emTstvbHBswlq"}
 {"name":"r","firstname":"d","email":"roland2.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"SscoYRAV0sUfZepI"}
@@ -8,4 +9,3 @@
 {"name":"James","firstname":"Bond","email":"james@mi6.gb","pwd":"james","type":"customer","_id":"cTZ7vgXuRrEq0G1M"}
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"smull4DUVhj9Z9ir"}
-{"name":"james2","firstname":"bond","email":"j@mi6.gb","pwd":"rttrr","type":"customer","_id":"4yKXvGcdx19LroaD"}
