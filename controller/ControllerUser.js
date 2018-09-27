@@ -48,13 +48,13 @@ export class ControllerUser {
 
     async create(request, response) {
         try {
-            const userID = await this.storeUser.getUserID_ByMail(request.body.email);
+            let userID = await this.storeUser.getUserID_ByMail(request.body.email);
             let session;
             if(!userID)    {
                 let user = request.body;
                 user.type = 'customer';
                 await this.storeUser.create(user);
-                const userID = await this.storeUser.getUserID(user.email, user.pwd);
+                userID = await this.storeUser.getUserID(user.email, user.pwd);
                 const token = await this.storeSession.createSession(userID);
                 response.json({value: token});
             }
