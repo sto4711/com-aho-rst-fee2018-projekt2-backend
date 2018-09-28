@@ -13,26 +13,19 @@ export class StoreUser {
         return (userArr.length === 0 ? null : userArr[0]);
     }
 
-    async getUserID_ByMail(email) {
-        const userArr = await this.dbMananger_User.find({"email": email});
+    async getUser_ByMailPwd(email, pwd) {
+        const userArr = await this.dbMananger_User.find({"email": email, "pwd": pwd});
         return (userArr.length === 0 ? null : userArr[0]);
     }
-
 
     async getUsers() {
         return await this.dbMananger_User.find( /* {"name": ""} */ );
     }
 
-    async getUserID(email, pwd) {
-        const userArr = await this.dbMananger_User.find({"email": email, "pwd": pwd});
-        return (userArr.length === 0 ? null : userArr[0]._id);
-    }
-
-
     async create(user) {
-        const shoppingBasket = await this.dbMananger_User.insert(user);
+        const userNew = await this.dbMananger_User.insert(user);
         Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
-        return shoppingBasket;
+        return userNew;
     }
 
 
