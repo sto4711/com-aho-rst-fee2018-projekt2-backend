@@ -28,7 +28,8 @@ export class ControllerShoppingBasket {
             const shoppingBasket = await this.storeShoppingBasket.get(request.query.id);
             if (shoppingBasket === null) {
                 Logger.traceError(this.LOGGER_NAME, 'get', 'shoppingBasketID"' + request.query.id + '" failed, no basket found ->');
-                response.status(404).send('ShoppingBasket not found');
+                response.json(await this.storeShoppingBasket.create());
+                // response.status(404).send('ShoppingBasket not found');
             } else {
                 response.json(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'get', 'ok');
