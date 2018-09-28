@@ -24,7 +24,6 @@ export class StoreUser {
 
     async create(user) {
         const userNew = await this.dbMananger_User.insert(user);
-        Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
         return userNew;
     }
 

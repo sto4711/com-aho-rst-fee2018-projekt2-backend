@@ -5,5 +5,6 @@ export class User  {
         this.email =  email;
         this.pwd =  pwd;
         this.type =  type;
+        this.token =  null;
     }
 }

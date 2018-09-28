@@ -23,18 +23,17 @@ export class ControllerUser {
             const user = await this.storeUser.getUser_ByMailPwd(request.body.email, request.body.pwd);
             if (user != null) {
                 const session = await this.storeSession.getSessionByUser(user._id);
-                let token = null;
                 if (session == null) {
-                    token = await this.storeSession.createSession(user._id);
+                    user.token = await this.storeSession.createSession(user._id);
                     Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
-                    token = await this.storeSession.renewSession(session._id);
+                    user.token = await this.storeSession.renewSession(session._id);
                     Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
                 } else {
-                    token = session.token;
+                    user.token = session.token;
                 }
                 Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" ok');
-                response.json({value: token});
+                response.json(user);
             }
             else {
                 Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
@@ -56,7 +55,9 @@ export class ControllerUser {
                 user.type = 'customer';
                 user = await this.storeUser.create(user);
                 const token = await this.storeSession.createSession(user._id);
-                response.json({value: token});
+                user.token = token;
+                Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
+                response.json(user);
             }
             else   {
                 Logger.traceError(this.LOGGER_NAME, 'create', 'user already exists');
