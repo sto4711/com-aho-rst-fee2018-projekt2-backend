@@ -20,12 +20,12 @@ export class ControllerUser {
 
    async signIn(request, response) {
         try {
-            const userID = await this.storeUser.getUserID(request.body.email, request.body.pwd);
-            if (userID != null) {
-                const session = await this.storeSession.getSessionByUser(userID);
+            const user = await this.storeUser.getUser_ByMailPwd(request.body.email, request.body.pwd);
+            if (user != null) {
+                const session = await this.storeSession.getSessionByUser(user._id);
                 let token = null;
                 if (session == null) {
-                    token = await this.storeSession.createSession(userID);
+                    token = await this.storeSession.createSession(user._id);
                     Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
                     token = await this.storeSession.renewSession(session._id);
@@ -48,14 +48,14 @@ export class ControllerUser {
 
     async create(request, response) {
         try {
-            let userID = await this.storeUser.getUserID_ByMail(request.body.email);
+            let user = await this.storeUser.getUser_ByMailPwd(request.body.email, request.body.pwd);
             let session;
-            if(!userID)    {
-                let user = request.body;
+            if(!user)    {
+                debugger;
+                user = request.body;
                 user.type = 'customer';
-                await this.storeUser.create(user);
-                userID = await this.storeUser.getUserID(user.email, user.pwd);
-                const token = await this.storeSession.createSession(userID);
+                user = await this.storeUser.create(user);
+                const token = await this.storeSession.createSession(user._id);
                 response.json({value: token});
             }
             else   {
