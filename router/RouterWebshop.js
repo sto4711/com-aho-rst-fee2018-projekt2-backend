@@ -25,6 +25,10 @@ export class RouterWebshop {
             await this.controllerUser.create(request, response);
         });
 
+        this.router.get('/user', async (request, response) => {
+            await this.controllerUser.getUser(request, response);
+        });
+
         this.router.get('/users', authentication.required(), async (request, response) => {
             await this.controllerUser.getUsers(request, response);
         });

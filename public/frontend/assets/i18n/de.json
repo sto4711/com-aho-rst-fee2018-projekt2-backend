@@ -95,6 +95,7 @@
   "DISCARD-CHANGES": "Änderungen verwerfen",
   "AN-ERROR-HAS-OCCURRED": "Es ist ein Fehler aufgetreten",
   "LOGIN-SUCCESSFUL": "Login war erfolgreich",
+  "LOGOUT-SUCCESSFUL": "Logout war erfolgreich",
   "ACCOUNT-CREATED": "Konto erstellt",
   "OOPS-SOMETHING-WENT-WRONG": "Ups, irgendwas lief schief",
   "WRONG-EMAIL-OR-PASSWORD": "Falsche Email oder Password",

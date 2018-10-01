@@ -95,6 +95,7 @@
   "DISCARD-CHANGES": "discard changes",
   "AN-ERROR-HAS-OCCURRED": "an error has occurred",
   "LOGIN-SUCCESSFUL": "login successful",
+  "LOGOUT-SUCCESSFUL": "logout successful",
   "ACCOUNT-CREATED": "account created",
   "OOPS-SOMETHING-WENT-WRONG": "oops something went wrong",
   "WRONG-EMAIL-OR-PASSWORD": "wrong email or password",

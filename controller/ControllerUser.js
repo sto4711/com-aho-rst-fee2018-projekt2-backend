@@ -111,6 +111,28 @@ export class ControllerUser {
         return hasNotExpired;
     }
 
+    async getUser(request, response)  {
+        try {
+            let user = await this.storeUser.getUser(request.query.id);
+            const session = await this.storeSession.getSessionByUser(user._id);
+            if(user && session) {
+                user.token = session.token;
+                Logger.traceMessage(this.LOGGER_NAME, 'getUser', 'ok');
+                response.json(user);
+            }else if(user){
+                user.token = await this.storeSession.createSession(user._id);
+                Logger.traceMessage(this.LOGGER_NAME, 'getUser', 'no session found, new created');
+                response.json(user);
+            }else{
+                Logger.traceError(this.LOGGER_NAME, 'getUser', 'user not found ' + request.query.id);
+                response.status(404).send('user not found');
+            }
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'getUser', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
     async getUsers(request, response)  {
         try {
             response.json(await this.storeUser.getUsers());

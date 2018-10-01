@@ -18,23 +18,29 @@ class WebshopBackend {
                 response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
                 response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
                 response.setHeader('Access-Control-Allow-Credentials', true);
-                response.setHeader('Content-Type', 'application/json; charset=utf-8');
+                //response.setHeader('Content-Type', 'application/json; charset=utf-8');
             }
-            else if (request.path.indexOf('.png') > 0) {
+            /*
+            else if (request.path.endsWith('.png')) {
                 response.setHeader("Content-Type", "image/png");
             }
-            else if (request.path.indexOf('.gif') > 0) {
+            else if (request.path.endsWith('.jpg')) {
+                response.setHeader("Content-Type", "image/jpeg");
+                debugger;
+            }
+            else if (request.path.endsWith('.gif')) {
                 response.setHeader("Content-Type", "image/gif");
             }
-            else if (request.path.indexOf('.css') > 0) {
+            else if (request.path.endsWith('.css')) {
                 response.setHeader("Content-Type", "text/css; charset=utf-8");
             }
-            else if (request.path.indexOf('.js') > 0) {
+            else if (request.path.endsWith('.js')) {
                 response.setHeader("Content-Type", "application/javascript; charset=utf-8");
             }
             else {
                 response.setHeader("Content-Type", "text/html; charset=utf-8");
             }
+            */
             next();
         });
 
