@@ -95,6 +95,7 @@
   "DISCARD-CHANGES": "discard changes",
   "AN-ERROR-HAS-OCCURRED": "an error has occurred",
   "LOGIN-SUCCESSFUL": "login successful",
+  "LOGIN-SUCCESSFUL-USER-HAS-CHANGED": "login ok (user has changed)",
   "LOGOUT-SUCCESSFUL": "logout successful",
   "ACCOUNT-CREATED": "account created",
   "OOPS-SOMETHING-WENT-WRONG": "oops something went wrong",
@@ -107,7 +108,6 @@
   "ORDER-DELETE": "delete order",
   "TO-DELETE-THIS-ORDER-FOR-SURE": "are you sure to delete this order?",
   "BACKEND-SERVER-IS-UNAVAILABLE-PLEASE-TRY-AGAIN-LATER": "backend server is unavailable please try again later",
-
   "RESET": "reset",
   "ORDER-NOW": "order now",
   "TO-CHECKOUT": "to checkout",

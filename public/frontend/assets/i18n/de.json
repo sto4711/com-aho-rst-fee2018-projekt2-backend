@@ -94,7 +94,8 @@
   "ORDER-DETAIL-TAKEN-OVER-FROM-LATEST-ORDER": "Bestelldetatils von letzter Bestellung übernommen",
   "DISCARD-CHANGES": "Änderungen verwerfen",
   "AN-ERROR-HAS-OCCURRED": "Es ist ein Fehler aufgetreten",
-  "LOGIN-SUCCESSFUL": "Login war erfolgreich",
+  "LOGIN-SUCCESSFUL": "Login ok",
+  "LOGIN-SUCCESSFUL-USER-HAS-CHANGED": "Login ok (Benutzer hat gewechselt)",
   "LOGOUT-SUCCESSFUL": "Logout war erfolgreich",
   "ACCOUNT-CREATED": "Konto erstellt",
   "OOPS-SOMETHING-WENT-WRONG": "Ups, irgendwas lief schief",
@@ -107,9 +108,6 @@
   "ORDER-SAVE": "Bestellung speichern",
   "ORDER-DELETE": "Bestellung löschen",
   "TO-DELETE-THIS-ORDER-FOR-SURE": "Diese Bestellung wirklich löschen?",
-
-
-
   "RESET": "zurücksetzen",
   "ORDER-NOW": "Jetzt bestellen",
   "TO-CHECKOUT": "Zur Kasse",
