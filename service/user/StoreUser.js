@@ -22,6 +22,11 @@ export class StoreUser {
         return await this.dbMananger_User.find( /* {"name": ""} */ );
     }
 
+    async update(user) {
+        const userUpdated = await this.dbMananger_User.update(user._id, user);
+        return userUpdated;
+    }
+
     async create(user) {
         const userNew = await this.dbMananger_User.insert(user);
         return userNew;
