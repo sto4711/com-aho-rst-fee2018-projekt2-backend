@@ -27,6 +27,9 @@ export class RouterWebshop {
         this.router.post('/user/updateUser', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
         });
+        this.router.post('/user/deleteUser', async (request, response) => {
+            await this.controllerUser.deleteUser(request, response);
+        });
 
         this.router.get('/user', async (request, response) => {
             await this.controllerUser.getUser(request, response);

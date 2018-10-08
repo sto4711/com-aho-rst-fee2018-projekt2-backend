@@ -72,9 +72,19 @@ export class ControllerUser {
     async updateUser(request, response) {
         try {
             response.json(await this.storeUser.update(request.body));
-            Logger.traceMessage(this.LOGGER_NAME, 'updateOrder', 'ok');
+            Logger.traceMessage(this.LOGGER_NAME, 'updateUser', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'updateOrder', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'updateUser', 'failed -> ' + e);
+            response.status(500).send('server error, contact support');
+        }
+    }
+
+    async deleteUser(request, response) {
+        try {
+            response.json(await this.storeUser.delete(request.body));
+            Logger.traceMessage(this.LOGGER_NAME, 'deleteUser', 'ok');
+        } catch (e) {
+            Logger.traceError(this.LOGGER_NAME, 'deleteUser', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }

@@ -26,6 +26,10 @@ export class StoreUser {
         const userUpdated = await this.dbMananger_User.update(user._id, user);
         return userUpdated;
     }
+    async delete(user) {
+        const userUpdated = await this.dbMananger_User.remove(user._id, user);
+        return userUpdated;
+    }
 
     async create(user) {
         const userNew = await this.dbMananger_User.insert(user);
