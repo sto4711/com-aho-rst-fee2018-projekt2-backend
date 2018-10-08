@@ -17,7 +17,7 @@ export class RouterWebshop {
             await this.controllerUser.signIn(request, response);
         });
 
-        this.router.post('/user/signOut', authentication.required(), async (request, response) => {
+        this.router.post('/user/signOut', async (request, response) => {
             await this.controllerUser.signOut(request, response);
         });
 
