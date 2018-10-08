@@ -13,11 +13,11 @@ export class RouterWebshop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
         this.controllerOrder = new ControllerOrder(this.controllerShoppingBasket.getStoreShoppingBasket(), this.controllerUser.getStoreSession(),this.controllerUser.getStoreUser());
 
-        this.router.post('/user/signIn', async (request, response) => {
+        this.router.post('/user/sign-in', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
 
-        this.router.post('/user/signOut', async (request, response) => {
+        this.router.post('/user/sign-out', async (request, response) => {
             await this.controllerUser.signOut(request, response);
         });
 

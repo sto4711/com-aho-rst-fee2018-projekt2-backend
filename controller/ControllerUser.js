@@ -70,21 +70,15 @@ export class ControllerUser {
     }
 
     async signOut(request, response) {
-        const token = request.headers.authorization;
         try {
-            if (token == null) {
-                Logger.traceError(this.LOGGER_NAME, 'signOut', 'no token in header');
-                response.status(400).send('no token in header');
+            const session = await this.storeSession.getSessionByUser(request.body.userId);
+            if (session == null) {
+                Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'no session found for token "' + token + '" ok');
+                response.status(404).send('no session found');
             } else {
-                const session = await this.storeSession.getSessionByToken(token);
-                if (session == null) {
-                    Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'no session found for token "' + token + '" ok');
-                    response.status(404).send('no session found');
-                } else {
-                    await this.storeSession.updateSessionTokenDate(session._id, new Date(Date.now() - this.HOUR));
-                    Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'ok');
-                    response.json({status: 'ok'});
-                }
+                await this.storeSession.updateSessionTokenDate(session._id, new Date(Date.now() - this.HOUR));
+                Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'ok');
+                response.json({status: 'ok'});
             }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'signOut', 'token"' + token + '" failed -> ' + e);
