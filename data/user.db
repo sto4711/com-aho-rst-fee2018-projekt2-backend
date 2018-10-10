@@ -1,12 +1,13 @@
 {"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"aho","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
 {"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"rst","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
-{"name":"jkjkjkj","firstname":"jkjkjk","email":"jkjkjkjk@fff.cov","pwd":"rst","type":"customer","_id":"0hetp3IY5iTbAAQT"}
+{"name":"jkjkjkjd334","firstname":"jkjkjk4","email":"jkjkjkjk4@fff.cov","pwd":"rst4","type":"customer4","_id":"0hetp3IY5iTbAAQT"}
 {"name":"gdd","firstname":"gdd","email":"g.m@cc.chg","pwd":"rst","type":"customer","_id":"2Rsx7qXz52va8d3X"}
 {"name":"james2","firstname":"bond","email":"j@mi6.gb","pwd":"rttrr","type":"customer","_id":"4yKXvGcdx19LroaD"}
 {"name":"mamma","firstname":"mia","email":"hhghg@hjhjh.com","pwd":"com","type":"customer","_id":"5qKsO9e5tP8OoIEG"}
 {"name":"jkjkjkj","firstname":"jkjkjk","email":"jkjkjkjk@fff.com","pwd":"rst","type":"customer","_id":"GF3UJKsO2uiZnAeo"}
 {"name":"","firstname":"","email":"","pwd":"","type":"customer","_id":"IY5O00tke5kvsEO3"}
 {"name":"Peter","firstname":"Müller","email":"p.m@vvv.com","pwd":"rst","type":"customer","_id":"IfEycFuE3t6HSW5T"}
+{"name":"Barbara","firstname":"Stauffer","email":"barbara.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"J4njA6ssaKFMktr9"}
 {"name":"eeeee","firstname":"zzzzz","email":"rs.fff@ffff.ch","pwd":"rst","type":"customer","_id":"Jg7ekr79oeMObfgN"}
 {"name":"hhh","firstname":"hhhh","email":"hhhhh@jjj.ch","pwd":"sto","type":"customer","_id":"K9z9LXKXv9XrrqUQ"}
 {"name":"iron","firstname":"man","email":"iron2.man@ff.com","pwd":"sto","type":"customer","_id":"KxDGlp1usWQu9EGK"}
@@ -27,4 +28,7 @@
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"rst","type":"customer","_id":"smull4DUVhj9Z9ir"}
 {"name":"zuzuzuzu","firstname":"zuzuzu","email":"zuzuz@ghghgh.ch","pwd":"sto","type":"customer","_id":"tWJLLqygGn8jKsvx"}
 {"name":"tztztz","firstname":"tztztz","email":"tztztz@ddd.ch","pwd":"jjjj","type":"customer","_id":"yguCsodwI5J6fHKs"}
-{"name":"uiuiu","firstname":"uiuiui","email":"uiuiui@hhjhj.ch","pwd":"rst","type":"customer","_id":"zuwcXcJptfO0f7a6"}
+{"name":"uiuiu3","firstname":"uiuiui3","email":"uiuiui@hhjhj.ch","pwd":"rst","type":"customer","_id":"zuwcXcJptfO0f7a6"}
+{"$$deleted":true,"_id":"zuwcXcJptfO0f7a6"}
+{"$$deleted":true,"_id":"yguCsodwI5J6fHKs"}
+{"$$deleted":true,"_id":"tWJLLqygGn8jKsvx"}

@@ -13,16 +13,22 @@ export class RouterWebshop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
         this.controllerOrder = new ControllerOrder(this.controllerShoppingBasket.getStoreShoppingBasket(), this.controllerUser.getStoreSession(),this.controllerUser.getStoreUser());
 
-        this.router.post('/user/signIn', async (request, response) => {
+        this.router.post('/user/sign-in', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
 
-        this.router.post('/user/signOut', authentication.required(), async (request, response) => {
+        this.router.post('/user/sign-out', async (request, response) => {
             await this.controllerUser.signOut(request, response);
         });
 
         this.router.post('/user/create', async (request, response) => {
             await this.controllerUser.create(request, response);
+        });
+        this.router.post('/user/updateUser', async (request, response) => {
+            await this.controllerUser.updateUser(request, response);
+        });
+        this.router.post('/user/deleteUser', async (request, response) => {
+            await this.controllerUser.deleteUser(request, response);
         });
 
         this.router.get('/user', async (request, response) => {
