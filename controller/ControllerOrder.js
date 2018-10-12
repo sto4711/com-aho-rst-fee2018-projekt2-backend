@@ -69,8 +69,7 @@ export class ControllerOrder {
 
     async getOrdersByUser(request, response) {
         try {
-           // response.json(await this.storeOrder.getOrdersByUser(request.query.id));
-            response.json(await this.storeOrder.getOrdersByUser({}));
+            response.json(await this.storeOrder.getOrdersByUser(request.query.userId));
             Logger.traceMessage(this.LOGGER_NAME, 'getOrdersByUser', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getOrdersByUser', 'failed -> ' + e);
