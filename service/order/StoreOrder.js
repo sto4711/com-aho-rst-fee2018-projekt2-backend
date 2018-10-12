@@ -37,6 +37,11 @@ export class StoreOrder {
         return await this.dbMananger_Order.find(filter, {"orderDate": this.dbMananger_Order.DESCENDING}, limit);
      }
 
+    async getOrdersByUser(userID) {
+        const orderArr = await this.dbMananger_Order.find('',{"userID": "00crcwDLlQ3Xmbbb"},'');
+        return (orderArr.length === 0 ? null : orderArr[0]);
+    }
+
     async update(order) {
          await this.dbMananger_Order.update(order._id, order);
         Logger.traceMessage(this.LOGGER_NAME, 'update', 'ok');

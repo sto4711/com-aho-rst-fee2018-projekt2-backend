@@ -43,6 +43,10 @@ export class RouterWebshop {
             await response.json({status: 'not yet implemented'});
         });
 
+        this.router.get('/user-orders', async (request, response) => {
+            await this.controllerOrder.getOrdersByUser(request, response);
+        });
+
         this.router.get('/articles', async (request, response) => {
             await this.controllerArticle.getArticles(request, response);
         });
@@ -93,7 +97,7 @@ export class RouterWebshop {
 
         this.router.get('/order-all', async (request, response) => {
             await this.controllerOrder.getOrderAll(request, response);
-    });
+        });
 
         this.router.patch('/order/change-delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
