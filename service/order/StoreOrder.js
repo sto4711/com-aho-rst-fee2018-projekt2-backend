@@ -38,7 +38,7 @@ export class StoreOrder {
      }
 
     async getOrdersByUser(userId) {
-         return await this.dbMananger_Order.find({"userID": userId});
+         return await this.dbMananger_Order.find({"userID": userId},{"orderDate": this.dbMananger_Order.DESCENDING});
 
     }
 
