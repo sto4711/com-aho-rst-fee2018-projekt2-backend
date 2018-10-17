@@ -162,13 +162,13 @@ export class ControllerOrder {
             if (ok) {
                 order.userID = session.userID;
                 order.state = request.body.state;
-                if (order.state === 'APPROVED') {
-                    const shoppingBasket = await this.storeShoppingBasket.get(order.shoppingBasket._id);
-                    ok = (order !== null && shoppingBasket !== null ? true : false);
-                    if (ok) {
-                        order.shoppingBasket = shoppingBasket;
-                        Logger.traceMessage(this.LOGGER_NAME, 'changeState', 'APPROVED, shoppingBasket synced');
-                    }
+            }
+            if (order.state === 'APPROVED') {
+                const shoppingBasket = await this.storeShoppingBasket.get(order.shoppingBasket._id);
+                ok = (shoppingBasket !== null ? true : false);
+                if (ok) {
+                    order.shoppingBasket = shoppingBasket;
+                    Logger.traceMessage(this.LOGGER_NAME, 'changeState', 'APPROVED, shoppingBasket synced');
                 }
             }
             if (ok) {
