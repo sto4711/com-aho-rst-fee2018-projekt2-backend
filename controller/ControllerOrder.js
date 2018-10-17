@@ -15,7 +15,6 @@ export class ControllerOrder {
     }
 
     async create(request, response) {
-        debugger;
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
             let ok = (shoppingBasket ? true : false);
@@ -87,6 +86,7 @@ export class ControllerOrder {
             response.status(500).send('server error, contact support');
         }
     }
+
     async deleteOrder(request, response) {
         try {
             response.json(await this.storeOrder.delete(request.body));
@@ -157,26 +157,17 @@ export class ControllerOrder {
     async changeState(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
-            let ok = (order != null ? true : false);
-
+            const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+            let ok = (order !== null && session !== null ? true : false);
             if (ok) {
-                const session = await this.storeSession.getSessionByToken(request.headers.authorization);
                 order.userID = session.userID;
-                ok = (order.userID != null ? true : false);
-            }
-            if (ok) {
-                debugger;
                 order.state = request.body.state;
                 if (order.state === 'APPROVED') {
                     const shoppingBasket = await this.storeShoppingBasket.get(order.shoppingBasket._id);
-
-                    if (order != null && shoppingBasket != null) {
+                    ok = (order !== null && shoppingBasket !== null ? true : false);
+                    if (ok) {
                         order.shoppingBasket = shoppingBasket;
-                        await this.storeOrder.update(order);
                         Logger.traceMessage(this.LOGGER_NAME, 'changeState', 'APPROVED, shoppingBasket synced');
-                    }
-                    else {
-                        ok = false;
                     }
                 }
             }
@@ -194,6 +185,5 @@ export class ControllerOrder {
             response.status(500).send('server error, contact support');
         }
     }
-
 
 }
