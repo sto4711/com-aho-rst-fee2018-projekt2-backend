@@ -50,7 +50,6 @@ export class ControllerUser {
             let user = await this.storeUser.getUser_ByMailPwd(request.body.email, request.body.pwd);
             let session;
             if(!user)    {
-                debugger;
                 user = request.body;
                 user.type = 'customer';
                 user = await this.storeUser.create(user);
@@ -91,6 +90,7 @@ export class ControllerUser {
 
     async signOut(request, response) {
         try {
+            const token = request.headers.authorization;
             const session = await this.storeSession.getSessionByUser(request.body.userId);
             if (session == null) {
                 Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'no session found for token "' + token + '" ok');
@@ -149,12 +149,24 @@ export class ControllerUser {
 
     async getUsers(request, response)  {
         try {
-            response.json(await this.storeUser.getUsers());
-            Logger.traceMessage(this.LOGGER_NAME, 'getUsers', 'ok');
+            const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+            const user = await this.storeUser.getUser(session.userID);
+            const isAdmin = (user.type === 'admin'? true:false);
+            if(isAdmin)    {
+                response.json(await this.storeUser.getUsers());
+                Logger.traceMessage(this.LOGGER_NAME, 'getUsers', 'ok');
+            }
+            else    {
+                Logger.traceError(this.LOGGER_NAME, 'getUsers', 'user has not role "admin"');
+                response.status(404).send('user has not role "admin"');
+            }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getUsers', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
+
+
+
 
 }

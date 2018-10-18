@@ -99,8 +99,18 @@ export class ControllerOrder {
 
     async getOrderAll(request, response) {
         try {
-            response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
-            Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
+            const session = await this.storeSession.getSessionByToken(request.headers.authorization);
+            const user = await this.storeUser.getUser(session.userID);
+            const isAdmin = (user.type === 'admin'? true:false);
+
+            if(isAdmin)    {
+                response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
+                Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
+            }
+            else    {
+                Logger.traceError(this.LOGGER_NAME, 'getOrderAll', 'user has not role "admin"');
+                response.status(404).send('user has not role "admin"');
+            }
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getAllOrders', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
