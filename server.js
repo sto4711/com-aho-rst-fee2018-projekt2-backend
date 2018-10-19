@@ -4,6 +4,7 @@ import path from 'path';
 import {Logger} from './commons/Logger';
 import {RouterWebshop} from './router/RouterWebshop';
 import {RouterWebshopFrontend} from './router/RouterWebshopFrontend';
+import {StoreUser} from "./service/user/StoreUser";
 
 class WebshopBackend {
     constructor() {
@@ -26,7 +27,6 @@ class WebshopBackend {
             }
             else if (request.path.endsWith('.jpg')) {
                 response.setHeader("Content-Type", "image/jpeg");
-                debugger;
             }
             else if (request.path.endsWith('.gif')) {
                 response.setHeader("Content-Type", "image/gif");
@@ -74,4 +74,5 @@ class WebshopBackend {
 
 }
 
+//new StoreUser().hashExistingPWDs().then();
 new WebshopBackend();

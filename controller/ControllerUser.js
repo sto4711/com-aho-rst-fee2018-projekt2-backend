@@ -1,6 +1,7 @@
 import {StoreSession} from '../service/user/StoreSession';
 import {StoreUser} from '../service/user/StoreUser';
 import {Logger} from '../commons/Logger';
+import {CryptoMananger} from "../commons/CryptoMananger";
 
 export class ControllerUser {
     constructor() {
@@ -52,6 +53,7 @@ export class ControllerUser {
             if(!user)    {
                 user = request.body;
                 user.type = 'customer';
+                user.pwd = await CryptoMananger.createHash(user.pwd);
                 user = await this.storeUser.create(user);
                 const token = await this.storeSession.createSession(user._id);
                 user.token = token;

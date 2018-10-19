@@ -1,10 +1,11 @@
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
-import {ShoppingBasket} from "../shopping-basket/ShoppingBasket";
 import {Logger} from "../../commons/Logger";
+import {CryptoMananger} from "../../commons/CryptoMananger";
 
 
 export class StoreUser {
     constructor() {
+        this.LOGGER_NAME = 'StoreUser';
         this.dbMananger_User = new DatabaseMananger_NEDB("data/user.db");
     }
 
@@ -14,18 +15,27 @@ export class StoreUser {
     }
 
     async getUser_ByMailPwd(email, pwd) {
-        const userArr = await this.dbMananger_User.find({"email": email, "pwd": pwd});
-        return (userArr.length === 0 ? null : userArr[0]);
+        const userArr = await this.dbMananger_User.find({"email": email});
+        for (let i = 0; i < userArr.length; i++) {
+            const user = userArr[i];
+            const hasSamePwd = await CryptoMananger.compare(pwd, user.pwd);
+            if(hasSamePwd)    {
+                user.pwd = 'XXX';
+                return user;
+            }
+        }
+        return null; // nothing found
     }
 
     async getUsers() {
-        return await this.dbMananger_User.find( /* {"name": ""} */ );
+        return await this.dbMananger_User.find(/* {"name": ""} */);
     }
 
     async update(user) {
         const userUpdated = await this.dbMananger_User.update(user._id, user);
         return userUpdated;
     }
+
     async delete(user) {
         const userUpdated = await this.dbMananger_User.remove(user._id, user);
         return userUpdated;
@@ -36,6 +46,17 @@ export class StoreUser {
         return userNew;
     }
 
-
+    async hashExistingPWDs() {
+        const userArr = await this.dbMananger_User.find();
+        for (let i = 0; i < userArr.length; i++) {
+            let user = userArr[i];
+            let pwd = user.pwd;
+            const pwdHashed = await CryptoMananger.createHash(pwd);
+            user.pwd = pwdHashed;
+            await this.update(user);
+            Logger.traceMessage(this.LOGGER_NAME, 'hashExistingPWDs', 'next pwd encrypted & stored into database');
+        }
+        Logger.traceMessage(this.LOGGER_NAME, 'hashExistingPWDs', 'start');
+    }
 
 }
