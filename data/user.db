@@ -14,6 +14,7 @@
 {"name":"uuuuuuuu","firstname":"uuuuuuuuu","email":"uuuuuuu2@ddd.ch","pwd":"$2b$10$/KZBPPs2cw.qYlUA9FOcvOA3gYSP67lJhCo93CnJoCY7TB1zg5/FW","type":"customer","_id":"M7dVOrKQJFqfBEjq"}
 {"name":"Fritz","firstname":"Muster","email":"fritz.muster@gmail.com","pwd":"$2b$10$mmIUbK34mtSBBZ0c9LSdOOBXQ8C8iCJXH1kzwt5bKSo3AKcwxQ1QS","type":"customer","_id":"Mz4emTstvbHBswlq"}
 {"name":"zzzz","firstname":"ttttt","email":"tztztz@jkjkj.com","pwd":"$2b$10$wZSX7vA1ffYS0FxIEtj3xupfchAhYv/n/vaAtEH3adsRq.ZzP0Q66","type":"customer","_id":"P1023tFoxXpVM8gf"}
+{"name":"test","firstname":"test","email":"roland4.stauffer@gmail.com","pwd":"$2b$10$nb.rrO2/LeEaMh14I7EEieJYKxsYmuM6YnOzbpPNsDewHWX4LW7dS","type":"customer","_id":"PiypenzROPcsJWj9"}
 {"name":"r","firstname":"d","email":"roland2.stauffer@gmail.com","pwd":"$2b$10$l2oo8hDIIt.CDTOvALZQp.sEKkFXfWEWfRAcYfKQb1WQ6qP0SJpEW","type":"customer","_id":"SscoYRAV0sUfZepI"}
 {"name":"iron","firstname":"man","email":"iron.man@ff.com","pwd":"$2b$10$2iHK2eUEjjyxDJSMmSe/C.ebQM/u/I77hi98t68kCqSH0pcgw2v7C","type":"customer","_id":"Ud84d9OJ2QJ0D5L5"}
 {"name":"remy","firstname":"scherrer","email":"rscherrer@zfv.ch","pwd":"$2b$10$v6.EHHo87e/djfbN70laD.DP6AyuagAPFNx/EwEIVSRYrsd8f3bNK","type":"customer","_id":"VBTJx0cFfBJGYpRu"}
@@ -27,4 +28,3 @@
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"$2b$10$gSOA5AJy.s9bsjD8KGud/OpO8M.6dYpRPgBpgxYCwkZ.cA8IEsCFK","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"Andre","firstname":"Stauffer","email":"andre.stauffer@gmail.com","pwd":"$2b$10$lDcMdZ1adGBtJ.LFC1VMseeFvxKaHNEXEhOb7As02XujwzIF1Dy0q","type":"customer","_id":"skEikQyNVutvU8XB"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"$2b$10$OdEoCRyKTfBKoGFvwC6ASO6roAfRkU72/vGUYRyLnNKdnpORyDVgO","type":"customer","_id":"smull4DUVhj9Z9ir"}
-{"name":"test","firstname":"test","email":"roland4.stauffer@gmail.com","pwd":"$2b$10$nb.rrO2/LeEaMh14I7EEieJYKxsYmuM6YnOzbpPNsDewHWX4LW7dS","type":"customer","_id":"PiypenzROPcsJWj9"}
