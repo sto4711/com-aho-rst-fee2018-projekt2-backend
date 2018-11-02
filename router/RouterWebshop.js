@@ -4,14 +4,23 @@ import {ControllerUser} from '../controller/ControllerUser';
 import {ControllerArticle} from '../controller/ControllerArticle';
 import {ControllerShoppingBasket} from "../controller/ControllerShoppingBasket";
 import {ControllerOrder} from "../controller/ControllerOrder";
+import {StoreUser} from "../service/user/StoreUser";
+import {StoreSession} from "../service/user/StoreSession";
+import {StoreShoppingBasket} from "../service/shopping-basket/StoreShoppingBasket";
+import {StoreArticle} from "../service/article/StoreArticle";
 
 export class RouterWebshop {
     constructor() {
+        const storeUser = new StoreUser();
+        const storeSession = new StoreSession();
+        const storeShoppingBasket = new StoreShoppingBasket();
+        const storeArticle = new StoreArticle();
+
         this.router = express.Router();
-        this.controllerUser = new ControllerUser();
-        this.controllerArticle = new ControllerArticle();
-        this.controllerShoppingBasket = new ControllerShoppingBasket(this.controllerArticle.getStoreArticle());
-        this.controllerOrder = new ControllerOrder(this.controllerShoppingBasket.getStoreShoppingBasket(), this.controllerUser.getStoreSession(),this.controllerUser.getStoreUser());
+        this.controllerUser = new ControllerUser(storeUser, storeSession);
+        this.controllerArticle = new ControllerArticle(storeArticle);
+        this.controllerShoppingBasket = new ControllerShoppingBasket(storeShoppingBasket,storeArticle);
+        this.controllerOrder = new ControllerOrder(storeShoppingBasket, storeSession,storeUser);
 
         this.router.post('/user/sign-in', async (request, response) => {
             await this.controllerUser.signIn(request, response);

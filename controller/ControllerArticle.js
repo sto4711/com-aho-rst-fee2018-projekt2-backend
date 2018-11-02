@@ -1,14 +1,9 @@
-import {StoreArticle} from '../service/article/StoreArticle';
 import {Logger} from "../commons/Logger";
 
 export class ControllerArticle {
-    constructor() {
-        this.storeArticle = new StoreArticle();
+    constructor(storeArticle) {
+        this.storeArticle = storeArticle;
         this.LOGGER_NAME = 'ControllerArticle';
-    }
-
-    getStoreArticle()   {
-        return this.storeArticle;
     }
 
     async getArticles(request, response)  {

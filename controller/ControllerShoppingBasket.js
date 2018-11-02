@@ -1,16 +1,11 @@
 import {Logger} from "../commons/Logger";
-import {StoreShoppingBasket} from "../service/shopping-basket/StoreShoppingBasket";
 import {ShoppingBasketItem} from "../service/shopping-basket/ShoppingBasketItem";
 
 export class ControllerShoppingBasket {
-    constructor(storeArticle) {
-        this.storeShoppingBasket = new StoreShoppingBasket();
+    constructor(storeShoppingBasket, storeArticle) {
+        this.storeShoppingBasket = storeShoppingBasket;
         this.storeArticle = storeArticle;
         this.LOGGER_NAME = 'ControllerShoppingBasket';
-    }
-
-    getStoreShoppingBasket() {
-        return this.storeShoppingBasket;
     }
 
     async create(request, response) {
@@ -40,7 +35,7 @@ export class ControllerShoppingBasket {
         }
     }
 
-    calculateTotalSum(shoppingBasket) {
+    static calculateTotalSum(shoppingBasket) {
         shoppingBasket.totalSum = 0;
         for (let i = 0; i < shoppingBasket.items.length; i++) {
             shoppingBasket.totalSum += shoppingBasket.items[i].articlePriceSum;
@@ -65,7 +60,7 @@ export class ControllerShoppingBasket {
                     const article = await this.storeArticle.getArticleDetails(request.body.articleID, null);
                     const shoppingBasketItem = new ShoppingBasketItem(article._id, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber, article.articleQueryParameter);
                     shoppingBasket.items.push(shoppingBasketItem);
-                    this.calculateTotalSum(shoppingBasket);
+                    ControllerShoppingBasket.calculateTotalSum(shoppingBasket);
                     await this.storeShoppingBasket.update(shoppingBasket);
                     Logger.traceMessage(this.LOGGER_NAME, 'addItem', 'ok');
                     response.json(shoppingBasket);
@@ -88,7 +83,7 @@ export class ControllerShoppingBasket {
                 if (shoppingBasket.items[i].articleID === request.body.articleID) {
                     shoppingBasket.items[i].articleAmount = request.body.articleAmount;
                     shoppingBasket.items[i].articlePriceSum = shoppingBasket.items[i].articleAmount * shoppingBasket.items[i].articlePrice;
-                    this.calculateTotalSum(shoppingBasket);
+                    ControllerShoppingBasket.calculateTotalSum(shoppingBasket);
                     await this.storeShoppingBasket.update(shoppingBasket);
                     break;
                 }
@@ -108,7 +103,7 @@ export class ControllerShoppingBasket {
                 shoppingBasket.items = shoppingBasket.items.filter((item) => {
                     return (item.articleID !== request.body.articleID);
                 });
-                this.calculateTotalSum(shoppingBasket);
+                ControllerShoppingBasket.calculateTotalSum(shoppingBasket);
                 await this.storeShoppingBasket.update(shoppingBasket);
                 response.json(shoppingBasket);
                 Logger.traceMessage(this.LOGGER_NAME, 'removeItem', 'ok');

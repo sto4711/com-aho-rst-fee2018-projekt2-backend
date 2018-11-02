@@ -1,22 +1,12 @@
-import {StoreSession} from '../service/user/StoreSession';
-import {StoreUser} from '../service/user/StoreUser';
 import {Logger} from '../commons/Logger';
 import {CryptoMananger} from "../commons/CryptoMananger";
 
 export class ControllerUser {
-    constructor() {
+    constructor(storeUser, storeSession) {
         this.HOUR = 1000 * 60 * 60;//ms
         this.LOGGER_NAME = 'ControllerUser';
-        this.storeSession = new StoreSession();
-        this.storeUser = new StoreUser();
-    }
-
-    getStoreSession()   {
-        return this.storeSession;
-    }
-
-    getStoreUser()   {
-        return this.storeUser;
+        this.storeSession = storeSession;
+        this.storeUser = storeUser;
     }
 
    async signIn(request, response) {
