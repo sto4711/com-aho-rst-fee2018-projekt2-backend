@@ -29,7 +29,7 @@ export class ControllerArticle {
 
     async getArticlesLatest(request, response)  {
         try {
-            response.json(await this.storeArticle.getArticlesOrderByLimited('releaseDate', 'desc', request.query.limit));
+            response.json(await this.storeArticle.getArticlesOrderByLimited('releaseDate', 'asc', request.query.limit));
             Logger.traceMessage(this.LOGGER_NAME, 'getArticlesNewest', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getArticlesNewest', 'failed -> ' + e);

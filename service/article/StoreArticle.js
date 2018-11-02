@@ -1,5 +1,4 @@
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
-import {Logger} from "../../commons/Logger";
 
 export class StoreArticle {
     constructor() {
@@ -14,8 +13,9 @@ export class StoreArticle {
     }
 
     async getArticlesOrderByLimited(sort, ascDesc, limit) {
+        debugger;
         const ascDesc_DB = (ascDesc.toLowerCase() === 'asc' ? this.dbMananger_Article.DESCENDING : this.dbMananger_Article.ASCENDING);
-        return await this.dbMananger_Article.find({}, {"releaseDate": this.dbMananger_Article.DESCENDING}, limit);
+        return await this.dbMananger_Article.find({}, {"releaseDate": ascDesc_DB}, limit);
     }
 
     async getArticleDetails(articleId, articleQueryParameter) {

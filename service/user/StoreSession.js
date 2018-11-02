@@ -6,10 +6,10 @@ import {Session} from "../../service/user/Session";
 
 export class StoreSession {
     constructor() {
+        this.LOGGER_NAME = 'StoreSession';
         this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
         this.dbMananger_Session = new DatabaseMananger_NEDB("data/session.db");
-        this.dbMananger_Session.deleteAll();
-        this.LOGGER_NAME = 'StoreSession';
+        this.dbMananger_Session.deleteAll().then();
     }
 
     async getSessionByUser(userID) {
