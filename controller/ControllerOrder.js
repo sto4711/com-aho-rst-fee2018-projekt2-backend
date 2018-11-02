@@ -1,9 +1,5 @@
 import {Logger} from '../commons/Logger';
 import {StoreOrder} from "../service/order/StoreOrder";
-import {Address} from "../service/order/Address";
-import {ContactData} from "../service/order/ContactData";
-import {DeliveryType} from "../service/order/DeliveryType";
-import {PaymentType} from "../service/order/PaymentType";
 
 export class ControllerOrder {
     constructor(storeShoppingBasket, storeSession, storeUser) {
@@ -17,7 +13,6 @@ export class ControllerOrder {
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
-//            let ok = (shoppingBasket ? true : false);
             let ok = !!shoppingBasket; // like (shoppingBasket ? true : false)
             debugger;
             let session, user;

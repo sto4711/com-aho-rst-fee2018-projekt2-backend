@@ -1,7 +1,5 @@
-import UIDGenerator from 'uid-generator';
 import {Logger} from "../../commons/Logger";
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
-import {ShoppingBasket} from "../shopping-basket/ShoppingBasket";
 import {Order} from "./Order";
 
 
