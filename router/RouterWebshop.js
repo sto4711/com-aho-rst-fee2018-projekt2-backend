@@ -16,7 +16,7 @@ export class RouterWebshop {
         const storeShoppingBasket = new StoreShoppingBasket();
         const storeArticle = new StoreArticle();
 
-        this.router = express.Router();
+        this.router = express.Router(null);
         this.controllerUser = new ControllerUser(storeUser, storeSession);
         this.controllerArticle = new ControllerArticle(storeArticle);
         this.controllerShoppingBasket = new ControllerShoppingBasket(storeShoppingBasket,storeArticle);

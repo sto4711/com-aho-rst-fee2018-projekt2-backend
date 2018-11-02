@@ -3,7 +3,7 @@ import path from 'path';
 
 export class RouterWebshopFrontend {
     constructor() {
-        this.router = express.Router();
+        this.router = express.Router(null);
 
         // catch 404 not found when frontend refresh page
         this.router.get('/*',  async (request, response) => {
