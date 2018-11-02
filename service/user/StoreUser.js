@@ -32,18 +32,15 @@ export class StoreUser {
     }
 
     async update(user) {
-        const userUpdated = await this.dbMananger_User.update(user._id, user);
-        return userUpdated;
+        return await this.dbMananger_User.update(user._id, user);
     }
 
     async delete(user) {
-        const userUpdated = await this.dbMananger_User.remove(user._id, user);
-        return userUpdated;
+        return await this.dbMananger_User.remove(user._id, user);
     }
 
     async create(user) {
-        const userNew = await this.dbMananger_User.insert(user);
-        return userNew;
+        return await this.dbMananger_User.insert(user);
     }
 
     async hashExistingPWDs() {
@@ -51,8 +48,7 @@ export class StoreUser {
         for (let i = 0; i < userArr.length; i++) {
             let user = userArr[i];
             let pwd = user.pwd;
-            const pwdHashed = await CryptoMananger.createHash(pwd);
-            user.pwd = pwdHashed;
+            user.pwd = await CryptoMananger.createHash(pwd);
             await this.update(user);
             Logger.traceMessage(this.LOGGER_NAME, 'hashExistingPWDs', 'next pwd encrypted & stored into database');
         }

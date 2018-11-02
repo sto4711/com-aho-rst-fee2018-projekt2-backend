@@ -39,7 +39,7 @@ export class DatabaseMananger_NEDB {
     async logAllItems() {
         const all = await this.find();
         for (let i = 0; i < all.length; i++) {
-            console.log(JSON.stringify(all[i]));
+            Logger.traceMessage(this.LOGGER_NAME, 'logAllItems', JSON.stringify(all[i]));
         }
     }
 

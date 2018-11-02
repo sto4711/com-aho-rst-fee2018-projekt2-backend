@@ -55,8 +55,7 @@ export class ControllerUser {
                 user.type = 'customer';
                 user.pwd = await CryptoMananger.createHash(user.pwd);
                 user = await this.storeUser.create(user);
-                const token = await this.storeSession.createSession(user._id);
-                user.token = token;
+                user.token = await this.storeSession.createSession(user._id);
                 Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');
                 response.json(user);
             }
@@ -153,8 +152,7 @@ export class ControllerUser {
         try {
             const session = await this.storeSession.getSessionByToken(request.headers.authorization);
             const user = await this.storeUser.getUser(session.userID);
-            const isAdmin = (user.type === 'admin'? true:false);
-            if(isAdmin)    {
+            if(user.type === 'admin')    {
                 response.json(await this.storeUser.getUsers());
                 Logger.traceMessage(this.LOGGER_NAME, 'getUsers', 'ok');
             }

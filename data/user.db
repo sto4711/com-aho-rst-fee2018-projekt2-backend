@@ -28,3 +28,4 @@
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"$2b$10$gSOA5AJy.s9bsjD8KGud/OpO8M.6dYpRPgBpgxYCwkZ.cA8IEsCFK","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"Andre","firstname":"Stauffer","email":"andre.stauffer@gmail.com","pwd":"$2b$10$lDcMdZ1adGBtJ.LFC1VMseeFvxKaHNEXEhOb7As02XujwzIF1Dy0q","type":"customer","_id":"skEikQyNVutvU8XB"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"$2b$10$OdEoCRyKTfBKoGFvwC6ASO6roAfRkU72/vGUYRyLnNKdnpORyDVgO","type":"customer","_id":"smull4DUVhj9Z9ir"}
+{"name":"Peter","firstname":"Müller","email":"peter.mueller@ski.ch","pwd":"$2b$10$0r0NU4bQDN4BXTjwxq7fku6SaNz6VhbizgW2BV3b42YjbEcyd1nbO","type":"customer","_id":"azXzmzCwIdNejq91"}
