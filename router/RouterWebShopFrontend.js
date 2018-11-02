@@ -6,6 +6,7 @@ export class RouterWebShopFrontend {
         this.router = express.Router(null);
 
         // catch 404 not found when frontend refresh page
+        // noinspection JSUnresolvedFunction
         this.router.get('/*',  async (request, response) => {
             response.sendFile(path.resolve('public/frontend/index.html'));
         });

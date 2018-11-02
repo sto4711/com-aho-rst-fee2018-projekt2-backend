@@ -13,7 +13,6 @@ export class StoreArticle {
     }
 
     async getArticlesOrderByLimited(sort, ascDesc, limit) {
-        debugger;
         const ascDesc_DB = (ascDesc.toLowerCase() === 'asc' ? this.dbManager_Article.DESCENDING : this.dbManager_Article.ASCENDING);
         return await this.dbManager_Article.find({}, {"releaseDate": ascDesc_DB}, limit);
     }

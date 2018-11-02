@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import {Logger} from './commons/Logger';
 import {RouterWebShop} from './router/RouterWebshop';
+
+
 import {RouterWebShopFrontend} from './router/RouterWebshopFrontend';
 
 class WebShopBackend {
@@ -47,7 +49,7 @@ class WebShopBackend {
 
     static traceURL_Backend(request) {
         if (request.path.startsWith('/webshop') && request.method !== 'OPTIONS') {
-            Logger.traceMessage(this.LOGGER_NAME, 'traceURL_Backend', request.url + '     (' + request.method + ')');
+            Logger.traceMessage('WebShopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
         }
     }
 

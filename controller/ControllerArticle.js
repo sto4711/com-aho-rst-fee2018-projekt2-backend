@@ -45,6 +45,7 @@ export class ControllerArticle {
     async changeArticleRating(request, response)  {
         try {
             let article = await this.storeArticle.getArticleDetails(request.body.articleID,null);
+            // noinspection JSUnresolvedVariable
             if(request.body.rateUp) {// find the lowest
                 for (let i = 0; i < article.rating.length; i++ ) {
                     if(!article.rating[i])  {

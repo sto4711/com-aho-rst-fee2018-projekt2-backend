@@ -79,8 +79,8 @@ export class ControllerUser {
     }
 
     async signOut(request, response) {
+        const token = request.headers.authorization;
         try {
-            const token = request.headers.authorization;
             const session = await this.storeSession.getSessionByUser(request.body.userId);
             if (session == null) {
                 Logger.traceMessage(this.LOGGER_NAME, 'signOut', 'no session found for token "' + token + '" ok');

@@ -14,7 +14,6 @@ export class ControllerOrder {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
             let ok = !!shoppingBasket; // like (shoppingBasket ? true : false)
-            debugger;
             let session, user;
 
             if (ok) {
