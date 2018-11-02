@@ -1,7 +1,7 @@
 import Datastore from 'nedb-promise'
 import {Logger} from "./Logger";
 
-export class DatabaseMananger_NEDB {
+export class DatabaseManager_NEDB {
     constructor(filename) {
         this.db = new Datastore({filename: filename, autoload: true});
         this.DESCENDING = -1;
