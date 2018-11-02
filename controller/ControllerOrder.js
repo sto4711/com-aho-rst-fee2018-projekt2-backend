@@ -17,16 +17,18 @@ export class ControllerOrder {
     async create(request, response) {
         try {
             const shoppingBasket = await this.storeShoppingBasket.get(request.body.shoppingBasketId);
-            let ok = (shoppingBasket ? true : false);
+//            let ok = (shoppingBasket ? true : false);
+            let ok = !!shoppingBasket; // like (shoppingBasket ? true : false)
+            debugger;
             let session, user;
 
             if (ok) {
                 session = await this.storeSession.getSessionByToken(request.headers.authorization);
-                ok = (session ? true : false);
+                ok = !!session;
             }
             if (ok) {
                 user = await this.storeUser.getUser(session.userID);
-                ok = (user ? true : false);
+                ok = !!user;
             }
             if (ok) {
                 let order = await this.storeOrder.create(shoppingBasket);
@@ -101,9 +103,8 @@ export class ControllerOrder {
         try {
             const session = await this.storeSession.getSessionByToken(request.headers.authorization);
             const user = await this.storeUser.getUser(session.userID);
-            const isAdmin = (user.type === 'admin'? true:false);
 
-            if(isAdmin)    {
+            if(user.type === 'admin')    {
                 response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
                 Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
             }
@@ -120,7 +121,7 @@ export class ControllerOrder {
     async change(request, response) {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
-            let ok = (order != null ? true : false);
+            let ok = order != null;
             if (ok) {
                 if (request.url.endsWith('change-delivery-address')) {
                     order.deliveryAddress = request.body.deliveryAddress;
@@ -168,14 +169,14 @@ export class ControllerOrder {
         try {
             let order = await this.storeOrder.getOrderDetails(request.body.orderId);
             const session = await this.storeSession.getSessionByToken(request.headers.authorization);
-            let ok = (order !== null && session !== null ? true : false);
+            let ok = order !== null && session !== null;
             if (ok) {
                 order.userID = session.userID;
                 order.state = request.body.state;
             }
             if (order.state === 'APPROVED') {
                 const shoppingBasket = await this.storeShoppingBasket.get(order.shoppingBasket._id);
-                ok = (shoppingBasket !== null ? true : false);
+                ok = shoppingBasket !== null;
                 if (ok) {
                     order.shoppingBasket = shoppingBasket;
                     Logger.traceMessage(this.LOGGER_NAME, 'changeState', 'APPROVED, shoppingBasket synced');
