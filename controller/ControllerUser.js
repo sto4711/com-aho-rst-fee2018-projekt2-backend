@@ -1,5 +1,5 @@
 import {Logger} from '../commons/Logger';
-import {CryptoMananger} from "../commons/CryptoMananger";
+import {CryptoManager} from "../commons/CryptoManager";
 
 export class ControllerUser {
     constructor(storeUser, storeSession) {
@@ -16,22 +16,22 @@ export class ControllerUser {
                 const session = await this.storeSession.getSessionByUser(user._id);
                 if (session == null) {
                     user.token = await this.storeSession.createSession(user._id);
-                    Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> no session found, new one created');
+                    Logger.traceMessage(this.LOGGER_NAME, 'signIn', 'user "' + request.body.email + '" -> no session found, new one created');
                 } else if (new Date().getTime() > (session.tokenDate.getTime() + this.HOUR)) {
                     user.token = await this.storeSession.renewSession(session._id);
-                    Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" -> session expired, token renewed');
+                    Logger.traceMessage(this.LOGGER_NAME, 'signIn', 'user "' + request.body.email + '" -> session expired, token renewed');
                 } else {
                     user.token = session.token;
                 }
-                Logger.traceMessage(this.LOGGER_NAME, 'signin', 'user "' + request.body.email + '" ok');
+                Logger.traceMessage(this.LOGGER_NAME, 'signIn', 'user "' + request.body.email + '" ok');
                 response.json(user);
             }
             else {
-                Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed, user or pwd nok');
+                Logger.traceError(this.LOGGER_NAME, 'signIn', 'user"' + request.body.email + '" failed, user or pwd nok');
                 response.status(404).send('user or pwd nok');
             }
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'signin', 'user"' + request.body.email + '" failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'signIn', 'user"' + request.body.email + '" failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -42,7 +42,7 @@ export class ControllerUser {
             if(!user)    {
                 user = request.body;
                 user.type = 'customer';
-                user.pwd = await CryptoMananger.createHash(user.pwd);
+                user.pwd = await CryptoManager.createHash(user.pwd);
                 user = await this.storeUser.create(user);
                 user.token = await this.storeSession.createSession(user._id);
                 Logger.traceMessage(this.LOGGER_NAME, 'create', 'ok');

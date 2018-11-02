@@ -1,6 +1,6 @@
 import {DatabaseMananger_NEDB} from "../../commons/DatabaseMananger_NEDB";
 import {Logger} from "../../commons/Logger";
-import {CryptoMananger} from "../../commons/CryptoMananger";
+import {CryptoManager} from "../../commons/CryptoManager";
 
 
 export class StoreUser {
@@ -18,7 +18,7 @@ export class StoreUser {
         const userArr = await this.dbMananger_User.find({"email": email});
         for (let i = 0; i < userArr.length; i++) {
             const user = userArr[i];
-            const hasSamePwd = await CryptoMananger.compare(pwd, user.pwd);
+            const hasSamePwd = await CryptoManager.compare(pwd, user.pwd);
             if(hasSamePwd)    {
                 user.pwd = 'XXX';
                 return user;

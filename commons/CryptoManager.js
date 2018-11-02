@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import {Promise} from 'rsvp';
 
-export class CryptoMananger {
+export class CryptoManager {
 
     static createHash(toHash) {
         return new Promise((resolve, reject) =>
