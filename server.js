@@ -2,15 +2,15 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import {Logger} from './commons/Logger';
-import {RouterWebshop} from './router/RouterWebshop';
-import {RouterWebshopFrontend} from './router/RouterWebshopFrontend';
+import {RouterWebShop} from './router/RouterWebshop';
+import {RouterWebShopFrontend} from './router/RouterWebshopFrontend';
 
 class WebShopBackend {
     constructor() {
         this.app = express();
-        this.routerWebshop = new RouterWebshop();
-        this.routerWebshopFrontend = new RouterWebshopFrontend();
-        this.LOGGER_NAME = 'WebshopBackend';
+        this.routerWebShop = new RouterWebShop();
+        this.routerWebShopFrontend = new RouterWebShopFrontend();
+        this.LOGGER_NAME = 'WebShopBackend';
 
         this.app.use((request, response, next) => {
             if (request.path.startsWith('/webshop')) {
@@ -25,7 +25,7 @@ class WebShopBackend {
 
         //Authentication
         this.app.use(async (request, response, next) => {
-            request.authenticated = await this.routerWebshop.getControllerUser().isTokenValid(request);
+            request.authenticated = await this.routerWebShop.getControllerUser().isTokenValid(request);
             next();
         });
 
@@ -38,16 +38,16 @@ class WebShopBackend {
         this.app.use(express.static(path.resolve('public')));                   // images, frontend
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());
-        this.app.use('/webshop', this.routerWebshop.getRouter());               // backend      -> http://localhost:3000/webshop
-        this.app.use('/frontend', this.routerWebshopFrontend.getRouter());      // frontend     -> http://localhost:3000/frontend
+        this.app.use('/webshop', this.routerWebShop.getRouter());               // backend      -> http://localhost:3000/webshop
+        this.app.use('/frontend', this.routerWebShopFrontend.getRouter());      // frontend     -> http://localhost:3000/frontend
         this.app.listen(3000);
-        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend  Webshop : http://localhost:3000/webshop');
-        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Frontend Webshop : http://localhost:3000/frontend');
+        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend  WebShop : http://localhost:3000/webshop');
+        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Frontend WebShop : http://localhost:3000/frontend');
     }
 
     static traceURL_Backend(request) {
         if (request.path.startsWith('/webshop') && request.method !== 'OPTIONS') {
-            Logger.traceMessage('WebshopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
+            Logger.traceMessage(this.LOGGER_NAME, 'traceURL_Backend', request.url + '     (' + request.method + ')');
         }
     }
 

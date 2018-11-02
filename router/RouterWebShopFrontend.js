@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 
-export class RouterWebshopFrontend {
+export class RouterWebShopFrontend {
     constructor() {
         this.router = express.Router(null);
 

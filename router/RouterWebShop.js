@@ -9,7 +9,7 @@ import {StoreSession} from "../service/user/StoreSession";
 import {StoreShoppingBasket} from "../service/shopping-basket/StoreShoppingBasket";
 import {StoreArticle} from "../service/article/StoreArticle";
 
-export class RouterWebshop {
+export class RouterWebShop {
     constructor() {
         const storeUser = new StoreUser();
         const storeSession = new StoreSession();
