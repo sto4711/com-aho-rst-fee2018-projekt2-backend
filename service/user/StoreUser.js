@@ -43,6 +43,7 @@ export class StoreUser {
         return await this.dbMananger_User.insert(user);
     }
 
+    // noinspection JSUnusedGlobalSymbols
     async hashExistingPWDs() {
         const userArr = await this.dbMananger_User.find();
         for (let i = 0; i < userArr.length; i++) {

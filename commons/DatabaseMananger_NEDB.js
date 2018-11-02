@@ -36,6 +36,7 @@ export class DatabaseMananger_NEDB {
         return await this.db.remove({"_id":id},{});
     }
 
+    // noinspection JSUnusedGlobalSymbols
     async logAllItems() {
         const all = await this.find();
         for (let i = 0; i < all.length; i++) {
