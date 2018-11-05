@@ -114,7 +114,7 @@ export class ControllerOrder {
 
     async change(request, response) {
         try {
-            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            let order = await this.storeOrder.getOrderDetails(request.body._id);
             let ok = order != null;
             if (ok) {
                 if (request.url.endsWith('change-delivery-address')) {

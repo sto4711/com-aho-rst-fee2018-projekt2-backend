@@ -9,7 +9,6 @@ export class StoreOrder {
         this.LOGGER_NAME = 'StoreOrder';
     }
 
-
     async create(shoppingBasket) {
         const order = await this.dbManager_Order.insert(new Order(shoppingBasket));
         Logger.traceMessage(this.LOGGER_NAME, 'create', 'order created');

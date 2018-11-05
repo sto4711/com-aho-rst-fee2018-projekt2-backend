@@ -1,9 +1,10 @@
 {"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"$2b$10$zCiRwQ..w34R54PlsQ.nW.0FATdUCJPzILHsughyeFCkfZPvgGYHi","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
-{"name":"Roland","firstname":"Stauffer2","email":"roland.stauffer@gmail.com","pwd":"$2b$10$zwVr0wQpbolLImdGk70oxOJcnJlUlu0q.r8LV6kAlfITfrKzCd5Py","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$zwVr0wQpbolLImdGk70oxOJcnJlUlu0q.r8LV6kAlfITfrKzCd5Py","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
 {"name":"jkjkjkjd334","firstname":"jkjkjk4","email":"jkjkjkjk4@fff.cov","pwd":"$2b$10$NN7qLlAoYbqf6BRGzs4ls.uYoRgYMdU6TCp6C6VJiUYH4Kyll.2l6","type":"customer4","_id":"0hetp3IY5iTbAAQT"}
 {"name":"gdd","firstname":"gdd","email":"g.m@cc.chg","pwd":"$2b$10$vccLjcSreIWW76r6t5JDdenCghZ9/GtTJqxVoyjboFnMoKBNV5a7a","type":"customer","_id":"2Rsx7qXz52va8d3X"}
 {"name":"james2","firstname":"bond","email":"j@mi6.gb","pwd":"$2b$10$9qy515pZ9Ox2LcxYoYCWUeXYIqUJH5QSs9.kCQZo6wNr4cuhpy02W","type":"customer","_id":"4yKXvGcdx19LroaD"}
 {"name":"mamma","firstname":"mia","email":"hhghg@hjhjh.com","pwd":"$2b$10$epZKYy4530l4/kpy6v2ARu/sqhi3AhMf8j/qxUKhmYXTWcjP7JwRy","type":"customer","_id":"5qKsO9e5tP8OoIEG"}
+{"name":"king2","firstname":"kong","email":"king@kong.org","pwd":null,"type":"customer","_id":"FyheKgMqS8S7SEzM"}
 {"name":"jkjkjkj","firstname":"jkjkjk","email":"jkjkjkjk@fff.com","pwd":"$2b$10$jeNl1Z7KzeLiFi3zj41kqemDNvoGQgAKbkXlSrXPRzQ2BUfIgKOqi","type":"customer","_id":"GF3UJKsO2uiZnAeo"}
 {"name":"","firstname":"","email":"","pwd":"$2b$10$Q8xvOoeifPQFxZiqdkXXWuHgbsRy4b9TjZHXFJFToJcF5mKV7c/tS","type":"customer","_id":"IY5O00tke5kvsEO3"}
 {"name":"Peter","firstname":"Müller","email":"p.m@vvv.com","pwd":"$2b$10$DhLHkgyTW/aM9P2FcdkaFue/So2A5UmLq9eiwAEIJknvNNQrVRY1C","type":"customer","_id":"IfEycFuE3t6HSW5T"}
@@ -18,6 +19,7 @@
 {"name":"r","firstname":"d","email":"roland2.stauffer@gmail.com","pwd":"$2b$10$l2oo8hDIIt.CDTOvALZQp.sEKkFXfWEWfRAcYfKQb1WQ6qP0SJpEW","type":"customer","_id":"SscoYRAV0sUfZepI"}
 {"name":"iron","firstname":"man","email":"iron.man@ff.com","pwd":"$2b$10$2iHK2eUEjjyxDJSMmSe/C.ebQM/u/I77hi98t68kCqSH0pcgw2v7C","type":"customer","_id":"Ud84d9OJ2QJ0D5L5"}
 {"name":"remy","firstname":"scherrer","email":"rscherrer@zfv.ch","pwd":"$2b$10$v6.EHHo87e/djfbN70laD.DP6AyuagAPFNx/EwEIVSRYrsd8f3bNK","type":"customer","_id":"VBTJx0cFfBJGYpRu"}
+{"firstname":"wayne","name":"bruce2","email":"b.w@ww.com","pwd":"$2b$10$R/h6yzQHjABD2fITl3oQ0OhL1eLq6MJcf3bLZh.TdZYaEQlm2Z4J.","type":"customer","_id":"VxgJmIg0BaCvEnnS"}
 {"name":"Hans","firstname":"Muster","email":"hans.muster@gmail.com","pwd":"$2b$10$ViRDaeZlE1rZ/fsUnIfmAeFoZw6Y9T3Uc9mFRO8FG2Iu.qJM3Wf4K","type":"customer","_id":"YkBVKS80d55JCLqL"}
 {"name":"rddddddddd","firstname":"fdddddddd","email":"roland3.stauffer@gmail.com","pwd":"$2b$10$Tz0KULiew0zPHAih4MflyeqM96WpXKTsZHXhn3n8nV0YV9pRdKyIC","type":"customer","_id":"YrmHLDbmYTDW1Ju3"}
 {"name":"Peter","firstname":"Müller","email":"peter.mueller@ski.ch","pwd":"$2b$10$0r0NU4bQDN4BXTjwxq7fku6SaNz6VhbizgW2BV3b42YjbEcyd1nbO","type":"customer","_id":"azXzmzCwIdNejq91"}
@@ -29,3 +31,6 @@
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"$2b$10$gSOA5AJy.s9bsjD8KGud/OpO8M.6dYpRPgBpgxYCwkZ.cA8IEsCFK","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"Andre","firstname":"Stauffer","email":"andre.stauffer@gmail.com","pwd":"$2b$10$lDcMdZ1adGBtJ.LFC1VMseeFvxKaHNEXEhOb7As02XujwzIF1Dy0q","type":"customer","_id":"skEikQyNVutvU8XB"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"$2b$10$OdEoCRyKTfBKoGFvwC6ASO6roAfRkU72/vGUYRyLnNKdnpORyDVgO","type":"customer","_id":"smull4DUVhj9Z9ir"}
+{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$9fNahMXbtHT/9Zy6XWHU8e5oykN4fSH0jnguRN7gnyevi12SCm8zy","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"Roland","firstname":"Stauffer2","email":"roland.stauffer@gmail.com","pwd":"$2b$10$9fNahMXbtHT/9Zy6XWHU8e5oykN4fSH0jnguRN7gnyevi12SCm8zy","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$8IBmPPiqsZMLg6KQa.CweuJONhSb1CqYeH/zm2vyReFCgtrQLerdG","type":"admin","_id":"01crcwDLlQ3Xmbbb"}

@@ -40,6 +40,7 @@ export class StoreUser {
     }
 
     async create(user) {
+        delete user['_id'];
         return await this.dbManager_User.insert(user);
     }
 

@@ -60,7 +60,13 @@ export class ControllerUser {
 
     async updateUser(request, response) {
         try {
-            response.json(await this.storeUser.update(request.body));
+            let user = request.body;
+            if(request.body.pwd)    {
+                user.pwd = await CryptoManager.createHash(user.pwd);
+            }   else {
+                delete user['pwd'];//do not change existing pwd
+            }
+            response.json(await this.storeUser.update(user));
             Logger.traceMessage(this.LOGGER_NAME, 'updateUser', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'updateUser', 'failed -> ' + e);
