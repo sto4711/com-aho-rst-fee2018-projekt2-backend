@@ -1,5 +1,5 @@
 {"name":"Alain","firstname":"Holzhauser","email":"alain@aholzhauser.ch","pwd":"$2b$10$zCiRwQ..w34R54PlsQ.nW.0FATdUCJPzILHsughyeFCkfZPvgGYHi","type":"admin","_id":"00crcwDLlQ3Xmbbb"}
-{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$zwVr0wQpbolLImdGk70oxOJcnJlUlu0q.r8LV6kAlfITfrKzCd5Py","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
+{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$uos4LDkZVixKRHs4m7e1d.RvJ08QcdWtTWuqHy9uEKVhKUvxbf6KO","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
 {"name":"jkjkjkjd334","firstname":"jkjkjk4","email":"jkjkjkjk4@fff.cov","pwd":"$2b$10$NN7qLlAoYbqf6BRGzs4ls.uYoRgYMdU6TCp6C6VJiUYH4Kyll.2l6","type":"customer4","_id":"0hetp3IY5iTbAAQT"}
 {"name":"gdd","firstname":"gdd","email":"g.m@cc.chg","pwd":"$2b$10$vccLjcSreIWW76r6t5JDdenCghZ9/GtTJqxVoyjboFnMoKBNV5a7a","type":"customer","_id":"2Rsx7qXz52va8d3X"}
 {"name":"james2","firstname":"bond","email":"j@mi6.gb","pwd":"$2b$10$9qy515pZ9Ox2LcxYoYCWUeXYIqUJH5QSs9.kCQZo6wNr4cuhpy02W","type":"customer","_id":"4yKXvGcdx19LroaD"}
@@ -31,6 +31,3 @@
 {"name":"rst","firstname":"sta","email":"2roland2.stauffer@gmail.com","pwd":"$2b$10$gSOA5AJy.s9bsjD8KGud/OpO8M.6dYpRPgBpgxYCwkZ.cA8IEsCFK","type":"customer","_id":"qtgkIAt81edu13Uv"}
 {"name":"Andre","firstname":"Stauffer","email":"andre.stauffer@gmail.com","pwd":"$2b$10$lDcMdZ1adGBtJ.LFC1VMseeFvxKaHNEXEhOb7As02XujwzIF1Dy0q","type":"customer","_id":"skEikQyNVutvU8XB"}
 {"name":"rst","firstname":"rst","email":"rroland.stauffer@gmail.com","pwd":"$2b$10$OdEoCRyKTfBKoGFvwC6ASO6roAfRkU72/vGUYRyLnNKdnpORyDVgO","type":"customer","_id":"smull4DUVhj9Z9ir"}
-{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$9fNahMXbtHT/9Zy6XWHU8e5oykN4fSH0jnguRN7gnyevi12SCm8zy","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
-{"name":"Roland","firstname":"Stauffer2","email":"roland.stauffer@gmail.com","pwd":"$2b$10$9fNahMXbtHT/9Zy6XWHU8e5oykN4fSH0jnguRN7gnyevi12SCm8zy","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
-{"name":"Roland","firstname":"Stauffer","email":"roland.stauffer@gmail.com","pwd":"$2b$10$8IBmPPiqsZMLg6KQa.CweuJONhSb1CqYeH/zm2vyReFCgtrQLerdG","type":"admin","_id":"01crcwDLlQ3Xmbbb"}
