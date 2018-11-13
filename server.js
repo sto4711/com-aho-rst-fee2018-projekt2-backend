@@ -13,7 +13,7 @@ class WebShopBackend {
         this.LOGGER_NAME = 'WebShopBackend';
 
         this.app.use((request, response, next) => {
-            if (request.path.startsWith('/webshop')) {
+            if (request.path.startsWith('/backend')) {
                 response.setHeader('Access-Control-Allow-Origin', '*');                     //enable CORS
                 response.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
                 response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -38,15 +38,15 @@ class WebShopBackend {
         this.app.use(express.static(path.resolve('public')));                   // images, frontend
         this.app.use(bodyParser.urlencoded({extended: false}));
         this.app.use(bodyParser.json());
-        this.app.use('/webshop', this.routerWebShop.getRouter());               // backend      -> http://localhost:3000/webshop
+        this.app.use('/backend', this.routerWebShop.getRouter());               // backend      -> http://localhost:3000/webshop
         this.app.use('/frontend', this.routerWebShopFrontend.getRouter());      // frontend     -> http://localhost:3000/frontend
         this.app.listen(3000);
-        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend  WebShop : http://localhost:3000/webshop');
+        Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Backend  WebShop : http://localhost:3000/backend');
         Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Frontend WebShop : http://localhost:3000/frontend');
     }
 
     static traceURL_Backend(request) {
-        if (request.path.startsWith('/webshop') && request.method !== 'OPTIONS') {
+        if (request.path.startsWith('/backend') && request.method !== 'OPTIONS') {
             Logger.traceMessage('WebShopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
         }
     }
