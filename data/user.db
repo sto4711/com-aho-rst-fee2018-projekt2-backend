@@ -19,7 +19,7 @@
 {"name":"r","firstname":"d","email":"roland2.stauffer@gmail.com","pwd":"$2b$10$l2oo8hDIIt.CDTOvALZQp.sEKkFXfWEWfRAcYfKQb1WQ6qP0SJpEW","type":"customer","_id":"SscoYRAV0sUfZepI"}
 {"name":"iron","firstname":"man","email":"iron.man@ff.com","pwd":"$2b$10$2iHK2eUEjjyxDJSMmSe/C.ebQM/u/I77hi98t68kCqSH0pcgw2v7C","type":"customer","_id":"Ud84d9OJ2QJ0D5L5"}
 {"name":"remy","firstname":"scherrer","email":"rscherrer@zfv.ch","pwd":"$2b$10$v6.EHHo87e/djfbN70laD.DP6AyuagAPFNx/EwEIVSRYrsd8f3bNK","type":"customer","_id":"VBTJx0cFfBJGYpRu"}
-{"firstname":"wayne","name":"bruce2","email":"b.w@ww.com","pwd":"$2b$10$R/h6yzQHjABD2fITl3oQ0OhL1eLq6MJcf3bLZh.TdZYaEQlm2Z4J.","type":"customer","_id":"VxgJmIg0BaCvEnnS"}
+{"name":"bruce2","firstname":"wayne","email":"b.w@ww.com","pwd":"$2b$10$R/h6yzQHjABD2fITl3oQ0OhL1eLq6MJcf3bLZh.TdZYaEQlm2Z4J.","type":"customer","_id":"VxgJmIg0BaCvEnnS"}
 {"name":"Hans","firstname":"Muster","email":"hans.muster@gmail.com","pwd":"$2b$10$ViRDaeZlE1rZ/fsUnIfmAeFoZw6Y9T3Uc9mFRO8FG2Iu.qJM3Wf4K","type":"customer","_id":"YkBVKS80d55JCLqL"}
 {"name":"rddddddddd","firstname":"fdddddddd","email":"roland3.stauffer@gmail.com","pwd":"$2b$10$Tz0KULiew0zPHAih4MflyeqM96WpXKTsZHXhn3n8nV0YV9pRdKyIC","type":"customer","_id":"YrmHLDbmYTDW1Ju3"}
 {"name":"Peter","firstname":"Müller","email":"peter.mueller@ski.ch","pwd":"$2b$10$0r0NU4bQDN4BXTjwxq7fku6SaNz6VhbizgW2BV3b42YjbEcyd1nbO","type":"customer","_id":"azXzmzCwIdNejq91"}

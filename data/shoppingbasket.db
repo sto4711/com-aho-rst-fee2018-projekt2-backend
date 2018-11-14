@@ -227,3 +227,4 @@
 {"shoppingBasketDate":{"$$date":1537377665260},"items":[{"articleID":"xEUehKXKxYo0002","articleName":"E-Bike Modell 2","articlePrice":2000.05,"articleAvailability":true,"articleAmount":3,"itemNumber":"10000002","articlePriceSum":6000.15,"articleQueryParameter":"Superbike-E-Bike-Modell-2"}],"totalSum":6000.15,"_id":"yZVwuXtNrNOWDvPz"}
 {"shoppingBasketDate":{"$$date":1538773695483},"items":[],"totalSum":0,"_id":"z0pecNMipsmGIfWn"}
 {"shoppingBasketDate":{"$$date":1539162577099},"items":[{"articleID":"xEUehKXKxYo0010","articleName":"E-Bike Modell 10","articlePrice":10000.05,"articleAvailability":true,"articleAmount":1,"itemNumber":"10000010","articlePriceSum":10000.05,"articleQueryParameter":"Superbike-E-Bike-Modell-10"}],"totalSum":10000.05,"_id":"zvIqrkrTTWLKpqZV"}
+{"shoppingBasketDate":{"$$date":1542187867727},"items":[],"totalSum":0,"_id":"N9G7njEiVupItRsc"}
