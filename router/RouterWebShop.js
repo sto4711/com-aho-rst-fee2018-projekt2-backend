@@ -50,10 +50,6 @@ export class RouterWebShop {
             await this.controllerUser.getUsers(request, response);
         });
 
-        this.router.get('/user-details', authentication.required(), async (request, response) => {
-            await response.json({status: 'not yet implemented'});
-        });
-
         this.router.get('/user-orders', authentication.required(), async (request, response) => {
             await this.controllerOrder.getOrdersByUser(request, response);
         });
