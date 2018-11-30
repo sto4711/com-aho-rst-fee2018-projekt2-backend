@@ -22,6 +22,44 @@ export class RouterWebShop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(storeShoppingBasket, storeArticle);
         this.controllerOrder = new ControllerOrder(storeShoppingBasket, storeSession, storeUser);
 
+        // get
+        this.router.get('/article', async (request, response) => {
+            await this.controllerArticle.getArticle(request, response);
+        });
+        this.router.get('/articles', async (request, response) => {
+            await this.controllerArticle.getArticles(request, response);
+        });
+        this.router.get('/articles/latest', async (request, response) => {
+            await this.controllerArticle.getArticlesLatest(request, response);
+        });
+
+        this.router.get('/user', async (request, response) => {
+            await this.controllerUser.getUser(request, response);
+        });
+        this.router.get('/users', authentication.required(), async (request, response) => {
+            await this.controllerUser.getUsers(request, response);
+        });
+
+        this.router.get('/shopping-basket/', async (request, response) => {
+            await this.controllerShoppingBasket.get(request, response);
+        });
+
+        this.router.get('/order', authentication.required(), async (request, response) => {
+            await this.controllerOrder.get(request, response);
+        });
+        this.router.get('/orders', authentication.required(), async (request, response) => {
+            await this.controllerOrder.getOrders(request, response);
+        });
+
+
+        this.router.get('/user-orders', authentication.required(), async (request, response) => {
+            await this.controllerOrder.getOrdersByUser(request, response);
+        });
+
+
+
+
+
         this.router.post('/sign-in/user', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
@@ -54,27 +92,9 @@ export class RouterWebShop {
 
 
 
-        this.router.get('/user', async (request, response) => {
-            await this.controllerUser.getUser(request, response);
-        });
 
-        this.router.get('/users', authentication.required(), async (request, response) => {
-            await this.controllerUser.getUsers(request, response);
-        });
 
-        this.router.get('/user-orders', authentication.required(), async (request, response) => {
-            await this.controllerOrder.getOrdersByUser(request, response);
-        });
 
-        this.router.get('/articles', async (request, response) => {
-            await this.controllerArticle.getArticles(request, response);
-        });
-        this.router.get('/articles/latest', async (request, response) => {
-            await this.controllerArticle.getArticlesLatest(request, response);
-        });
-        this.router.get('/article', async (request, response) => {
-            await this.controllerArticle.getArticle(request, response);
-        });
 
 
 
@@ -96,9 +116,6 @@ export class RouterWebShop {
 
 
 
-        this.router.get('/shopping-basket/', async (request, response) => {
-            await this.controllerShoppingBasket.get(request, response);
-        });
 
 
 
@@ -107,13 +124,7 @@ export class RouterWebShop {
             await this.controllerOrder.create(request, response);
         });
 
-        this.router.get('/order-details', authentication.required(), async (request, response) => {
-            await this.controllerOrder.getOrderDetails(request, response);
-        });
 
-        this.router.get('/order-all', authentication.required(), async (request, response) => {
-            await this.controllerOrder.getOrderAll(request, response);
-        });
 
         this.router.patch('/order/change-delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);

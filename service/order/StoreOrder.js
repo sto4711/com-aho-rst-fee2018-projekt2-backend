@@ -25,12 +25,8 @@ export class StoreOrder {
         return (orderArr.length === 0 ? null : orderArr[0]);
     }
 
-    async getOrderDetails(id) {
-        const orderArr = await this.dbManager_Order.find({"_id": id});
-        return (orderArr.length === 0 ? null : orderArr[0]);
-    }
 
-    async getOrderAll(filter, sort, limit) {
+    async getOrders(filter, sort, limit) {
         return await this.dbManager_Order.find(filter, {"orderDate": this.dbManager_Order.DESCENDING}, limit);
     }
 

@@ -52,12 +52,12 @@ export class ControllerOrder {
         }
     }
 
-    async getOrderDetails(request, response) {
+    async get(request, response) {
         try {
-            response.json(await this.storeOrder.getOrderDetails(request.query.id));
-            Logger.traceMessage(this.LOGGER_NAME, 'getOrderDetails', 'ok');
+            response.json(await this.storeOrder.get(request.query.id));
+            Logger.traceMessage(this.LOGGER_NAME, 'get', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'getOrderDetails', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'get', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
@@ -93,28 +93,28 @@ export class ControllerOrder {
         }
     }
 
-    async getOrderAll(request, response) {
+    async getOrders(request, response) {
         try {
             const session = await this.storeSession.getSessionByToken(request.headers.authorization);
             const user = await this.storeUser.getUser(session.userID);
 
             if(user.type === 'admin')    {
-                response.json(await this.storeOrder.getOrderAll('', 'orderDate', ''));
-                Logger.traceMessage(this.LOGGER_NAME, 'getAllOrders', 'ok');
+                response.json(await this.storeOrder.getOrders('', 'orderDate', ''));
+                Logger.traceMessage(this.LOGGER_NAME, 'getOrders', 'ok');
             }
             else    {
-                Logger.traceError(this.LOGGER_NAME, 'getOrderAll', 'user has not role "admin"');
+                Logger.traceError(this.LOGGER_NAME, 'getOrders', 'user has not role "admin"');
                 response.status(404).send('user has not role "admin"');
             }
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'getAllOrders', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'getOrders', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
     async change(request, response) {
         try {
-            let order = await this.storeOrder.getOrderDetails(request.body._id);
+            let order = await this.storeOrder.get(request.body._id);
             let ok = order != null;
             if (ok) {
                 if (request.url.endsWith('change-delivery-address')) {
@@ -161,7 +161,7 @@ export class ControllerOrder {
 
     async changeState(request, response) {
         try {
-            let order = await this.storeOrder.getOrderDetails(request.body.orderId);
+            let order = await this.storeOrder.get(request.body.orderId);
             const session = await this.storeSession.getSessionByToken(request.headers.authorization);
             let ok = order !== null && session !== null;
             if (ok) {
