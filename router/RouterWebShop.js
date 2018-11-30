@@ -81,8 +81,11 @@ export class RouterWebShop {
 
 
 
-        this.router.post('/update/user', async (request, response) => {
+        this.router.patch('/update/user', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
+        });
+        this.router.patch('/update/order', async (request, response) => {
+            await this.controllerOrder.updateOrder(request, response);
         });
 
 
@@ -148,9 +151,6 @@ export class RouterWebShop {
             await this.controllerOrder.changeState(request, response);
         });
 
-        this.router.patch('/order/update', async (request, response) => {
-            await this.controllerOrder.updateOrder(request, response);
-        });
 
         this.router.patch('/order/delete-order', async (request, response) => {
             await this.controllerOrder.deleteOrder(request, response);
