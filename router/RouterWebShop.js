@@ -22,7 +22,7 @@ export class RouterWebShop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(storeShoppingBasket, storeArticle);
         this.controllerOrder = new ControllerOrder(storeShoppingBasket, storeSession, storeUser);
 
-        // get
+        // GET
         this.router.get('/article', async (request, response) => {
             await this.controllerArticle.getArticle(request, response);
         });
@@ -32,18 +32,15 @@ export class RouterWebShop {
         this.router.get('/articles/latest', async (request, response) => {
             await this.controllerArticle.getArticlesLatest(request, response);
         });
-
         this.router.get('/user', async (request, response) => {
             await this.controllerUser.getUser(request, response);
         });
         this.router.get('/users', authentication.required(), async (request, response) => {
             await this.controllerUser.getUsers(request, response);
         });
-
-        this.router.get('/shopping-basket/', async (request, response) => {
+        this.router.get('/shopping-basket', async (request, response) => {
             await this.controllerShoppingBasket.get(request, response);
         });
-
         this.router.get('/order', authentication.required(), async (request, response) => {
             await this.controllerOrder.get(request, response);
         });
@@ -54,19 +51,13 @@ export class RouterWebShop {
             await this.controllerOrder.getOrdersByUser(request, response);
         });
 
-
-
-
-
-
-
+        // POST
         this.router.post('/sign-in/user', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
         this.router.post('/sign-out/user', async (request, response) => {
             await this.controllerUser.signOut(request, response);
         });
-
         this.router.post('/create/user', async (request, response) => {
             await this.controllerUser.create(request, response);
         });
@@ -76,84 +67,46 @@ export class RouterWebShop {
         this.router.post('/create/order', authentication.required(), async (request, response) => {
             await this.controllerOrder.create(request, response);
         });
+        this.router.post('/delete/user', async (request, response) => {
+            await this.controllerUser.deleteUser(request, response);
+        });
+        this.router.patch('/delete/order', async (request, response) => {
+            await this.controllerOrder.deleteOrder(request, response);
+        });
+        this.router.post('/add-item/shopping-basket', async (request, response) => {
+            await this.controllerShoppingBasket.addItem(request, response);
+        });
+        this.router.post('/remove-item/shopping-basket', async (request, response) => {
+            await this.controllerShoppingBasket.removeItem(request, response);
+        });
 
-
-
-
-
+        // PATCH
         this.router.patch('/update/user', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
         });
         this.router.patch('/update/order', async (request, response) => {
             await this.controllerOrder.updateOrder(request, response);
         });
-
-
-
-
-        this.router.post('/delete/user', async (request, response) => {
-            await this.controllerUser.deleteUser(request, response);
+        this.router.patch('/update/order/state', authentication.required(), authentication.required(), async (request, response) => {
+            await this.controllerOrder.changeState(request, response);
         });
-
-
-
-
-
-
-
-
-
-
-
-
+        this.router.patch('/update/order/delivery-address', authentication.required(), async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+        this.router.patch('/update/order/contact-data', authentication.required(), async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+        this.router.patch('/update/order/delivery-type', authentication.required(), async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
+        this.router.patch('/update/order/payment-type', authentication.required(), async (request, response) => {
+            await this.controllerOrder.change(request, response);
+        });
         this.router.patch('/change-rating/article', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
         });
-
-        this.router.post('/add-item/shopping-basket', async (request, response) => {
-            await this.controllerShoppingBasket.addItem(request, response);
-        });
-
-        this.router.post('/remove-item/shopping-basket', async (request, response) => {
-            await this.controllerShoppingBasket.removeItem(request, response);
-        });
-
         this.router.patch('/change-item-amount/shopping-basket', async (request, response) => {
             await this.controllerShoppingBasket.changeItemAmount(request, response);
-        });
-
-
-
-
-
-
-
-
-
-
-        this.router.patch('/order/change-delivery-address', authentication.required(), async (request, response) => {
-            await this.controllerOrder.change(request, response);
-        });
-
-        this.router.patch('/order/change-contact-data', authentication.required(), async (request, response) => {
-            await this.controllerOrder.change(request, response);
-        });
-
-        this.router.patch('/order/change-delivery-type', authentication.required(), async (request, response) => {
-            await this.controllerOrder.change(request, response);
-        });
-
-        this.router.patch('/order/change-payment-type', authentication.required(), async (request, response) => {
-            await this.controllerOrder.change(request, response);
-        });
-
-        this.router.patch('/order/state', authentication.required(), authentication.required(), async (request, response) => {
-            await this.controllerOrder.changeState(request, response);
-        });
-
-
-        this.router.patch('/order/delete-order', async (request, response) => {
-            await this.controllerOrder.deleteOrder(request, response);
         });
     }
 
