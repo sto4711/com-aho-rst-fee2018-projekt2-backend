@@ -50,11 +50,11 @@ export class RouterWebShop {
         this.router.get('/orders', authentication.required(), async (request, response) => {
             await this.controllerOrder.getOrders(request, response);
         });
-
-
-        this.router.get('/user-orders', authentication.required(), async (request, response) => {
+        this.router.get('/orders/user', authentication.required(), async (request, response) => {
             await this.controllerOrder.getOrdersByUser(request, response);
         });
+
+
 
 
 
@@ -73,6 +73,11 @@ export class RouterWebShop {
         this.router.post('/create/shopping-basket', async (request, response) => {
             await this.controllerShoppingBasket.create(request, response);
         });
+        this.router.post('/create/order', authentication.required(), async (request, response) => {
+            await this.controllerOrder.create(request, response);
+        });
+
+
 
 
 
@@ -120,9 +125,6 @@ export class RouterWebShop {
 
 
 
-        this.router.post('/order/create', authentication.required(), async (request, response) => {
-            await this.controllerOrder.create(request, response);
-        });
 
 
 
