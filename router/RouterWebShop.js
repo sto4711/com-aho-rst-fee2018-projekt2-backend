@@ -65,22 +65,22 @@ export class RouterWebShop {
         this.router.get('/articles', async (request, response) => {
             await this.controllerArticle.getArticles(request, response);
         });
-
-        this.router.get('/articles', async (request, response) => {
-            await this.controllerArticle.getArticles(request, response);
-        });
-
         this.router.get('/articles/latest', async (request, response) => {
             await this.controllerArticle.getArticlesLatest(request, response);
         });
-
-        this.router.get('/article-details', async (request, response) => {
-            await this.controllerArticle.getArticleDetails(request, response);
+        this.router.get('/article', async (request, response) => {
+            await this.controllerArticle.getArticle(request, response);
         });
 
-        this.router.patch('/article-details/change-rating', async (request, response) => {
+
+
+        this.router.patch('/article/change-rating', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
         });
+
+
+
+
 
         this.router.post('/shopping-basket/create', async (request, response) => {
             await this.controllerShoppingBasket.create(request, response);

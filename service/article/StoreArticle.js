@@ -5,6 +5,11 @@ export class StoreArticle {
         this.dbManager_Article = new DatabaseManager_NEDB("data/article.db");
     }
 
+    async getArticle(articleId, articleQueryParameter) {
+        const articleArr = await this.dbManager_Article.find((articleId? {"_id": articleId} : {"articleQueryParameter": articleQueryParameter}));
+        return (articleArr.length === 0 ? null : articleArr[0]);
+    }
+
     async getArticles(filterName) {
         if (filterName !== '') {
             return await this.dbManager_Article.find({"searchTags": new RegExp(filterName.toLowerCase())});
@@ -17,10 +22,6 @@ export class StoreArticle {
         return await this.dbManager_Article.find({}, {"releaseDate": ascDesc_DB}, limit);
     }
 
-    async getArticleDetails(articleId, articleQueryParameter) {
-        const articleArr = await this.dbManager_Article.find((articleId? {"_id": articleId} : {"articleQueryParameter": articleQueryParameter}));
-        return (articleArr.length === 0 ? null : articleArr[0]);
-    }
 
     async update(article) {
         await this.dbManager_Article.update(article._id, article);

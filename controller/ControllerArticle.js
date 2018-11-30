@@ -9,12 +9,9 @@ export class ControllerArticle {
     async getArticles(request, response)  {
         try {
             const filter = request.query.filter ;
-
             const result = await this.storeArticle.getArticles( (filter==null? '' : filter)  );
             Logger.traceMessage(this.LOGGER_NAME, 'getArticles', 'count articles ' + result.length );
             response.json(result);
-
-            //response.json(await this.storeArticle.getArticles( (filter==null? '' : filter)  ));
             Logger.traceMessage(this.LOGGER_NAME, 'getArticles', 'ok');
         } catch (e) {
             Logger.traceError(this.LOGGER_NAME, 'getArticles', 'failed -> ' + e);
@@ -32,19 +29,19 @@ export class ControllerArticle {
         }
     }
 
-    async getArticleDetails(request, response)  {
+    async getArticle(request, response)  {
         try {
-            response.json(await this.storeArticle.getArticleDetails(null, request.query.article));
-            Logger.traceMessage(this.LOGGER_NAME, 'getArticleDetails', 'ok');
+            response.json(await this.storeArticle.getArticle(null, request.query.article));
+            Logger.traceMessage(this.LOGGER_NAME, 'getArticle', 'ok');
         } catch (e) {
-            Logger.traceError(this.LOGGER_NAME, 'getArticleDetails', 'failed -> ' + e);
+            Logger.traceError(this.LOGGER_NAME, 'getArticle', 'failed -> ' + e);
             response.status(500).send('server error, contact support');
         }
     }
 
     async changeArticleRating(request, response)  {
         try {
-            let article = await this.storeArticle.getArticleDetails(request.body.articleID,null);
+            let article = await this.storeArticle.getArticle(request.body.articleID,null);
             // noinspection JSUnresolvedVariable
             if(request.body.rateUp) {// find the lowest
                 for (let i = 0; i < article.rating.length; i++ ) {
