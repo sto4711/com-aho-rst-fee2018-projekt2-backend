@@ -29,18 +29,26 @@ export class RouterWebShop {
             await this.controllerUser.signOut(request, response);
         });
 
-
-        this.router.post('/user/create', async (request, response) => {
+        this.router.post('/create/user', async (request, response) => {
             await this.controllerUser.create(request, response);
         });
 
-        this.router.post('/user/updateUser', async (request, response) => {
+
+        this.router.post('/update/user', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
         });
 
-        this.router.post('/user/deleteUser', async (request, response) => {
+
+
+
+        this.router.post('/delete/user', async (request, response) => {
             await this.controllerUser.deleteUser(request, response);
         });
+
+
+
+
+
 
         this.router.get('/user', async (request, response) => {
             await this.controllerUser.getUser(request, response);
