@@ -32,6 +32,10 @@ export class RouterWebShop {
         this.router.post('/create/user', async (request, response) => {
             await this.controllerUser.create(request, response);
         });
+        this.router.post('/create/shopping-basket', async (request, response) => {
+            await this.controllerShoppingBasket.create(request, response);
+        });
+
 
 
         this.router.post('/update/user', async (request, response) => {
@@ -74,25 +78,22 @@ export class RouterWebShop {
 
 
 
-        this.router.patch('/article/change-rating', async (request, response) => {
+        this.router.patch('/change-rating/article', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
         });
 
-
-
-
-
-        this.router.post('/shopping-basket/create', async (request, response) => {
-            await this.controllerShoppingBasket.create(request, response);
+        this.router.post('/add-item/shopping-basket', async (request, response) => {
+            await this.controllerShoppingBasket.addItem(request, response);
         });
+
+
+
+
 
         this.router.get('/shopping-basket/', async (request, response) => {
             await this.controllerShoppingBasket.get(request, response);
         });
 
-        this.router.post('/shopping-basket/add-item', async (request, response) => {
-            await this.controllerShoppingBasket.addItem(request, response);
-        });
 
         this.router.patch('/shopping-basket/change-item-amount', async (request, response) => {
             await this.controllerShoppingBasket.changeItemAmount(request, response);
