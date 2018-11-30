@@ -22,13 +22,13 @@ export class RouterWebShop {
         this.controllerShoppingBasket = new ControllerShoppingBasket(storeShoppingBasket, storeArticle);
         this.controllerOrder = new ControllerOrder(storeShoppingBasket, storeSession, storeUser);
 
-        this.router.post('/user/sign-in', async (request, response) => {
+        this.router.post('/sign-in/user', async (request, response) => {
             await this.controllerUser.signIn(request, response);
         });
-
-        this.router.post('/user/sign-out', async (request, response) => {
+        this.router.post('/sign-out/user', async (request, response) => {
             await this.controllerUser.signOut(request, response);
         });
+
 
         this.router.post('/user/create', async (request, response) => {
             await this.controllerUser.create(request, response);
