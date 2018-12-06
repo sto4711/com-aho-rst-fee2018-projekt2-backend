@@ -59,7 +59,7 @@ export class ControllerShoppingBasket {
                 if (!articleAlreadyExists) {
                     const article = await this.storeArticle.getArticle(request.body.articleID, null);
                     // noinspection JSUnresolvedVariable
-                    const shoppingBasketItem = new ShoppingBasketItem(article._id, article.name, article.price, article.availability, request.body.articleAmount, article.itemNumber, article.articleQueryParameter);
+                    const shoppingBasketItem = new ShoppingBasketItem(article._id, article.name, article.price, article.imageURL, article.availability, request.body.articleAmount, article.itemNumber, article.articleQueryParameter);
                     shoppingBasket.items.push(shoppingBasketItem);
                     ControllerShoppingBasket.calculateTotalSum(shoppingBasket);
                     await this.storeShoppingBasket.update(shoppingBasket);
