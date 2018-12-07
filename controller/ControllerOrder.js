@@ -117,27 +117,27 @@ export class ControllerOrder {
             let order = await this.storeOrder.get(request.body._id);
             let ok = order != null;
             if (ok) {
-                if (request.url.endsWith('change-delivery-address')) {
+                if (request.url.endsWith('delivery-address')) {
                     order.deliveryAddress = request.body.deliveryAddress;
                     order.state = 'CHANGE DELIVERY ADDRESS';
                     await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change deliveryAddress', 'ok');
-                } else if (request.url.endsWith('change-contact-data')) {
+                } else if (request.url.endsWith('contact-data')) {
                     order.contactData = request.body.contactData;
                     order.state = 'CHANGE CONTACT DATA';
                     await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change contactData', 'ok');
                 }
-                else if (request.url.endsWith('change-delivery-type')) {
+                else if (request.url.endsWith('delivery-type')) {
                     order.deliveryType = request.body.deliveryType;
                     order.state = 'CHANGE DELIVERY TYPE';
                     await this.storeOrder.update(order);
                     response.json(order);
                     Logger.traceMessage(this.LOGGER_NAME, 'change deliveryType', 'ok');
                 }
-                else if (request.url.endsWith('change-payment-type')) {
+                else if (request.url.endsWith('payment-type')) {
                     order.paymentType = request.body.paymentType;
                     order.state = 'CHANGE PAYMENT TYPE';
                     await this.storeOrder.update(order);
