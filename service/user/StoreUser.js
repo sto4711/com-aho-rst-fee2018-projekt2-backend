@@ -14,6 +14,12 @@ export class StoreUser {
         return (userArr.length === 0 ? null : userArr[0]);
     }
 
+    async getUser_ByMail(email) {
+        const userArr = await this.dbManager_User.find({"email": email});
+        return (userArr.length === 0 ? null : userArr[0]);
+    }
+
+
     async getUser_ByMailPwd(email, pwd) {
         const userArr = await this.dbManager_User.find({"email": email});
         for (let i = 0; i < userArr.length; i++) {

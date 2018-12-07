@@ -38,7 +38,7 @@ export class ControllerUser {
 
     async create(request, response) {
         try {
-            let user = await this.storeUser.getUser_ByMailPwd(request.body.email, request.body.pwd);
+            let user = await this.storeUser.getUser_ByMail(request.body.email);
             if(!user)    {
                 user = request.body;
                 user.type = 'customer';
