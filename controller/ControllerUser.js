@@ -106,17 +106,19 @@ export class ControllerUser {
         const token = request.headers.authorization;
         if (token == null) {
             return false;
+        }else if (token === '') {
+            return false;
         }
 
         const tokenDate = await this.storeSession.getSessionTokenDate(token);
         if (tokenDate == null) {
-            Logger.traceMessage(this.LOGGER_NAME, 'isSessionValid', 'unknown token ' + token);
+            Logger.traceMessage(this.LOGGER_NAME, 'isTokenValid', 'unknown token ' + token);
             return false;
         }
 
         const hasNotExpired = Date.now() < (tokenDate.getTime() + this.HOUR);
         if (!hasNotExpired) {
-            Logger.traceMessage(this.LOGGER_NAME, 'isSessionValid', 'session not valid, token has expired');
+            Logger.traceMessage(this.LOGGER_NAME, 'isTokenValid', 'session not valid, token has expired');
         }
         return hasNotExpired;
     }
