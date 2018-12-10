@@ -25,13 +25,17 @@ class WebShopBackend {
 
         //Authentication
         this.app.use(async (request, response, next) => {
-            request.authenticated = await this.routerWebShop.getControllerUser().isTokenValid(request);
+            if(WebShopBackend.isBackendCall(request)) {
+                request.authenticated = await this.routerWebShop.getControllerUser().isTokenValid(request);
+            }
             next();
         });
 
         //Trace URL Backend only
         this.app.use(async (request, response, next) => {
-            WebShopBackend.traceURL_Backend(request);
+            if(WebShopBackend.isBackendCall(request)) {
+                Logger.traceMessage('WebShopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
+            }
             next();
         });
 
@@ -45,10 +49,8 @@ class WebShopBackend {
         Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Frontend WebShop : http://localhost:3000/frontend');
     }
 
-    static traceURL_Backend(request) {
-        if (request.path.startsWith('/backend') && request.method !== 'OPTIONS') {
-            Logger.traceMessage('WebShopBackend', 'traceURL_Backend', request.url + '     (' + request.method + ')');
-        }
+    static isBackendCall(request) {
+        return request.path.startsWith('/backend') && request.method !== 'OPTIONS';
     }
 
 }
