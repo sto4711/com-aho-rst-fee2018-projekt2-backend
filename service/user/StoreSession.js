@@ -9,7 +9,6 @@ export class StoreSession {
         this.LOGGER_NAME = 'StoreSession';
         this.uIDGenerator = new UIDGenerator(); // Default is a 128-bit UID encoded in base58
         this.dbManager_Session = new DatabaseManager_NEDB("data/session.db");
-        this.dbManager_Session.deleteAll().then();
     }
 
     async getSessionByUser(userID) {
