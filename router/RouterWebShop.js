@@ -84,9 +84,12 @@ export class RouterWebShop {
         this.router.put('/update/user', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
         });
-        this.router.patch('/update/order', async (request, response) => {
+        this.router.put('/update/order', async (request, response) => {
             await this.controllerOrder.updateOrder(request, response);
         });
+
+
+
         this.router.patch('/update/order/delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
