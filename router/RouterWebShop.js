@@ -80,15 +80,12 @@ export class RouterWebShop {
             await this.controllerShoppingBasket.removeItem(request, response);
         });
 
-        // PATCH
-        this.router.patch('/update/user', async (request, response) => {
+        // PUT
+        this.router.put('/update/user', async (request, response) => {
             await this.controllerUser.updateUser(request, response);
         });
         this.router.patch('/update/order', async (request, response) => {
             await this.controllerOrder.updateOrder(request, response);
-        });
-        this.router.patch('/update/order/state', authentication.required(), authentication.required(), async (request, response) => {
-            await this.controllerOrder.changeState(request, response);
         });
         this.router.patch('/update/order/delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
@@ -101,6 +98,14 @@ export class RouterWebShop {
         });
         this.router.patch('/update/order/payment-type', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
+        });
+
+
+
+
+        // PATCH
+        this.router.patch('/update/order/state', authentication.required(), authentication.required(), async (request, response) => {
+            await this.controllerOrder.changeState(request, response);
         });
         this.router.patch('/change-rating/article', async (request, response) => {
             await this.controllerArticle.changeArticleRating(request, response);
