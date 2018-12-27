@@ -87,24 +87,18 @@ export class RouterWebShop {
         this.router.put('/update/order', async (request, response) => {
             await this.controllerOrder.updateOrder(request, response);
         });
-
-
-
-        this.router.patch('/update/order/delivery-address', authentication.required(), async (request, response) => {
+        this.router.put('/update/order/delivery-address', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
-        this.router.patch('/update/order/contact-data', authentication.required(), async (request, response) => {
+        this.router.put('/update/order/contact-data', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
-        this.router.patch('/update/order/delivery-type', authentication.required(), async (request, response) => {
+        this.router.put('/update/order/delivery-type', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
-        this.router.patch('/update/order/payment-type', authentication.required(), async (request, response) => {
+        this.router.put('/update/order/payment-type', authentication.required(), async (request, response) => {
             await this.controllerOrder.change(request, response);
         });
-
-
-
 
         // PATCH
         this.router.patch('/update/order/state', authentication.required(), authentication.required(), async (request, response) => {
