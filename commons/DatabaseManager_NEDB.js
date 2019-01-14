@@ -6,7 +6,7 @@ export class DatabaseManager_NEDB {
         this.db = new Datastore({filename: filename, autoload: true});
         this.DESCENDING = -1;
         this.ASCENDING = 1;
-        this.LOGGER_NAME = 'StoreShoppingBasket';
+        this.LOGGER_NAME = 'DatabaseManager_NEDB';
         Logger.traceMessage(this.LOGGER_NAME, 'constructor', 'Database "' + filename.replace('.db', '') + '" ready')
     }
 
